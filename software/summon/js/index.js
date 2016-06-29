@@ -66,7 +66,7 @@ var app = {
     onDiscover: function(device) {
         if (device.id == deviceId) {
             console.log("Found " + deviceName + " (" + deviceId + ")!");
-            app.onParseAdvData(device);
+            bluetooth.connect(device.id, function(){console.log("CONNECTION SUCCESSFUL")}, function(){console.log("Failed connect")});
         } else {
             //console.log('Not Blink (' + device.id + ')');
 
@@ -78,36 +78,7 @@ var app = {
    onParseAdvData: function(device){
         //Parse Advertised Data
         var advertisement = device.advertisement;
-
-
-        // Check this is something we can parse
-        if (advertisement.localName == 'Solar' &&
-                advertisement.manufacturerData) { 
-
-            var mandata = advertisement.manufacturerData;
-            
-            // Save when we got this.
-            last_update = Date.now();
-            
-            //check that it's a data packet
-            console.log(mandata);
-            if (mandata[0] == 224) {
-
-                var data = new DataView(new Uint8Array(advertisement.manufacturerData.subarray(3)).buffer);
-                var volt = data.getFloat32(0,true)
-                var curr = data.getFloat32(4,true)
-                var pow = data.getFloat32(8,true)
-                document.getElementById("vVal").innerHTML = volt.toFixed(2);
-                document.getElementById("cVal").innerHTML = curr.toFixed(2);
-                document.getElementById("pVal").innerHTML = pow.toFixed(2);
-            }
-
-
-            app.update_time_ago();
-
-        } else {
-            console.log('Advertisement was not Solar.');
-        }
+        console.log("Found: " + advertisement.localName);
 
     },
     update_time_ago: function () {
@@ -130,8 +101,6 @@ var app = {
             } else if (diff < 120000) {
                 out = 'Last updated about a minute ago';
             }
-
-            document.querySelector("#data_update").innerHTML = out;
         }
     },
     // Function to Log Text to Screen

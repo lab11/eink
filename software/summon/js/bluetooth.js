@@ -17,6 +17,26 @@ document.addEventListener("deviceready", function () {
     }, failure);
   };
 
+  var successfulWrite = function()
+  {
+    console.log("Successful Write");
+  }
+
+  var failedWrite = function()
+  {
+    console.log("Failed write");
+  }
+
+  bluetooth.write = function(device_id, service_uuid, characteristic_uuid, value) {
+    ble.write(device_id, service_uuid, characteristic_uuid, successfulWrite, failedWrite);
+
+  };
+
+  bluetooth.connect = function(device_id, success, failure)
+  {
+    ble.connect(device_id, success, failure);
+  }
+
   // create a common advertisement interface between iOS and android
   //  This format follows the nodejs BLE library, noble
   //  https://github.com/sandeepmistry/noble#peripheral-discovered
