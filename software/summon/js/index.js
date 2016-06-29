@@ -2,8 +2,8 @@
 
 var deviceId = "C0:98:E5:00:F8:02";                                                 // while testing, replace with address of a BLE peripheral
 var deviceName = "E-Ink disp";                                                      // while testing, replace with desired name
-var serviceUuid = "E528A44AFF4F3089D44F7CB505ABA641";                               // example service UUID to access
-var characteristicUuid = "E528A410FF4F3089D44F7CB505ABA641";                        // example characteristic UUID to read or write
+var serviceUuid =        "E528A44A-FF4F-3089-D44F-7CB505ABA641";                               // example service UUID to access
+var characteristicUuid = "E528A410-FF4F-3089-D44F-7CB505ABA641";                        // example characteristic UUID to read or write
 var writeValue = "Written from this app";                                           // value to write to characteristic
 
 var timer;
