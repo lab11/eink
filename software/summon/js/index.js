@@ -86,7 +86,7 @@ var app = {
                 console.log("created buffer");
 
                 console.log("started write");
-                ble.write(deviceId, serviceUuid, characteristicUuid, buffer, console.log("wrote"), console.log("failed write"));
+                ble.writeWithoutResponse(deviceId, serviceUuid, characteristicUuid, buffer, console.log("wrote"), console.log("failed write"));
 
             }, function(){console.log("Failed connect")});
         } else {
