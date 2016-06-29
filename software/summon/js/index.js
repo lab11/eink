@@ -35,7 +35,7 @@ var app = {
     },
     // App Ready Event Handler
     onAppReady: function() {
-        console.log.log("onAppReady");
+        console.log("onAppReady");
 
         // Setup update for last data time
         setInterval(app.update_time_ago, 5000);
