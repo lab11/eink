@@ -45,7 +45,6 @@ var app = {
             deviceName = window.gateway.getDeviceName();                            // get device name from Summon
             console.log("Opened via Summon..");
         }
-        document.getElementById("title").innerHTML = String(deviceId);
         console.log("Checking if ble is enabled...");
         bluetooth.isEnabled(app.onEnable);                                                // if BLE enabled, goto: onEnable
         // app.onEnable();
