@@ -30,8 +30,9 @@ document.addEventListener("deviceready", function () {
   }
 
   bluetooth.write = function(device_id, service_uuid, characteristic_uuid, value) {
+    console.log("started write");
     ble.write(device_id, service_uuid, characteristic_uuid, successfulWrite, failedWrite);
-
+    console.log("ended write");
   };
 
   bluetooth.connect = function(device_id, success, failure)
