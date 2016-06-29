@@ -1,10 +1,33 @@
 /* JavaScript for Template Summon UI */
 
-var deviceId = "C0:98:E5:30:03:14";                                                 // while testing, replace with address of a BLE peripheral
-var deviceName = "BLE Device";                                                      // while testing, replace with desired name
-var serviceUuid = "1800";                                                           // example service UUID to access
-var characteristicUuid = "2A00";                                                    // example characteristic UUID to read or write
-var writeValue = "Written Name";                                                    // value to write to characteristic
+var deviceId = "C0:98:E5:00:F8:02";                                                 // while testing, replace with address of a BLE peripheral
+var deviceName = "E-Ink disp";                                                      // while testing, replace with desired name
+var serviceUuid = "E528A44AFF4F3089D44F7CB505ABA641";                               // example service UUID to access
+var characteristicUuid = "A410";                                                    // example characteristic UUID to read or write
+var writeValue = "Written from this app";                                           // value to write to characteristic
+
+<<<<<<< HEAD
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+    console.log(navigator.notification);
+}
+
+navigator.notification.alert(
+    'You are the winner!',  // message
+        alertDismissed,         // callback
+	    'Game Over',            // title
+	        'Done'                  // buttonName
+		);
+
+
+
+
+function alertDismissed() {
+    // do something
+}
+=======
+alert("Stuff!");
+>>>>>>> 167b4d4a2ca4753ad12fed8decc80ade85544f89
 
 var app = {
     // Application Constructor
@@ -35,9 +58,22 @@ var app = {
     onConnect: function(device) {
         app.log("Connected to " + deviceName + " (" + deviceId + ")!");
         // uncomment to read characteristic on connect; if read is good, goto: onRead
-        summon.bluetooth.read(deviceId, serviceUuid, characteristicUuid, app.onRead, app.onError);  
+        //summon.bluetooth.read(deviceId, serviceUuid, characteristicUuid, app.onRead, app.onError);  
         // uncomment to write writeValue to characteristic on connect; if write is good, goto: onWrite
-        // summon.bluetooth.write(deviceId, serviceUuid, characteristicUuid, app.stringToBytes(writeValue), app.onWrite, app.onError); 
+        $( "#addcharacteristicsbutton" ).bind( "click", function(event, ui) {
+            writeValue = $("#textinput").val();
+            
+	    navigator.notification.alert(
+	        'You are the winner!',  // message
+		    alertDismissed,         // callback
+		        'Game Over',            // title
+			    'Done'                  // buttonName
+			    );
+
+
+
+            summon.bluetooth.write(deviceId, serviceUuid, characteristicUuid, app.stringToBytes(writeValue), app.onWrite, app.onError); 
+        }); 
     },
     // BLE Characteristic Read Callback
     onRead: function(data) {

@@ -3,15 +3,39 @@
 
 <html>
     <head>
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"> -->
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/index.css">
+        
+        <!-- JQUERY MOBILE --> 
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        
         <summon request="bluetooth"/>
-        <title>Template</title>
+        <title>Eink Display</title>
     </head>
     <body>
+        <div id="container" style="padding: 20px;">
+            <h1>Eink Display</h1>
+
+            <p>Text and qr codes. rev7: notification?</p>
+ 
+            <hr>
+            
+            <h4>X Coordinate <input type="number" id="xcoordinateinput"></input></h4>
+            <h4>Y Coordinate <input type="number" id="ycoordinateinput"></input></h4>
+            <h4>Scale <input type="number" id="scaleinput"></input></h4>
+            <h4>Text <input type="text" id="textinput"></input></h4>
+            <h4>QR Code <input type="text" id="qrcodeinput"></input></h4>
+            
+            <hr>
+            
+            <button type="button" id="addcharacteristicsbutton">Write Characteristics</button>
+            
+        </div>
         <div id="console"></div>
         <script type="text/javascript" src="js/index.js"></script>
     </body>
