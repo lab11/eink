@@ -6,73 +6,138 @@ var serviceUuid = "E528A44AFF4F3089D44F7CB505ABA641";                           
 var characteristicUuid = "A410";                                                    // example characteristic UUID to read or write
 var writeValue = "Written from this app";                                           // value to write to characteristic
 
-console.log("APP STARTED");
+var timer;
+
+var last_update = 0;
+
+var switch_visibility_console_check = "visible";
+var switch_visibility_steadyscan_check = "visible";
+
+// Load the swipe pane
+$(document).on('pageinit',function(){
+    $("#main_view").on("swipeleft",function(){
+        $("#logPanel").panel( "open");
+    });
+});
 
 var app = {
     // Application Constructor
     initialize: function() {
+        console.log("init");
+
         document.addEventListener("deviceready", app.onAppReady, false);
         document.addEventListener("resume", app.onAppReady, false);
         document.addEventListener("pause", app.onPause, false);
+        
+        if (typeof window.gateway != "undefined") { // if UI opened through Summon,
+            app.onAppReady();
+        }
     },
     // App Ready Event Handler
     onAppReady: function() {
-        if (gateway) {                                                              // if UI opened through Summon (gateway var exists),
-            deviceId = gateway.getDeviceId();                                       // get device ID from Summon
-            deviceName = gateway.getDeviceName();                                   // get device name from Summon
+        console.log.log("onAppReady");
+
+        // Setup update for last data time
+        setInterval(app.update_time_ago, 5000);
+
+        if (typeof window.gateway != "undefined") {                               // if UI opened through Summon,
+            deviceId = window.gateway.getDeviceId();                                // get device ID from Summon
+            deviceName = window.gateway.getDeviceName();                            // get device name from Summon
+            console.log("Opened via Summon..");
         }
-        summon.bluetooth.isEnabled(app.onEnable);                                   // if BLE enabled, goto: onEnable
+        document.getElementById("title").innerHTML = String(deviceId);
+        console.log("Checking if ble is enabled...");
+        bluetooth.isEnabled(app.onEnable);                                                // if BLE enabled, goto: onEnable
+        // app.onEnable();
     },
     // App Paused Event Handler
-    onPause: function() {                                                           // if user leaves app, stop BLE
-        summon.bluetooth.disconnectDevice();
-        summon.bluetooth.stopScan();
+    onPause: function() {
+        console.log("on Pause");                                                           // if user leaves app, stop BLE
+        bluetooth.stopScan();
     },
     // Bluetooth Enabled Callback
     onEnable: function() {
-        summon.bluetooth.connectDevice(app.onConnect, app.onDeviceReady);           // start BLE scan; if device connected, goto: onConnect
+        console.log("onEnable");
+        // app.onPause();                                                              // halt any previously running BLE processes
+        bluetooth.startScan([], app.onDiscover, app.onAppReady);                          // start BLE scan; if device discovered, goto: onDiscover
         console.log("Searching for " + deviceName + " (" + deviceId + ").");
     },
-    // BLE Device Connected Callback
-    onConnect: function(device) {
-        app.log("Connected to " + deviceName + " (" + deviceId + ")!");
-        // uncomment to read characteristic on connect; if read is good, goto: onRead
-        //summon.bluetooth.read(deviceId, serviceUuid, characteristicUuid, app.onRead, app.onError);  
-        // uncomment to write writeValue to characteristic on connect; if write is good, goto: onWrite
-        $( "#addcharacteristicsbutton" ).bind( "click", function(event, ui) {
-            writeValue = $("#textinput").val();
-            
+    // BLE Device Discovered Callback
+    onDiscover: function(device) {
+        if (device.id == deviceId) {
+            console.log("Found " + deviceName + " (" + deviceId + ")!");
+            app.onParseAdvData(device);
+        } else {
+            //console.log('Not Blink (' + device.id + ')');
 
-            summon.bluetooth.write(deviceId, serviceUuid, characteristicUuid, app.stringToBytes(writeValue), app.onWrite, app.onError); 
-        }); 
+            // HACK:
+            bluetooth.stopScan();
+            bluetooth.startScan([], app.onDiscover, app.onAppReady);
+        }
     },
-    // BLE Characteristic Read Callback
-    onRead: function(data) {
-        app.log("Characteristic Read: " + app.bytesToString(data));                 // display read value as string
+   onParseAdvData: function(device){
+        //Parse Advertised Data
+        var advertisement = device.advertisement;
+
+
+        // Check this is something we can parse
+        if (advertisement.localName == 'Solar' &&
+                advertisement.manufacturerData) { 
+
+            var mandata = advertisement.manufacturerData;
+            
+            // Save when we got this.
+            last_update = Date.now();
+            
+            //check that it's a data packet
+            console.log(mandata);
+            if (mandata[0] == 224) {
+
+                var data = new DataView(new Uint8Array(advertisement.manufacturerData.subarray(3)).buffer);
+                var volt = data.getFloat32(0,true)
+                var curr = data.getFloat32(4,true)
+                var pow = data.getFloat32(8,true)
+                document.getElementById("vVal").innerHTML = volt.toFixed(2);
+                document.getElementById("cVal").innerHTML = curr.toFixed(2);
+                document.getElementById("pVal").innerHTML = pow.toFixed(2);
+            }
+
+
+            app.update_time_ago();
+
+        } else {
+            console.log('Advertisement was not Solar.');
+        }
+
     },
-    // BLE Characteristic Write Callback
-    onWrite : function() {
-        app.log("Characeristic Written: " + writeValue);                            // display write success
-    },
-    // BLE Characteristic Read/Write Error Callback
-    onError: function() {                                                           // on error, try restarting BLE
-        app.log("Read/Write Error.")
-        summon.bluetooth.isEnabled(deviceId,function(){},app.onAppReady);
-        summon.bluetooth.isConnected(deviceId,function(){},app.onAppReady);
-    },
-    // Function to Convert String to Bytes (to Write Characteristics)
-    stringToBytes: function(string) {
-        array = new Uint8Array(string.length);
-        for (i = 0, l = string.length; i < l; i++) array[i] = string.charCodeAt(i);
-        return array.buffer;
-    },
-    // Function to Convert Bytes to String (to Read Characteristics)
-    bytesToString: function(buffer) {
-        return String.fromCharCode.apply(null, new Uint8Array(buffer));
+    update_time_ago: function () {
+        if (last_update > 0) {
+            // Only do something after we've gotten a packet
+            // Default output
+            var out = 'Haven\'t gotten a packet in a while...';
+
+            var now = Date.now();
+            var diff = now - last_update;
+            if (diff < 60000) {
+                // less than a minute
+                var seconds = Math.round(diff/1000);
+                out = 'Last updated ' + seconds + ' second';
+                if (seconds != 1) {
+                    out += 's';
+                }
+                out += ' ago';
+
+            } else if (diff < 120000) {
+                out = 'Last updated about a minute ago';
+            }
+
+            document.querySelector("#data_update").innerHTML = out;
+        }
     },
     // Function to Log Text to Screen
     log: function(string) {
-        document.querySelector("#console").innerHTML += (new Date()).toLocaleTimeString() + " : " + string + "<br />"; 
+        document.querySelector("#console").innerHTML += (new Date()).toLocaleTimeString() + " : " + string + "<br />";
+        document.querySelector("#console").scrollTop = document.querySelector("#console").scrollHeight;
     }
 };
 
