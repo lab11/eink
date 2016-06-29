@@ -83,8 +83,10 @@ var app = {
 
                 //convert text to format for write
                 var buffer = str2ab(writeValue);
+                console.log("created buffer");
 
-                bluetooth.write(deviceId, serviceUuid, characteristicUuid, buffer);
+                console.log("started write");
+                ble.write(deviceId, serviceUuid, characteristicUuid, console.log("wrote"), console.log("failed write"));
 
             }, function(){console.log("Failed connect")});
         } else {
