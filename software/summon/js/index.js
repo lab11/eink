@@ -66,7 +66,15 @@ var app = {
     onDiscover: function(device) {
         if (device.id == deviceId) {
             console.log("Found " + deviceName + " (" + deviceId + ")!");
-            bluetooth.connect(device.id, function(){console.log("CONNECTION SUCCESSFUL")}, function(){console.log("Failed connect")});
+            bluetooth.connect(device.id, function(){
+                console.log("CONNECTION SUCCESSFUL");
+
+                //convert text to format for write
+                var buffer = bluetooth.str2ab(writeValue);
+
+                bluetooth.write(deviceId, serviceUuid, characteristicUuid, buffer);
+
+            }, function(){console.log("Failed connect")});
         } else {
             //console.log('Not Blink (' + device.id + ')');
 
