@@ -194,7 +194,13 @@ function clicked()
     bluetooth.isEnabled(app.onEnable);  
     console.log("CLICKED!");
 
-    writeBLEtext();
+    for(var i = 0; i < 5; i++)
+    {
+        if(wroteTextSuccessfully == false)
+        {
+            writeBLEtext();
+        }
+    }
 }
 
 app.initialize();
