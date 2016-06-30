@@ -4,8 +4,6 @@ var deviceId = "C0:98:E5:00:F8:02";                                             
 var deviceName = "E-Ink disp";                                                      // while testing, replace with desired name
 var serviceUuid =        "E528A44A-FF4F-3089-D44F-7CB505ABA641";                               // example service UUID to access
 var characteristicUuid = "E528A410-FF4F-3089-D44F-7CB505ABA641";                        // example characteristic UUID to read or write
-var writeValue = "cordova SUX";                                           // value to write to characteristic
-
 var timer;
 
 var last_update = 0;
@@ -80,7 +78,7 @@ var app = {
                 console.log("CONNECTION SUCCESSFUL");
 
                 //convert text to format for write
-                var buffer = stringToBytes(writeValue);
+                var buffer = stringToBytes($("#textinput").val());
                 console.log("created buffer");
 
                 console.log("started write");
