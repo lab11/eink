@@ -4,7 +4,7 @@ var deviceId = "C0:98:E5:00:F8:02";                                             
 var deviceName = "E-Ink disp";                                                      // while testing, replace with desired name
 var serviceUuid =        "E528A44A-FF4F-3089-D44F-7CB505ABA641";                               // example service UUID to access
 var characteristicUuid = "E528A410-FF4F-3089-D44F-7CB505ABA641";                        // example characteristic UUID to read or write
-var writeValue = "Written from this app";                                           // value to write to characteristic
+var writeValue = "cordova SUX";                                           // value to write to characteristic
 
 var timer;
 
@@ -92,7 +92,7 @@ var app = {
 
             // HACK:
             bluetooth.stopScan();
-            bluetooth.startScan([], app.onDiscover, app.onAppReady);
+            //bluetooth.startScan([], app.onDiscover, app.onAppReady);
         }
     },
    onParseAdvData: function(device){
@@ -129,5 +129,12 @@ var app = {
         document.querySelector("#console").scrollTop = document.querySelector("#console").scrollHeight;
     }
 };
+
+
+function clicked()
+{
+    app.onEnable();
+    console.log("CLICKED!");
+}
 
 app.initialize();
