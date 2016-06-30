@@ -82,7 +82,7 @@ function writeConnect(charUuid, buffer, device, callback)
 
         }, function(error){
             console.log("Connection error: " + error);
-            writeConnect(device);
+            writeConnect(charUuid, buffer, device, callback);
         });
     }
 }
@@ -102,7 +102,7 @@ function scanConnectWrite(charUuid, buffer, callback)
         }, function(error){
             if(writeScans < 5)
             {
-                scanConnectWrite();
+                scanConnectWrite(charUuid, buffer, callback);
             }
         });
     }
