@@ -92,9 +92,11 @@ var app = {
                 var scale = $("#scaleinput").val();
 
                 //write x coord, y coord, and scale
+                /*
                 ble.write(deviceId, serviceUuid, xcoordUuid, xcoordinate, console.log("xcoord written"), console.log("xcoord failed"));
                 ble.write(deviceId, serviceUuid, ycoordUuid, ycoordinate, console.log("ycoord written"), console.log("ycoord failed"));
                 ble.write(deviceId, serviceUuid, scaleUuid, scale, console.log("scale written"), console.log("scale failed"));
+                */
 
                 console.log("started write");
                 ble.write(deviceId, serviceUuid, textUuid, buffer, console.log("wrote successfully"), function(error){console.log("error: " + error)});
