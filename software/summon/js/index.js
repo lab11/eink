@@ -57,7 +57,7 @@ var app = {
         }
         
         console.log("Checking if ble is enabled...");
-        bluetooth.isEnabled(app.onEnable);                                                // if BLE enabled, goto: onEnable
+        //bluetooth.isEnabled(app.onEnable);                                                // if BLE enabled, goto: onEnable
         // app.onEnable();
     },
     // App Paused Event Handler
@@ -92,7 +92,7 @@ var app = {
 
             // HACK:
             bluetooth.stopScan();
-            //bluetooth.startScan([], app.onDiscover, app.onAppReady);
+            bluetooth.startScan([], app.onDiscover, app.onAppReady);
         }
     },
    onParseAdvData: function(device){
@@ -133,7 +133,7 @@ var app = {
 
 function clicked()
 {
-    app.onEnable();
+    bluetooth.isEnabled(app.onEnable);  
     console.log("CLICKED!");
 }
 
