@@ -3,7 +3,13 @@
 var deviceId = "C0:98:E5:00:F8:02";                                                 // while testing, replace with address of a BLE peripheral
 var deviceName = "E-Ink disp";                                                      // while testing, replace with desired name
 var serviceUuid =        "E528A44A-FF4F-3089-D44F-7CB505ABA641";                               // example service UUID to access
-var characteristicUuid = "E528A410-FF4F-3089-D44F-7CB505ABA641";                        // example characteristic UUID to read or write
+
+var textUuid   = "E528A410-FF4F-3089-D44F-7CB505ABA641";                        // example characteristic UUID to read or write
+var xcoordUuid = "E528A411-FF4F-3089-D44F-7CB505ABA641";
+var ycoordUuid = "E528A412-FF4F-3089-D44F-7CB505ABA641";
+var scaleUuid  = "E528A413-FF4F-3089-D44F-7CB505ABA641";
+var qrcodeUuid = "E528A414-FF4F-3089-D44F-7CB505ABA641";
+
 var timer;
 
 var last_update = 0;
@@ -85,8 +91,13 @@ var app = {
                 var ycoordinate = $("#ycoordinateinput").val();
                 var scale = $("#scaleinput").val();
 
+                //write x coord, y coord, and scale
+                ble.write(deviceId, serviceUuid, xcoordUuid, xcoordinate, console.log("xcoord written"), console.log("xcoord failed"));
+                ble.write(deviceId, serviceUuid, ycoordUuid, ycoordinate, console.log("ycoord written"), console.log("ycoord failed"));
+                ble.write(deviceId, serviceUuid, scaleUuid, scale, console.log("scale written"), console.log("scale failed"));
+
                 console.log("started write");
-                ble.write(deviceId, serviceUuid, characteristicUuid, buffer, console.log("wrote successfully"), function(error){console.log("error: " + error)});
+                ble.write(deviceId, serviceUuid, textUuid, buffer, console.log("wrote successfully"), function(error){console.log("error: " + error)});
 
             }, function(error){console.log("Connection error: " + error)});
         } else {
