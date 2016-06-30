@@ -17,6 +17,8 @@ var last_update = 0;
 var switch_visibility_console_check = "visible";
 var switch_visibility_steadyscan_check = "visible";
 
+var wroteSuccessfully = true;
+
 // Load the swipe pane
 $(document).on('pageinit',function(){
     $("#main_view").on("swipeleft",function(){
@@ -78,7 +80,7 @@ var app = {
     },
     // BLE Device Discovered Callback
     onDiscover: function(device) {
-        if (device.id == deviceId) {
+        if (device.id == deviceId && wroteSuccessfully == false) {
             console.log("Found " + deviceName + " (" + deviceId + ")!");
             bluetooth.connect(device.id, function(){
                 console.log("CONNECTION SUCCESSFUL");
@@ -99,10 +101,10 @@ var app = {
                 */
 
                 console.log("started write");
-                ble.write(deviceId, serviceUuid, textUuid, buffer, console.log("wrote successfully"), function(error){console.log("error: " + error)});
+                ble.write(deviceId, serviceUuid, textUuid, buffer, function(){console.log("wrote successfully"); wroteSuccessfully = true;}, function(error){console.log("error: " + error)});
 
             }, function(error){console.log("Connection error: " + error)});
-        } else {
+        } else{
             //console.log('Not Blink (' + device.id + ')');
 
             // HACK:
@@ -148,6 +150,7 @@ var app = {
 
 function clicked()
 {
+    wroteSuccessfully = false;
     bluetooth.isEnabled(app.onEnable);  
     console.log("CLICKED!");
 }
