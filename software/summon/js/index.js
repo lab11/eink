@@ -35,6 +35,107 @@ function stringToBytes(string) {
     return array.buffer;
 }
 
+//write
+var wroteSuccessfully = false;
+
+//write buffer
+var writeAttempts = 0;
+function writeBuffer(charUuid, buffer, device, callback)
+{
+    if(writeAttempts < 5)
+    {
+        writeBufferAttempts++;
+
+        ble.write(deviceId, serviceUuid, charUuid, buffer, function(){
+            console.log("wrote to " + charUuid + " successfully"); 
+            wroteSuccessfully = true;
+
+            callback();//:D
+
+        }, function(error){
+            console.log("error: " + error);
+            if(writeAttempts < 5)
+            {
+                writeBuffer(charUuid, buffer, device, callback);
+            }
+        });
+    }
+}
+
+//write connect
+var writeConnectionAttempts = 0;
+function writeConnect(charUuid, buffer, device, callback)
+{
+    if(wroteSuccessfully == false && writeAttempts < 5)
+    {
+        writeConnectionAttempts++;
+
+        bluetooth.connect(device.id, function(){
+            console.log("CONNECTION SUCCESSFUL");
+
+            //convert text to format for write
+            var buffer = stringToBytes($("#textinput").val());
+            console.log("created buffer");
+
+            console.log("started write");
+            writeBuffer(charUuid, buffer, device, callback);
+
+        }, function(error){
+            console.log("Connection error: " + error);
+            writeConnect(device);
+        });
+    }
+}
+
+//write scanner
+var writeScans = 0;
+function scanConnectWrite(charUuid, buffer, callback)
+{
+    if(bluetoothEnabled)
+    {
+        writeScans++;
+        bluetooth.startScan([], function(device){
+            if(device.id == deviceId)
+            {
+                writeConnect(charUuid, buffer, device, callback);
+            }
+        }, function(error){
+            if(writeScans < 5)
+            {
+                scanConnectWrite();
+            }
+        });
+    }
+}
+
+//write x
+function writeX(callback)
+{
+    var buffer = stringToBytes($("#xcoordinateinput").val());
+    scanConnectWrite(xcoorduuid, buffer, callback);
+}
+
+//write y
+function writeY(callback)
+{
+    var buffer = stringToBytes($("#ycoordinateinput").val());
+    scanConnectWrite(ycoordUuid, buffer, callback);
+}
+
+//write scale
+function writeScale(callback)
+{
+    var buffer = stringToBytes($("#scaleinput").val());
+    scanConnectWrite(scaleUuid, buffer, callback);
+}
+
+//write qrcode
+function writeQRcode(callback)
+{
+    var buffer = stringToBytes($("#qrcodeinput").val());
+    scanConnectWrite(qrcodeUuid, buffer, callback);
+}
+
 //write text to ble
 var wroteTextSuccessfully = false;
 function writeBLEtext()
@@ -194,12 +295,31 @@ function clicked()
     bluetooth.isEnabled(app.onEnable);  
     console.log("CLICKED!");
 
+    /*
     for(var i = 0; i < 5; i++)
     {
         if(wroteTextSuccessfully == false)
         {
             writeBLEtext();
         }
+    }
+    */
+
+    //check if you should write qr code or text
+    var qrcodeAddress = $("#qrcodeinput").val();
+    if(qrcodeAddress.length > 0)
+    {
+        writeQRcode(console.log("Successfully wrote qr code"));
+    }
+    else
+    {
+        writeX(function(){
+            writeY(function(){
+                writeScale(function(){
+                    writeText(console.log("yay"));
+                });
+            });
+        });
     }
 }
 
