@@ -80,15 +80,15 @@ var app = {
             console.log("Found " + deviceName + " (" + deviceId + ")!");
             bluetooth.connect(device.id, function(){
                 console.log("CONNECTION SUCCESSFUL");
-                
+
                 //convert text to format for write
-                var buffer = str2ab(writeValue);
+                var buffer = stringToBytes(writeValue);
                 console.log("created buffer");
 
                 console.log("started write");
-                ble.writeWithoutResponse(deviceId, serviceUuid, characteristicUuid, buffer, console.log("wrote"), function(error){console.log("error: " + error)});
+                ble.write(deviceId, serviceUuid, characteristicUuid, buffer, console.log("wrote successfully"), function(error){console.log("error: " + error)});
 
-            }, function(){console.log("Failed connect")});
+            }, function(error){console.log("Connection error: " + error)});
         } else {
             //console.log('Not Blink (' + device.id + ')');
 
