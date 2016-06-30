@@ -66,7 +66,7 @@ function writeBuffer(charUuid, buffer, device, callback)
 var writeConnectionAttempts = 0;
 function writeConnect(charUuid, buffer, device, callback)
 {
-    if(wroteSuccessfully == false && writeAttempts < 5)
+    if(wroteSuccessfully == false && writeBufferAttempts < 5)
     {
         writeConnectionAttempts++;
 
