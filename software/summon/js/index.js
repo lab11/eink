@@ -42,7 +42,7 @@ var wroteSuccessfully = false;
 var writeBufferAttempts = 0;
 function writeBuffer(charUuid, buffer, device, callback)
 {
-    if(writeAttempts < 5)
+    if(writeBufferAttempts < 5)
     {
         writeBufferAttempts++;
 
@@ -54,7 +54,7 @@ function writeBuffer(charUuid, buffer, device, callback)
 
         }, function(error){
             console.log("error: " + error);
-            if(writeAttempts < 5)
+            if(writeBufferAttempts < 5)
             {
                 writeBuffer(charUuid, buffer, device, callback);
             }
