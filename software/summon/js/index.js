@@ -39,7 +39,7 @@ function stringToBytes(string) {
 var wroteSuccessfully = false;
 
 //write buffer
-var writeAttempts = 0;
+var writeBufferAttempts = 0;
 function writeBuffer(charUuid, buffer, device, callback)
 {
     if(writeAttempts < 5)
