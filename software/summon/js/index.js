@@ -112,7 +112,7 @@ function scanConnectWrite(charUuid, buffer, callback)
 function writeX(callback)
 {
     var buffer = stringToBytes($("#xcoordinateinput").val());
-    scanConnectWrite(xcoorduuid, buffer, callback);
+    scanConnectWrite(xcoordUuid, buffer, callback);
 }
 
 //write y
