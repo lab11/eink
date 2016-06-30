@@ -80,7 +80,7 @@ var app = {
             console.log("Found " + deviceName + " (" + deviceId + ")!");
             bluetooth.connect(device.id, function(){
                 console.log("CONNECTION SUCCESSFUL");
-
+                
                 //convert text to format for write
                 var buffer = str2ab(writeValue);
                 console.log("created buffer");
