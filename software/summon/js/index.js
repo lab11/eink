@@ -17,7 +17,7 @@ var last_update = 0;
 var switch_visibility_console_check = "visible";
 var switch_visibility_steadyscan_check = "visible";
 
-var wroteSuccessfully = true;
+var bluetoothEnabled = false;
 
 // Load the swipe pane
 $(document).on('pageinit',function(){
@@ -35,6 +35,44 @@ function stringToBytes(string) {
     return array.buffer;
 }
 
+//write text to ble
+var wroteTextSuccessfully = false;
+function writeBLEtext()
+{
+    wroteTextSuccessfully = false;
+    var tries = 0;
+    if(bluetoothEnabled)
+    {
+        bluetooth.startScan([], function(device){
+            if (device.id == deviceId && tries < 5 && wroteTextSuccessfully == false)
+            {
+                tries++;
+                console.log("Found " + deviceName + " (" + deviceId + ")!");
+                bluetooth.connect(device.id, function(){
+                    console.log("CONNECTION SUCCESSFUL");
+
+                    //convert text to format for write
+                    var buffer = stringToBytes($("#textinput").val());
+                    console.log("created buffer");
+
+                    console.log("started write");
+                    ble.write(deviceId, serviceUuid, textUuid, buffer, function(){console.log("wrote successfully"); wroteTextSuccessfully = true;}, function(error){console.log("error: " + error)});
+
+                }, function(error){
+                    console.log("Connection error: " + error);
+                });
+            }
+            else if(wroteTextSuccessfully == false)
+            {
+                // HACK:
+                bluetooth.stopScan();
+                bluetooth.startScan([], app.onDiscover, app.onAppReady);
+            }
+        }, function(){//didn't find anything to connect to
+            console.log("Didn't find anything to connect to");
+        });  
+    }
+}
 
 var app = {
     // Application Constructor
@@ -63,7 +101,7 @@ var app = {
         }
         
         console.log("Checking if ble is enabled...");
-        //bluetooth.isEnabled(app.onEnable);                                                // if BLE enabled, goto: onEnable
+        bluetooth.isEnabled(app.onEnable);                                                // if BLE enabled, goto: onEnable
         // app.onEnable();
     },
     // App Paused Event Handler
@@ -74,9 +112,11 @@ var app = {
     // Bluetooth Enabled Callback
     onEnable: function() {
         console.log("onEnable");
+        bluetoothEnabled = true;
+
         // app.onPause();                                                              // halt any previously running BLE processes
-        bluetooth.startScan([], app.onDiscover, app.onAppReady);                          // start BLE scan; if device discovered, goto: onDiscover
-        console.log("Searching for " + deviceName + " (" + deviceId + ").");
+        //bluetooth.startScan([], app.onDiscover, app.onAppReady);                          // start BLE scan; if device discovered, goto: onDiscover
+        //console.log("Searching for " + deviceName + " (" + deviceId + ").");
     },
     // BLE Device Discovered Callback
     onDiscover: function(device) {
@@ -153,6 +193,8 @@ function clicked()
     wroteSuccessfully = false;
     bluetooth.isEnabled(app.onEnable);  
     console.log("CLICKED!");
+
+    writeBLEtext();
 }
 
 app.initialize();
