@@ -81,6 +81,10 @@ var app = {
                 var buffer = stringToBytes($("#textinput").val());
                 console.log("created buffer");
 
+                var xcoordinate = $("#xcoordinateinput").val();
+                var ycoordinate = $("#ycoordinateinput").val();
+                var scale = $("#scaleinput").val();
+
                 console.log("started write");
                 ble.write(deviceId, serviceUuid, characteristicUuid, buffer, console.log("wrote successfully"), function(error){console.log("error: " + error)});
 
