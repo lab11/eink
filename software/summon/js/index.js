@@ -5,7 +5,8 @@ var deviceName = "E-Ink disp";                                                  
 var serviceUuid =        "E528A44A-FF4F-3089-D44F-7CB505ABA641";                               // example service UUID to access
 
 var textUuid   = "E528A410-FF4F-3089-D44F-7CB505ABA641";                        // example characteristic UUID to read or write
-var xcoordUuid = "E528A411-FF4F-3089-D44F-7CB505ABA641";
+//var xcoordUuid = "E528A411-FF4F-3089-D44F-7CB505ABA641";
+var xcoordUuid = "a411";
 var ycoordUuid = "E528A412-FF4F-3089-D44F-7CB505ABA641";
 var scaleUuid  = "E528A413-FF4F-3089-D44F-7CB505ABA641";
 var qrcodeUuid = "E528A414-FF4F-3089-D44F-7CB505ABA641";
