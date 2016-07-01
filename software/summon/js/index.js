@@ -47,7 +47,7 @@ function writeBuffer(charUuid, buffer, device, callback)
     {
         writeBufferAttempts++;
 
-        ble.writeWithoutResponse(deviceId, serviceUuid, charUuid, buffer, function(){
+        ble.write(deviceId, serviceUuid, charUuid, buffer, function(){
             console.log("wrote to " + charUuid + " successfully"); 
             wroteSuccessfully = true;
 
