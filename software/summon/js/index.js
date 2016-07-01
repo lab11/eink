@@ -5,11 +5,10 @@ var deviceName = "E-Ink disp";                                                  
 var serviceUuid =        "E528A44A-FF4F-3089-D44F-7CB505ABA641";                               // example service UUID to access
 
 var textUuid   = "E528A410-FF4F-3089-D44F-7CB505ABA641";                        // example characteristic UUID to read or write
-//var xcoordUuid = "E528A411-FF4F-3089-D44F-7CB505ABA641";
-var xcoordUuid = "E528A411FF4F3089D44F7CB505ABA641";
-var ycoordUuid = "E528A412FF4F3089D44F7CB505ABA641";
-var scaleUuid  = "E528A413FF4F3089D44F7CB505ABA641";
-var qrcodeUuid = "E528A414FF4F3089D44F7CB505ABA641";
+var xcoordUuid = "E528A411-FF4F-3089-D44F-7CB505ABA641";
+var ycoordUuid = "E528A412-FF4F-3089-D44F-7CB505ABA641";
+var scaleUuid  = "E528A413-FF4F-3089-D44F-7CB505ABA641";
+var qrcodeUuid = "E528A414-FF4F-3089-D44F-7CB505ABA641";
 
 var timer;
 
@@ -71,9 +70,9 @@ function writeConnect(charUuid, buffer, device, callback)
     {
         writeConnectionAttempts++;
 
-        bluetooth.connect(device.id, function(){
+        bluetooth.connect(device.id, function(peripheral){
             console.log("CONNECTION SUCCESSFUL");
-            console.log(JSON.stringify(device, null, 2));
+            console.log(JSON.stringify(peripheral, null, 2));
 
             //convert text to format for write
             var buffer = stringToBytes($("#textinput").val());
