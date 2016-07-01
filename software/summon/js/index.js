@@ -2,13 +2,12 @@
 
 var deviceId = "C0:98:E5:00:F8:02";                                                 // while testing, replace with address of a BLE peripheral
 var deviceName = "E-Ink disp";                                                      // while testing, replace with desired name
-var serviceUuid =        "E528A44A-FF4F-3089-D44F-7CB505ABA641";                               // example service UUID to access
-
-var textUuid   = "E528A410-FF4F-3089-D44F-7CB505ABA641";                        // example characteristic UUID to read or write
-var xcoordUuid = "E528A411-FF4F-3089-D44F-7CB505ABA641";
-var ycoordUuid = "E528A412-FF4F-3089-D44F-7CB505ABA641";
-var scaleUuid  = "E528A413-FF4F-3089-D44F-7CB505ABA641";
-var qrcodeUuid = "E528A414-FF4F-3089-D44F-7CB505ABA641";
+var serviceUuid ="e528a44a-ff4f-3089-d44f-7cb505aba641";                               // example service UUID to access
+var textUuid   = "e528a410-ff4f-3089-d44f-7cb505aba641";                        // example characteristic UUID to read or write
+var xcoordUuid = "e528a411-ff4f-3089-d44f-7cb505aba641";
+var ycoordUuid = "e528a412-ff4f-3089-d44f-7cb505aba641";
+var scaleUuid  = "e528a413-ff4f-3089-d44f-7cb505aba641";
+var qrcodeUuid = "e528a414-ff4f-3089-d44f-7cb505aba641";
 
 var timer;
 
@@ -46,7 +45,7 @@ function writeBuffer(charUuid, buffer, device, callback)
     {
         writeBufferAttempts++;
 
-        ble.write(deviceId, serviceUuid, charUuid, buffer, function(){
+        ble.writeWithoutResponse(deviceId, serviceUuid, charUuid, buffer, function(){
             console.log("wrote to " + charUuid + " successfully"); 
             wroteSuccessfully = true;
 
