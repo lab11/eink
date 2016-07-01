@@ -73,6 +73,7 @@ function writeConnect(charUuid, buffer, device, callback)
 
         bluetooth.connect(device.id, function(){
             console.log("CONNECTION SUCCESSFUL");
+            console.log(JSON.stringify(device, null, 2));
 
             //convert text to format for write
             var buffer = stringToBytes($("#textinput").val());
@@ -98,9 +99,6 @@ function scanConnectWrite(charUuid, buffer, callback)
         bluetooth.startScan([], function(device){
             if(device.id == deviceId)
             {
-                console.log(JSON.stringify(device, null, 2));
-
-
                 writeConnect(charUuid, buffer, device, callback);
             }
         }, function(error){
