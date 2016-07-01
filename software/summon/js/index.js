@@ -1,7 +1,7 @@
 /* JavaScript for Template Summon UI */
 
 //var deviceId = "C0:98:E5:00:F8:02";                                                 // while testing, replace with address of a BLE peripheral
-var deviceId = "c0:98:E5:30:00:0C";
+var bleAddress = "c0:98:E5:30:00:0C";
 var deviceName = "E-Ink disp";                                                      // while testing, replace with desired name
 var serviceUuid =        "E528A44A-FF4F-3089-D44F-7CB505ABA641";                               // example service UUID to access
 
@@ -98,7 +98,7 @@ function scanConnectWrite(charUuid, buffer, callback)
     {
         writeScans++;
         bluetooth.startScan([], function(device){
-            if(device.id == deviceId)
+            if(device.id == bleAddress)
             {
                 writeConnect(charUuid, buffer, device, callback);
             }
@@ -199,7 +199,7 @@ var app = {
         setInterval(app.update_time_ago, 5000);
 
         if (typeof window.gateway != "undefined") {                               // if UI opened through Summon,
-            deviceId = window.gateway.getDeviceId();                                // get device ID from Summon
+            bleAddress = window.gateway.getDeviceId();                                // get device ID from Summon
             deviceName = window.gateway.getDeviceName();                            // get device name from Summon
             console.log("Opened via Summon..");
         }
@@ -224,8 +224,8 @@ var app = {
     },
     // BLE Device Discovered Callback
     onDiscover: function(device) {
-        if (device.id == deviceId && wroteSuccessfully == false) {
-            console.log("Found " + deviceName + " (" + deviceId + ")!");
+        if (device.id == bleAddress && wroteSuccessfully == false) {
+            console.log("Found " + deviceName + " (" + bleAddress + ")!");
             bluetooth.connect(device.id, function(){
                 console.log("CONNECTION SUCCESSFUL");
 
@@ -245,7 +245,7 @@ var app = {
                 */
 
                 console.log("started write");
-                ble.write(deviceId, serviceUuid, textUuid, buffer, function(){console.log("wrote successfully"); wroteSuccessfully = true;}, function(error){console.log("error: " + error)});
+                ble.write(bleAddress, serviceUuid, textUuid, buffer, function(){console.log("wrote successfully"); wroteSuccessfully = true;}, function(error){console.log("error: " + error)});
 
             }, function(error){console.log("Connection error: " + error)});
         } else{
