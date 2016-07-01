@@ -1,16 +1,15 @@
 /* JavaScript for Template Summon UI */
 
-//var deviceId = "C0:98:E5:00:F8:02";                                                 // while testing, replace with address of a BLE peripheral
-var bleAddress = "c0:98:E5:30:00:0C";
+var deviceId = "C0:98:E5:00:F8:02";                                                 // while testing, replace with address of a BLE peripheral
 var deviceName = "E-Ink disp";                                                      // while testing, replace with desired name
 var serviceUuid =        "E528A44A-FF4F-3089-D44F-7CB505ABA641";                               // example service UUID to access
 
 var textUuid   = "E528A410-FF4F-3089-D44F-7CB505ABA641";                        // example characteristic UUID to read or write
 //var xcoordUuid = "E528A411-FF4F-3089-D44F-7CB505ABA641";
-var xcoordUuid = "a411";
-var ycoordUuid = "E528A412-FF4F-3089-D44F-7CB505ABA641";
-var scaleUuid  = "E528A413-FF4F-3089-D44F-7CB505ABA641";
-var qrcodeUuid = "E528A414-FF4F-3089-D44F-7CB505ABA641";
+var xcoordUuid = "E528A411FF4F3089D44F7CB505ABA641";
+var ycoordUuid = "E528A412FF4F3089D44F7CB505ABA641";
+var scaleUuid  = "E528A413FF4F3089D44F7CB505ABA641";
+var qrcodeUuid = "E528A414FF4F3089D44F7CB505ABA641";
 
 var timer;
 
@@ -98,7 +97,7 @@ function scanConnectWrite(charUuid, buffer, callback)
     {
         writeScans++;
         bluetooth.startScan([], function(device){
-            if(device.id == bleAddress)
+            if(device.id == deviceId)
             {
                 writeConnect(charUuid, buffer, device, callback);
             }
@@ -199,7 +198,7 @@ var app = {
         setInterval(app.update_time_ago, 5000);
 
         if (typeof window.gateway != "undefined") {                               // if UI opened through Summon,
-            bleAddress = window.gateway.getDeviceId();                                // get device ID from Summon
+            deviceId = window.gateway.getDeviceId();                                // get device ID from Summon
             deviceName = window.gateway.getDeviceName();                            // get device name from Summon
             console.log("Opened via Summon..");
         }
@@ -224,8 +223,8 @@ var app = {
     },
     // BLE Device Discovered Callback
     onDiscover: function(device) {
-        if (device.id == bleAddress && wroteSuccessfully == false) {
-            console.log("Found " + deviceName + " (" + bleAddress + ")!");
+        if (device.id == deviceId && wroteSuccessfully == false) {
+            console.log("Found " + deviceName + " (" + deviceId + ")!");
             bluetooth.connect(device.id, function(){
                 console.log("CONNECTION SUCCESSFUL");
 
@@ -245,7 +244,7 @@ var app = {
                 */
 
                 console.log("started write");
-                ble.write(bleAddress, serviceUuid, textUuid, buffer, function(){console.log("wrote successfully"); wroteSuccessfully = true;}, function(error){console.log("error: " + error)});
+                ble.write(deviceId, serviceUuid, textUuid, buffer, function(){console.log("wrote successfully"); wroteSuccessfully = true;}, function(error){console.log("error: " + error)});
 
             }, function(error){console.log("Connection error: " + error)});
         } else{
