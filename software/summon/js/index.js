@@ -111,22 +111,29 @@ function scanConnectWrite(charUuid, buffer, callback)
 //write x
 function writeX(callback)
 {
-    var buffer = stringToBytes($("#xcoordinateinput").val());
+    var buffer = $("#xcoordinateinput").val();
     scanConnectWrite(xcoordUuid, buffer, callback);
 }
 
 //write y
 function writeY(callback)
 {
-    var buffer = stringToBytes($("#ycoordinateinput").val());
+    var buffer = $("#ycoordinateinput").val();
     scanConnectWrite(ycoordUuid, buffer, callback);
 }
 
 //write scale
 function writeScale(callback)
 {
-    var buffer = stringToBytes($("#scaleinput").val());
+    var buffer = $("#scaleinput").val();
     scanConnectWrite(scaleUuid, buffer, callback);
+}
+
+//write text
+function writeText(callback)
+{
+    var buffer = stringToBytes($("#textinput").val());
+    scanConnectWrite(textUuid, buffer, callback);
 }
 
 //write qrcode
