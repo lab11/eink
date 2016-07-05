@@ -120,21 +120,21 @@ function scanConnectWrite(charUuid, buffer, callback)
 //write x
 function writeX(callback)
 {
-    var buffer = longToByteArray(parseInt($("#xcoordinateinput").val());
+    var buffer = stringToBytes($("#xcoordinateinput").val());
     scanConnectWrite(xcoordUuid, buffer, callback);
 }
 
 //write y
 function writeY(callback)
 {
-    var buffer = longToByteArray(parseInt($("#ycoordinateinput").val()));
+    var buffer = stringToBytes($("#ycoordinateinput").val());
     scanConnectWrite(ycoordUuid, buffer, callback);
 }
 
 //write scale
 function writeScale(callback)
 {
-    var buffer = longToByteArray(parseInt($("#scaleinput").val()));
+    var buffer = stringToBytes($("#scaleinput").val());
     scanConnectWrite(scaleUuid, buffer, callback);
 }
 
