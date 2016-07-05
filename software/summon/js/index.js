@@ -111,21 +111,21 @@ function scanConnectWrite(charUuid, buffer, callback)
 //write x
 function writeX(callback)
 {
-    var buffer = $("#xcoordinateinput").val();
+    var buffer = parseInt($("#xcoordinateinput").val());
     scanConnectWrite(xcoordUuid, buffer, callback);
 }
 
 //write y
 function writeY(callback)
 {
-    var buffer = $("#ycoordinateinput").val();
+    var buffer = parseInt($("#ycoordinateinput").val());
     scanConnectWrite(ycoordUuid, buffer, callback);
 }
 
 //write scale
 function writeScale(callback)
 {
-    var buffer = $("#scaleinput").val();
+    var buffer = parseInt($("#scaleinput").val());
     scanConnectWrite(scaleUuid, buffer, callback);
 }
 
