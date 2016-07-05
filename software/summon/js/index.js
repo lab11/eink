@@ -68,6 +68,7 @@ function writeBuffer(charUuid, buffer, device, callback)
 var writeConnectionAttempts = 0;
 function writeConnect(charUuid, buffer, device, callback)
 {
+    console.log("connection attempt");
     if(wroteSuccessfully == false && writeBufferAttempts < 5)
     {
         writeConnectionAttempts++;
@@ -94,11 +95,13 @@ function scanConnectWrite(charUuid, buffer, callback)
     {
         writeScans++;
         bluetooth.startScan([], function(device){
+            console.log("Scan started");
             if(device.id == deviceId)
             {
                 writeConnect(charUuid, buffer, device, callback);
             }
         }, function(error){
+            console.log("Connection error: " + error);
             if(writeScans < 5)
             {
                 scanConnectWrite(charUuid, buffer, callback);
