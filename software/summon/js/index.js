@@ -34,19 +34,6 @@ function stringToBytes(string) {
     return array.buffer;
 }
 
-function longToByteArray = function(long) {//credit to stackoverflow for this function
-    // we want to represent the input as a 8-bytes array
-    var byteArray = [0, 0, 0, 0, 0, 0, 0, 0];
-
-    for ( var index = 0; index < byteArray.length; index ++ ) {
-        var byte = long & 0xff;
-        byteArray [ index ] = byte;
-        long = (long - byte) / 256 ;
-    }
-
-    return byteArray;
-};
-
 //write
 var wroteSuccessfully = false;
 
