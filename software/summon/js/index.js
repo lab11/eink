@@ -34,6 +34,19 @@ function stringToBytes(string) {
     return array.buffer;
 }
 
+function longToByteArray = function(long) {//credit to stackoverflow for this function
+    // we want to represent the input as a 8-bytes array
+    var byteArray = [0, 0, 0, 0, 0, 0, 0, 0];
+
+    for ( var index = 0; index < byteArray.length; index ++ ) {
+        var byte = long & 0xff;
+        byteArray [ index ] = byte;
+        long = (long - byte) / 256 ;
+    }
+
+    return byteArray;
+};
+
 //write
 var wroteSuccessfully = false;
 
@@ -107,21 +120,21 @@ function scanConnectWrite(charUuid, buffer, callback)
 //write x
 function writeX(callback)
 {
-    var buffer = parseInt($("#xcoordinateinput").val());
+    var buffer = longToByteArray(parseInt($("#xcoordinateinput").val());
     scanConnectWrite(xcoordUuid, buffer, callback);
 }
 
 //write y
 function writeY(callback)
 {
-    var buffer = stringToBytes($("#ycoordinateinput").val());
+    var buffer = longToByteArray(parseInt($("#ycoordinateinput").val()));
     scanConnectWrite(ycoordUuid, buffer, callback);
 }
 
 //write scale
 function writeScale(callback)
 {
-    var buffer = parseInt($("#scaleinput").val());
+    var buffer = longToByteArray(parseInt($("#scaleinput").val()));
     scanConnectWrite(scaleUuid, buffer, callback);
 }
 
