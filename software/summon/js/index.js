@@ -114,7 +114,7 @@ function writeX(callback)
 //write y
 function writeY(callback)
 {
-    var buffer = parseInt($("#ycoordinateinput").val());
+    var buffer = stringToBytes($("#ycoordinateinput").val());
     scanConnectWrite(ycoordUuid, buffer, callback);
 }
 
