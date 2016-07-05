@@ -73,10 +73,6 @@ function writeConnect(charUuid, buffer, device, callback)
             console.log("CONNECTION SUCCESSFUL");
             console.log(JSON.stringify(peripheral, null, 2));
 
-            //convert text to format for write
-            var buffer = stringToBytes($("#textinput").val());
-            console.log("created buffer");
-
             console.log("started write");
             writeBuffer(charUuid, buffer, device, callback);
 
