@@ -49,6 +49,9 @@ function writeBuffer(charUuid, buffer, device, callback)
             console.log("wrote to " + charUuid + " successfully"); 
             wroteSuccessfully = true;
 
+            //disconnect from device
+            ble.disconnect(device, console.log("successfully disconnected"), function(error){console.log(error)});
+
             callback();//:D
 
         }, function(error){
