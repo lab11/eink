@@ -52,7 +52,7 @@ function writeBuffer(charUuid, buffer, device, callback)
             callback();//:D
 
         }, function(error){
-            console.log("62Error: " + error + "  ID: " + charUuid);
+            console.log("62Error: " + error + "  ID: " + charUuid + " Buffer Length: " + buffer.byteLength);
             if(writeBufferAttempts < 5)
             {
                 writeBuffer(charUuid, buffer, device, callback);
