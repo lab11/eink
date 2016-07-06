@@ -34,6 +34,13 @@ function stringToBytes(string) {
     return array.buffer;
 }
 
+function numberToBuffer(string)
+{
+    var num = parseInt(string);
+    var data = new Uint8Array([num]);
+    return data;
+}
+
 //write
 var wroteSuccessfully = false;
 
@@ -116,29 +123,31 @@ function scanConnectWrite(charUuid, buffer, callback)
 //write x
 function writeX(callback)
 {
-    console.log("started writing x");
-    var buffer = stringToBytes($("#xcoordinateinput").val());
+    console.log("started x");
+    var buffer = numberToBuffer($("#xcoordinateinput").val());
     scanConnectWrite(xcoordUuid, buffer, callback);
 }
 
 //write y
 function writeY(callback)
 {
-    console.log("started writing y");
-    var buffer = stringToBytes($("#ycoordinateinput").val());
+    console.log("started y");
+    var buffer = numberToBuffer($("#ycoordinateinput").val());
     scanConnectWrite(ycoordUuid, buffer, callback);
 }
 
 //write scale
 function writeScale(callback)
 {
-    var buffer = stringToBytes($("#scaleinput").val());
+    console.log("started scale");
+    var buffer = numberToBuffer($("#scaleinput").val());
     scanConnectWrite(scaleUuid, buffer, callback);
 }
 
 //write text
 function writeText(callback)
 {
+    console.log("started text");
     var buffer = stringToBytes($("#textinput").val());
     scanConnectWrite(textUuid, buffer, callback);
 }
@@ -146,6 +155,7 @@ function writeText(callback)
 //write qrcode
 function writeQRcode(callback)
 {
+    console.log("started qr code");
     var buffer = stringToBytes($("#qrcodeinput").val());
     scanConnectWrite(qrcodeUuid, buffer, callback);
 }
@@ -320,7 +330,6 @@ function clicked()
     */
 
     //check if you should write qr code or text
-    /*
     var qrcodeAddress = $("#qrcodeinput").val();
     if(qrcodeAddress.length > 0)
     {
@@ -336,8 +345,8 @@ function clicked()
             });
         });
     }
-    */
-    writeText(console.log("yay"));
+    
+    //writeText(console.log("yay"));
 }
 
 app.initialize();
