@@ -37,7 +37,7 @@ function stringToBytes(string) {
 function numberToBuffer(string)
 {
     var num = parseInt(string);
-    var data = new Uint8Array([num]);
+    var data = new Uint8Array([num]).buffer;
     return data;
 }
 
@@ -125,7 +125,6 @@ function writeX(callback)
 {
     console.log("started x");
     var buffer = numberToBuffer($("#xcoordinateinput").val());
-    console.log("Buffer 0: " + buffer[0]);
     scanConnectWrite(xcoordUuid, buffer, callback);
 }
 
