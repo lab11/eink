@@ -125,6 +125,7 @@ function writeX(callback)
 {
     console.log("started x");
     var buffer = numberToBuffer($("#xcoordinateinput").val());
+    console.log(buffer);
     scanConnectWrite(xcoordUuid, buffer, callback);
 }
 
