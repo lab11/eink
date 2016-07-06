@@ -320,6 +320,7 @@ function clicked()
     */
 
     //check if you should write qr code or text
+    /*
     var qrcodeAddress = $("#qrcodeinput").val();
     if(qrcodeAddress.length > 0)
     {
@@ -335,6 +336,8 @@ function clicked()
             });
         });
     }
+    */
+    writeText(console.log("yay"));
 }
 
 app.initialize();
