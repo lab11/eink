@@ -348,7 +348,9 @@ function clicked()
     }
     */
     
-    writeText(console.log("yay"));
+    writeText(function(){
+        console.log("yay")
+    });
 }
 
 app.initialize();
