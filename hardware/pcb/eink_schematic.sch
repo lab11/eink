@@ -1744,6 +1744,174 @@ To use, set global attributes TITLE, AUTHOR and REV in your schematic.</descript
 </deviceset>
 </devicesets>
 </library>
+<library name="nucleum">
+<packages>
+<package name="NUCLEUM">
+<description>Nucleum Package with through holes for the programmer</description>
+<smd name="16" x="18.06" y="7.47" dx="1.5" dy="0.7" layer="1"/>
+<smd name="17" x="18.06" y="10.47" dx="1.5" dy="0.7" layer="1"/>
+<smd name="15" x="18.06" y="6.47" dx="1.5" dy="0.7" layer="1"/>
+<smd name="14" x="18.06" y="5.47" dx="1.5" dy="0.7" layer="1"/>
+<smd name="13" x="18.06" y="4.47" dx="1.5" dy="0.7" layer="1"/>
+<smd name="12" x="18.06" y="3.47" dx="1.5" dy="0.7" layer="1"/>
+<smd name="11" x="18.06" y="2.47" dx="1.5" dy="0.7" layer="1"/>
+<smd name="10" x="18.06" y="1.47" dx="1.5" dy="0.7" layer="1"/>
+<smd name="18" x="18.06" y="11.47" dx="1.5" dy="0.7" layer="1"/>
+<smd name="19" x="18.06" y="12.47" dx="1.5" dy="0.7" layer="1"/>
+<smd name="20" x="18.06" y="13.47" dx="1.5" dy="0.7" layer="1"/>
+<smd name="21" x="18.06" y="14.47" dx="1.5" dy="0.7" layer="1"/>
+<smd name="22" x="18.06" y="15.47" dx="1.5" dy="0.7" layer="1"/>
+<smd name="23" x="18.06" y="16.47" dx="1.5" dy="0.7" layer="1"/>
+<smd name="9" x="16.4811" y="-0.1089" dx="1.5" dy="0.754" layer="1" rot="R90"/>
+<smd name="24" x="16.4811" y="18.0489" dx="1.5" dy="0.7" layer="1" rot="R90"/>
+<smd name="8" x="15.4811" y="-0.1089" dx="1.5" dy="0.7" layer="1" rot="R90"/>
+<smd name="7" x="14.4811" y="-0.1089" dx="1.5" dy="0.7" layer="1" rot="R90"/>
+<smd name="6" x="13.4811" y="-0.1089" dx="1.5" dy="0.7" layer="1" rot="R90"/>
+<smd name="5" x="12.4811" y="-0.1089" dx="1.5" dy="0.7" layer="1" rot="R90"/>
+<smd name="4" x="11.4811" y="-0.1089" dx="1.5" dy="0.7" layer="1" rot="R90"/>
+<smd name="3" x="10.4811" y="-0.1089" dx="1.5" dy="0.7" layer="1" rot="R90"/>
+<smd name="2" x="9.4811" y="-0.1089" dx="1.5" dy="0.7" layer="1" rot="R90"/>
+<smd name="1" x="8.4811" y="-0.1089" dx="1.5" dy="0.7" layer="1" rot="R90"/>
+<smd name="25" x="15.4811" y="18.0489" dx="1.5" dy="0.7" layer="1" rot="R90"/>
+<smd name="26" x="14.4811" y="18.0489" dx="1.5" dy="0.7" layer="1" rot="R90"/>
+<smd name="27" x="13.4811" y="18.0489" dx="1.5" dy="0.7" layer="1" rot="R90"/>
+<smd name="28" x="12.4811" y="18.0489" dx="1.5" dy="0.7" layer="1" rot="R90"/>
+<smd name="29" x="11.4811" y="18.0489" dx="1.5" dy="0.7" layer="1" rot="R90"/>
+<smd name="30" x="10.4811" y="18.0489" dx="1.5" dy="0.7" layer="1" rot="R90"/>
+<smd name="31" x="9.4811" y="18.0489" dx="1.5" dy="0.7" layer="1" rot="R90"/>
+<smd name="32" x="8.4811" y="18.0489" dx="1.5" dy="0.7" layer="1" rot="R90"/>
+<wire x1="0.0022" y1="-0.0089" x2="0.0022" y2="17.9489" width="0.127" layer="21"/>
+<wire x1="0.0022" y1="17.9489" x2="7.81384375" y2="17.9489" width="0.127" layer="21"/>
+<wire x1="17.96" y1="17.9489" x2="17.062109375" y2="17.9489" width="0.127" layer="21"/>
+<wire x1="17.96" y1="-0.0089" x2="17.062109375" y2="-0.0089" width="0.127" layer="21"/>
+<wire x1="0.0022" y1="-0.0089" x2="7.81384375" y2="-0.0089" width="0.127" layer="21"/>
+<wire x1="17.96" y1="9.867890625" x2="17.96" y2="8.072109375" width="0.127" layer="21"/>
+<wire x1="17.96" y1="17.9489" x2="17.96" y2="17.051009375" width="0.127" layer="21"/>
+<wire x1="17.96" y1="-0.0089" x2="17.96" y2="0.888990625" width="0.127" layer="21"/>
+<wire x1="0.46" y1="0.47" x2="3.96" y2="0.47" width="0.127" layer="51"/>
+<wire x1="3.96" y1="0.47" x2="3.96" y2="7.69" width="0.127" layer="51"/>
+<wire x1="3.96" y1="7.69" x2="0.46" y2="7.69" width="0.127" layer="51"/>
+<wire x1="0.46" y1="7.69" x2="0.46" y2="0.47" width="0.127" layer="51"/>
+<text x="2.46" y="4.47" size="0.762" layer="51" font="vector" ratio="12" rot="R90" align="bottom-center">ANTENNA</text>
+<wire x1="7.96" y1="9.97" x2="15.96" y2="9.97" width="0.127" layer="51"/>
+<wire x1="7.96" y1="1.97" x2="7.96" y2="9.97" width="0.127" layer="51"/>
+<wire x1="15.96" y1="1.97" x2="7.96" y2="1.97" width="0.127" layer="51"/>
+<wire x1="15.96" y1="9.97" x2="15.96" y2="1.97" width="0.127" layer="51"/>
+<text x="12.46" y="5.97" size="0.762" layer="51" font="vector" ratio="12" rot="R90" align="bottom-center">NRF51822</text>
+<wire x1="11.96" y1="15.47" x2="11.96" y2="12.97" width="0.127" layer="51"/>
+<wire x1="11.96" y1="12.97" x2="15.96" y2="12.97" width="0.127" layer="51"/>
+<wire x1="15.96" y1="12.97" x2="15.96" y2="15.47" width="0.127" layer="51"/>
+<wire x1="15.96" y1="15.47" x2="11.96" y2="15.47" width="0.127" layer="51"/>
+<wire x1="3.96" y1="16.47" x2="3.96" y2="11.75" width="0.127" layer="51"/>
+<wire x1="3.96" y1="11.75" x2="7.96" y2="11.75" width="0.127" layer="51"/>
+<wire x1="7.96" y1="11.75" x2="7.96" y2="16.47" width="0.127" layer="51"/>
+<wire x1="7.96" y1="16.47" x2="3.96" y2="16.47" width="0.127" layer="51"/>
+<wire x1="0.46" y1="17.47" x2="2.46" y2="17.47" width="0.127" layer="51"/>
+<wire x1="2.46" y1="17.47" x2="2.46" y2="15.47" width="0.127" layer="51"/>
+<wire x1="2.46" y1="15.47" x2="0.46" y2="15.47" width="0.127" layer="51"/>
+<wire x1="0.46" y1="15.47" x2="0.46" y2="17.47" width="0.127" layer="51"/>
+<text x="13.96" y="13.97" size="0.762" layer="51" font="vector" ratio="12" align="bottom-center">RTC</text>
+<text x="5.96" y="13.97" size="0.762" layer="51" font="vector" ratio="12" rot="R90" align="center">FRAM</text>
+<text x="1.46" y="16.47" size="0.508" layer="51" font="vector" ratio="12" rot="R90" align="center">LED</text>
+<text x="18.46" y="8.97" size="0.762" layer="25" font="vector" ratio="12" rot="R270" align="bottom-center">&gt;NAME</text>
+<hole x="0.72" y="8.66" drill="1.6"/>
+<hole x="0.72" y="10.66" drill="1.6"/>
+<hole x="5.8" y="9.64" drill="1.6"/>
+<text x="2.34" y="9.67" size="0.762" layer="51" font="vector" ratio="12" rot="R180" align="center">PROG</text>
+</package>
+</packages>
+<symbols>
+<symbol name="NUCLEUM">
+<pin name="VCC" x="-25.4" y="-35.56" length="short" rot="R90"/>
+<pin name="P17" x="-22.86" y="-35.56" length="short" rot="R90"/>
+<pin name="SWDIO/!RESET@1" x="-20.32" y="-35.56" length="short" rot="R90"/>
+<pin name="SWDCLK" x="-17.78" y="-35.56" length="short" rot="R90"/>
+<pin name="UNUSED" x="-15.24" y="-35.56" length="short" rot="R90"/>
+<pin name="P21" x="-12.7" y="-35.56" length="short" rot="R90"/>
+<pin name="P22" x="-10.16" y="-35.56" length="short" rot="R90"/>
+<pin name="P23" x="-7.62" y="-35.56" length="short" rot="R90"/>
+<pin name="P24" x="-5.08" y="-35.56" length="short" rot="R90"/>
+<pin name="SPI_MISO/P29" x="20.32" y="-7.62" length="short" rot="R180"/>
+<pin name="SPI_MOSI/P30" x="20.32" y="-5.08" length="short" rot="R180"/>
+<pin name="SPI_SCK/P00" x="20.32" y="-2.54" length="short" rot="R180"/>
+<pin name="I2C_SCL" x="20.32" y="2.54" length="short" rot="R180"/>
+<pin name="I2C_SDA" x="20.32" y="5.08" length="short" rot="R180"/>
+<pin name="P08" x="20.32" y="7.62" length="short" rot="R180"/>
+<pin name="P09" x="20.32" y="10.16" length="short" rot="R180"/>
+<pin name="P10" x="20.32" y="12.7" length="short" rot="R180"/>
+<pin name="BTLDR_RX/P11" x="20.32" y="15.24" length="short" rot="R180"/>
+<pin name="BTLDR_TX/P12" x="20.32" y="17.78" length="short" rot="R180"/>
+<pin name="BTLDR_CTRL/P13" x="-5.08" y="35.56" length="short" rot="R270"/>
+<pin name="P02/AIN3" x="-7.62" y="35.56" length="short" rot="R270"/>
+<pin name="P03/AIN4" x="-10.16" y="35.56" length="short" rot="R270"/>
+<pin name="P04/AIN5" x="-12.7" y="35.56" length="short" rot="R270"/>
+<pin name="P05/AIN6" x="-15.24" y="35.56" length="short" rot="R270"/>
+<pin name="PO6/AIN7" x="-17.78" y="35.56" length="short" rot="R270"/>
+<pin name="SWDIO/!RESET@2" x="-20.32" y="35.56" length="short" rot="R270"/>
+<pin name="BATTERY" x="-22.86" y="35.56" length="short" rot="R270"/>
+<pin name="GND" x="-25.4" y="35.56" length="short" rot="R270"/>
+<wire x1="-27.94" y1="33.02" x2="17.78" y2="33.02" width="0.254" layer="94"/>
+<wire x1="17.78" y1="33.02" x2="17.78" y2="-33.02" width="0.254" layer="94"/>
+<wire x1="17.78" y1="-33.02" x2="-27.94" y2="-33.02" width="0.254" layer="94"/>
+<wire x1="-27.94" y1="-33.02" x2="-27.94" y2="33.02" width="0.254" layer="94"/>
+<text x="7.62" y="33.782" size="1.778" layer="95">&gt;NAME</text>
+<text x="7.62" y="-35.56" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="UNUSED5" x="20.32" y="-10.16" length="short" rot="R180"/>
+<pin name="UNUSED4" x="20.32" y="-12.7" length="short" rot="R180"/>
+<pin name="UNUSED3" x="20.32" y="-15.24" length="short" rot="R180"/>
+<pin name="UNUSED2" x="20.32" y="-17.78" length="short" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="NUCLEUM" prefix="U">
+<description>Nucleum sensorboard prototyping module.</description>
+<gates>
+<gate name="G$1" symbol="NUCLEUM" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="NUCLEUM">
+<connects>
+<connect gate="G$1" pin="BATTERY" pad="31"/>
+<connect gate="G$1" pin="BTLDR_CTRL/P13" pad="24"/>
+<connect gate="G$1" pin="BTLDR_RX/P11" pad="22"/>
+<connect gate="G$1" pin="BTLDR_TX/P12" pad="23"/>
+<connect gate="G$1" pin="GND" pad="32"/>
+<connect gate="G$1" pin="I2C_SCL" pad="17"/>
+<connect gate="G$1" pin="I2C_SDA" pad="18"/>
+<connect gate="G$1" pin="P02/AIN3" pad="25"/>
+<connect gate="G$1" pin="P03/AIN4" pad="26"/>
+<connect gate="G$1" pin="P04/AIN5" pad="27"/>
+<connect gate="G$1" pin="P05/AIN6" pad="28"/>
+<connect gate="G$1" pin="P08" pad="19"/>
+<connect gate="G$1" pin="P09" pad="20"/>
+<connect gate="G$1" pin="P10" pad="21"/>
+<connect gate="G$1" pin="P17" pad="2"/>
+<connect gate="G$1" pin="P21" pad="6"/>
+<connect gate="G$1" pin="P22" pad="7"/>
+<connect gate="G$1" pin="P23" pad="8"/>
+<connect gate="G$1" pin="P24" pad="9"/>
+<connect gate="G$1" pin="PO6/AIN7" pad="29"/>
+<connect gate="G$1" pin="SPI_MISO/P29" pad="14"/>
+<connect gate="G$1" pin="SPI_MOSI/P30" pad="15"/>
+<connect gate="G$1" pin="SPI_SCK/P00" pad="16"/>
+<connect gate="G$1" pin="SWDCLK" pad="4"/>
+<connect gate="G$1" pin="SWDIO/!RESET@1" pad="3"/>
+<connect gate="G$1" pin="SWDIO/!RESET@2" pad="30"/>
+<connect gate="G$1" pin="UNUSED" pad="5"/>
+<connect gate="G$1" pin="UNUSED2" pad="10"/>
+<connect gate="G$1" pin="UNUSED3" pad="11"/>
+<connect gate="G$1" pin="UNUSED4" pad="12"/>
+<connect gate="G$1" pin="UNUSED5" pad="13"/>
+<connect gate="G$1" pin="VCC" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 <attribute name="AUTHOR" value="Cole Hudson"/>
@@ -1758,6 +1926,7 @@ To use, set global attributes TITLE, AUTHOR and REV in your schematic.</descript
 </classes>
 <parts>
 <part name="FRAME1" library="frames" deviceset="LETTER_L" device=""/>
+<part name="U1" library="nucleum" deviceset="NUCLEUM" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1766,6 +1935,7 @@ To use, set global attributes TITLE, AUTHOR and REV in your schematic.</descript
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
 <instance part="FRAME1" gate="G$2" x="147.32" y="0"/>
+<instance part="U1" gate="G$1" x="127" y="101.6"/>
 </instances>
 <busses>
 </busses>
