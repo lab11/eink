@@ -84,24 +84,20 @@ var writeConnectionAttempts = 0;
 function writeConnect(charUuid, buffer, device, callback)
 {
     console.log("connection attempt");
-    if(/*wroteSuccessfully == false && */writeBufferAttempts < 5)
-    {
-        writeConnectionAttempts++;
+    bluetooth.connect(device.id, function(peripheral){
+        console.log("CONNECTION SUCCESSFUL");
+        console.log(JSON.stringify(peripheral, null, 2));
 
-        bluetooth.connect(device.id, function(peripheral){
-            console.log("CONNECTION SUCCESSFUL");
-            console.log(JSON.stringify(peripheral, null, 2));
+        console.log("started write");
+        writeBuffer(charUuid, buffer, device, callback);
 
-            console.log("started write");
-            writeBuffer(charUuid, buffer, device, callback);
+        globalDevice = device;
 
-            globalDevice = device;
-
-        }, function(error){
-            console.log("Connection error: " + error);
-            writeConnect(charUuid, buffer, device, callback);
-        });
-    }
+    }, function(error){
+        console.log("Connection error: " + error);
+        writeConnect(charUuid, buffer, device, callback);
+    });
+    
 }
 
 //write scanner
