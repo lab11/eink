@@ -338,6 +338,18 @@ function clicked()
     bluetooth.isEnabled(app.onEnable);  
     console.log("CLICKED!");
 
+    //if connected, then disconnect
+    ble.isConnected(deviceId, function(){
+        ble.disconnect(deviceId, function(){
+            console.log("successfully disconnected");
+        }, function(error){
+            console.log("error disconnecting: " + error);
+        });
+    }, function(error){
+        console.log("isConnected error: " + error);
+    });
+    
+
     //check if you should write qr code or text
     var qrcodeAddress = $("#qrcodeinput").val();
     if(qrcodeAddress.length > 0)
@@ -352,7 +364,7 @@ function clicked()
             writeY(function(){
                 writeScale(function(){
                     writeText(function(){
-                        ble.disconnect(globalDevice.id, function(){
+                        ble.disconnect(deviceId, function(){
                             console.log("successfully disconnected");
                         }, function(error){
                             console.log("error disconnecting: " + error);
