@@ -49,34 +49,30 @@ var globalDevice;
 var writeBufferAttempts = 0;
 function writeBuffer(charUuid, buffer, device, callback)
 {
-    if(writeBufferAttempts < 5)
-    {
-        writeBufferAttempts++;
+    ble.write(deviceId, serviceUuid, charUuid, buffer, function(){
+        console.log("wrote to " + charUuid + " successfully"); 
+        wroteSuccessfully = true;
 
-        ble.write(deviceId, serviceUuid, charUuid, buffer, function(){
-            console.log("wrote to " + charUuid + " successfully"); 
-            wroteSuccessfully = true;
+        callback();
 
+        //disconnect from device
+        /*
+        ble.disconnect(device, function(){
+            console.log("successfully disconnected");
             callback();
-
-            //disconnect from device
-            /*
-            ble.disconnect(device, function(){
-                console.log("successfully disconnected");
-                callback();
-            }, function(error){
-                console.log(error)
-            });
-            */
-
         }, function(error){
-            console.log("62Error: " + error + "  ID: " + charUuid + " Buffer Length: " + buffer.byteLength);
-            if(writeBufferAttempts < 5)
-            {
-                writeBuffer(charUuid, buffer, device, callback);
-            }
+            console.log(error)
         });
-    }
+        */
+
+    }, function(error){
+        console.log("62Error: " + error + "  ID: " + charUuid + " Buffer Length: " + buffer.byteLength);
+        if(writeBufferAttempts < 5)
+        {
+            writeBuffer(charUuid, buffer, device, callback);
+        }
+    });
+    
 }
 
 //write connect
