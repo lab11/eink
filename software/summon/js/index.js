@@ -125,6 +125,7 @@ function scanConnectWrite(charUuid, buffer, callback)
 //write x
 function writeX(callback)
 {
+    wroteSuccessfully = false;
     console.log("started x");
     var buffer = numberToBuffer($("#xcoordinateinput").val());
     scanConnectWrite(xcoordUuid, buffer, callback);
@@ -133,6 +134,7 @@ function writeX(callback)
 //write y
 function writeY(callback)
 {
+    wroteSuccessfully = false;
     console.log("started y");
     var buffer = numberToBuffer($("#ycoordinateinput").val());
     
@@ -144,6 +146,7 @@ function writeY(callback)
 //write scale
 function writeScale(callback)
 {
+    wroteSuccessfully = false;
     console.log("started scale");
     var buffer = numberToBuffer($("#scaleinput").val());
 
@@ -155,6 +158,7 @@ function writeScale(callback)
 //write text
 function writeText(callback)
 {
+    wroteSuccessfully = false;
     console.log("started text");
     var buffer = stringToBytes($("#textinput").val());
 
@@ -166,6 +170,7 @@ function writeText(callback)
 //write qrcode
 function writeQRcode(callback)
 {
+    wroteSuccessfully = false;
     console.log("started qr code");
     var buffer = stringToBytes($("#qrcodeinput").val());
 
