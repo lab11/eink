@@ -98,24 +98,20 @@ function writeConnect(charUuid, buffer, device, callback)
 }
 
 //write scanner
-var writeScans = 0;
 function scanConnectWrite(charUuid, buffer, callback)
 {
     if(bluetoothEnabled)
     {
         writeScans++;
-        bluetooth.startScan([], function(device){
-            console.log("Scan " + writeScans +"started");
+        bluetooth.scan([], 5, function(device){
+            console.log("scan");
             if(device.id == deviceId)
             {
                 writeConnect(charUuid, buffer, device, callback);
             }
         }, function(error){
-            console.log("Connection error: " + error);
-            if(writeScans < 5)
-            {
-                scanConnectWrite(charUuid, buffer, callback);
-            }
+            console.log("scan error: " + error);
+            scanConnectWrite(charUuid, buffer, callback);
         });
     }
 }
