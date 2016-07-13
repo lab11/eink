@@ -27,10 +27,12 @@ $(document).on('pageinit',function(){
 
 
 function stringToBytes(string) {
-    var array = new Uint8Array(string.length);
+    var array = new Uint8Array(string.length + 1);
     for (var i = 0, l = string.length; i < l; i++) {
         array[i] = string.charCodeAt(i);
     }
+
+    array[string.length] = '\0';
     return array.buffer;
 }
 
