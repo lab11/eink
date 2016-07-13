@@ -174,9 +174,7 @@ function writeQRcode(callback)
     console.log("started qr code");
     var buffer = stringToBytes($("#qrcodeinput").val());
 
-    //scanConnectWrite(qrcodeUuid, buffer, callback);
-
-    writeBuffer(qrcodeUuid, buffer, globalDevice, callback);
+    scanConnectWrite(qrcodeUuid, buffer, callback);
 }
 
 //write text to ble
