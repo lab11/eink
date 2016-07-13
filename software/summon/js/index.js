@@ -345,7 +345,11 @@ function clicked()
             writeY(function(){
                 writeScale(function(){
                     writeText(function(){
-                        console.log("yay")
+                        ble.disconnect(globalDevice, function(){
+                            console.log("successfully disconnected");
+                        }, function(error){
+                            conosle.log("error disconnecting: " + error);
+                        });
                     });
                 });
             });
