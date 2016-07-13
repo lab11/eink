@@ -57,7 +57,7 @@ function writeBuffer(charUuid, buffer, device, callback)
             console.log("wrote to " + charUuid + " successfully"); 
             wroteSuccessfully = true;
 
-
+            callback();
 
             //disconnect from device
             /*
