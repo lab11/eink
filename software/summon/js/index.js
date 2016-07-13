@@ -122,6 +122,20 @@ function scanConnectWrite(charUuid, buffer, callback)
     }
 }
 
+function disconnect()
+{
+    //if connected, then disconnect
+    ble.isConnected(deviceId, function(){
+        ble.disconnect(deviceId, function(){
+            console.log("successfully disconnected");
+        }, function(error){
+            console.log("error disconnecting: " + error);
+        });
+    }, function(error){
+        console.log("isConnected error: " + error);
+    });
+}
+
 //write x
 function writeX(callback)
 {
@@ -336,16 +350,7 @@ function clicked()
     bluetooth.isEnabled(app.onEnable);  
     console.log("CLICKED!");
 
-    //if connected, then disconnect
-    ble.isConnected(deviceId, function(){
-        ble.disconnect(deviceId, function(){
-            console.log("successfully disconnected");
-        }, function(error){
-            console.log("error disconnecting: " + error);
-        });
-    }, function(error){
-        console.log("isConnected error: " + error);
-    });
+    disconnect();
     
 
     //check if you should write qr code or text
@@ -353,7 +358,8 @@ function clicked()
     if(qrcodeAddress.length > 0)
     {
         writeQRcode(function(){
-            console.log("Successfully wrote qr code")
+            console.log("Successfully wrote qr code");
+            disconnect();
         });
     }
     else
