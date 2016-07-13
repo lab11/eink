@@ -102,7 +102,6 @@ function scanConnectWrite(charUuid, buffer, callback)
 {
     if(bluetoothEnabled)
     {
-        writeScans++;
         bluetooth.scan([], 5, function(device){
             console.log("scan");
             if(device.id == deviceId)
