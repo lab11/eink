@@ -337,7 +337,9 @@ function clicked()
     var qrcodeAddress = $("#qrcodeinput").val();
     if(qrcodeAddress.length > 0)
     {
-        writeQRcode(console.log("Successfully wrote qr code"));
+        writeQRcode(function(){
+            console.log("Successfully wrote qr code")
+        });
     }
     else
     {
@@ -345,10 +347,10 @@ function clicked()
             writeY(function(){
                 writeScale(function(){
                     writeText(function(){
-                        ble.disconnect(globalDevice, function(){
+                        ble.disconnect(globalDevice.id, function(){
                             console.log("successfully disconnected");
                         }, function(error){
-                            conosle.log("error disconnecting: " + error);
+                            console.log("error disconnecting: " + error);
                         });
                     });
                 });
