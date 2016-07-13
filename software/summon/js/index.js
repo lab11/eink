@@ -320,16 +320,6 @@ function clicked()
     console.log("CLICKED!");
 
     /*
-    for(var i = 0; i < 5; i++)
-    {
-        if(wroteTextSuccessfully == false)
-        {
-            writeBLEtext();
-        }
-    }
-    */
-
-    /*
     //check if you should write qr code or text
     var qrcodeAddress = $("#qrcodeinput").val();
     if(qrcodeAddress.length > 0)
