@@ -319,7 +319,6 @@ function clicked()
     bluetooth.isEnabled(app.onEnable);  
     console.log("CLICKED!");
 
-    /*
     //check if you should write qr code or text
     var qrcodeAddress = $("#qrcodeinput").val();
     if(qrcodeAddress.length > 0)
@@ -331,16 +330,13 @@ function clicked()
         writeX(function(){
             writeY(function(){
                 writeScale(function(){
-                    writeText(console.log("yay"));
+                    writeText(function(){
+                        console.log("yay")
+                    });
                 });
             });
         });
     }
-    */
-    
-    writeText(function(){
-        console.log("yay")
-    });
 }
 
 app.initialize();
