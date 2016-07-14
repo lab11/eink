@@ -122,10 +122,8 @@ function scanConnectWrite(charUuid, buffer, callback)
     }
 }
 
-var disconnectAttempts = 0;
 function disconnect()
 {
-    disconnectAttempts++;
     //if connected, then disconnect
     ble.isConnected(deviceId, function(){
         ble.disconnect(deviceId, function(){
@@ -133,14 +131,6 @@ function disconnect()
             disconnectAttempts = 0;
         }, function(error){
             console.log("error disconnecting: " + error);
-            if(disconnectAttempts < 10)
-            {
-                disconnect();
-            }
-            else
-            {
-                disconnectAttempts = 0;
-            }
         });
     }, function(error){
         console.log("isConnected error: " + error);
