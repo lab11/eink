@@ -165,7 +165,7 @@ function writeScale(callback)
 {
     wroteSuccessfully = false;
     console.log("started scale");
-    var buffer = new Uint8Array([parseInt($("#scaleinput").val())]).buffer;
+    var buffer = new Uint8Array([$("#scaleinput").val()]).buffer;
 
     //scanConnectWrite(scaleUuid, buffer, callback);
 
