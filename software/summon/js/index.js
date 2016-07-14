@@ -107,6 +107,12 @@ function scanConnectWrite(charUuid, buffer, callback)
             console.log("scan");
             if(device.id == deviceId)
             {
+                ble.stopScan(function(){
+                    console.log("scan stopped");
+                }, function(error){
+                    console.log("scan stop error: " + error);
+                });
+
                 writeConnect(charUuid, buffer, device, callback);
             }
         }, function(error){
@@ -116,14 +122,25 @@ function scanConnectWrite(charUuid, buffer, callback)
     }
 }
 
+var disconnectAttempts = 0;
 function disconnect()
 {
+    disconnectAttempts++;
     //if connected, then disconnect
     ble.isConnected(deviceId, function(){
         ble.disconnect(deviceId, function(){
             console.log("successfully disconnected");
+            disconnectAttempts = 0;
         }, function(error){
             console.log("error disconnecting: " + error);
+            if(disconnectAttempts < 10)
+            {
+                disconnect();
+            }
+            else
+            {
+                disconnectAttempts = 0;
+            }
         });
     }, function(error){
         console.log("isConnected error: " + error);
