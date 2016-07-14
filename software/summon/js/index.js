@@ -349,6 +349,8 @@ var app = {
 
 function clicked()
 {
+    console.log($("#scaleinput").val());
+    
     wroteSuccessfully = false;
     bluetooth.isEnabled(app.onEnable);  
     console.log("CLICKED!");
