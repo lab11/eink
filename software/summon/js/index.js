@@ -120,18 +120,22 @@ function scanConnectWrite(charUuid, buffer, callback)
     }
 }
 
-function disconnect()
+function disconnect(callback)
 {
     //if connected, then disconnect
     ble.isConnected(deviceId, function(){
         ble.disconnect(deviceId, function(){
             console.log("successfully disconnected");
             disconnectAttempts = 0;
+
+            callback();
         }, function(error){
             console.log("error disconnecting: " + error);
         });
     }, function(error){
         console.log("Not connected when attempting to disconnect");
+
+        callback();
     });
 }
 
@@ -349,30 +353,33 @@ function clicked()
     bluetooth.isEnabled(app.onEnable);  
     console.log("CLICKED!");
 
-    disconnect();
-    
-
-    //check if you should write qr code or text
-    var qrcodeAddress = $("#qrcodeinput").val();
-    if(qrcodeAddress.length > 0)
-    {
-        writeQRcode(function(){
-            console.log("Successfully wrote qr code");
-            disconnect();
-        });
-    }
-    else
-    {
-        writeX(function(){
-            writeY(function(){
-                writeScale(function(){
-                    writeText(function(){
-                        disconnect();
+    disconnect(function(){
+        //check if you should write qr code or text
+        var qrcodeAddress = $("#qrcodeinput").val();
+        if(qrcodeAddress.length > 0)
+        {
+            writeQRcode(function(){
+                console.log("Successfully wrote qr code");
+                disconnect(function(){
+                    console.log("qr code disconnect");
+                });
+            });
+        }
+        else
+        {
+            writeX(function(){
+                writeY(function(){
+                    writeScale(function(){
+                        writeText(function(){
+                            disconnect(function(){
+                                console.log("write text disconnect");
+                            });
+                        });
                     });
                 });
             });
-        });
-    }
+        }
+    });
 }
 
 app.initialize();
