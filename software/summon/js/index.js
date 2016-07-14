@@ -40,7 +40,7 @@ function numberToBuffer(string)
 {
     string = string.substring(0, 8);
     var num = parseInt(string);
-    var data = new Uint8Array([num]).buffer;
+    var data = new Uint16Array([num]).buffer;
     return data;
 }
 
