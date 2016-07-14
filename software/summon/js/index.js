@@ -57,15 +57,8 @@ function writeBuffer(charUuid, buffer, device, callback)
             console.log("wrote to " + charUuid + " successfully"); 
             wroteSuccessfully = true;
 
-            //callback();
+            callback();
 
-            //disconnect from device
-            ble.disconnect(deviceId, function(){
-                console.log("successfully disconnected");
-                callback();
-            }, function(error){
-                console.log(error);
-            });
         }, function(error){
             console.log("62Error: " + error + "  ID: " + charUuid + " Buffer Length: " + buffer.byteLength);
             if(writeBufferAttempts < 5)
@@ -88,6 +81,12 @@ function writeConnect(charUuid, buffer, device, callback)
         console.log("CONNECTION SUCCESSFUL");
         console.log(JSON.stringify(peripheral, null, 2));
 
+        ble.stopScan(function(){
+            console.log("scan stopped");
+        }, function(error){
+            console.log("scan stop error: " + error);
+        });
+
         console.log("started write");
         writeBuffer(charUuid, buffer, device, callback);
 
@@ -103,17 +102,14 @@ function writeConnect(charUuid, buffer, device, callback)
 //write scanner
 function scanConnectWrite(charUuid, buffer, callback)
 {
+    var found = false;
     if(bluetoothEnabled)
     {
         bluetooth.scan([], 10, function(device){
             console.log("scan");
             if(device.id == deviceId)
             {
-                ble.stopScan(function(){
-                    console.log("scan stopped");
-                }, function(error){
-                    console.log("scan stop error: " + error);
-                });
+                found = true;
 
                 writeConnect(charUuid, buffer, device, callback);
             }
@@ -155,9 +151,9 @@ function writeY(callback)
     console.log("started y");
     var buffer = numberToBuffer($("#ycoordinateinput").val());
     
-    scanConnectWrite(ycoordUuid, buffer, callback);
+    //scanConnectWrite(ycoordUuid, buffer, callback);
 
-    //writeBuffer(ycoordUuid, buffer, globalDevice, callback);
+    writeBuffer(ycoordUuid, buffer, globalDevice, callback);
 }
 
 //write scale
@@ -167,9 +163,9 @@ function writeScale(callback)
     console.log("started scale");
     var buffer = numberToBuffer($("#scaleinput").val());
 
-    scanConnectWrite(scaleUuid, buffer, callback);
+    //scanConnectWrite(scaleUuid, buffer, callback);
 
-    //writeBuffer(scaleUuid, buffer, globalDevice, callback);
+    writeBuffer(scaleUuid, buffer, globalDevice, callback);
 }
 
 //write text
@@ -179,9 +175,9 @@ function writeText(callback)
     console.log("started text");
     var buffer = stringToBytes($("#textinput").val().substring(0,30));
 
-    scanConnectWrite(textUuid, buffer, callback);
+    //scanConnectWrite(textUuid, buffer, callback);
 
-    //writeBuffer(textUuid, buffer, globalDevice, callback);
+    writeBuffer(textUuid, buffer, globalDevice, callback);
 }
 
 //write qrcode
