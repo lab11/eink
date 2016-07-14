@@ -214,7 +214,7 @@ function writeBLEtext()
                     ble.write(deviceId, serviceUuid, textUuid, buffer, function(){console.log("wrote successfully"); wroteTextSuccessfully = true;}, function(error){console.log("error: " + error)});
 
                 }, function(error){
-                    console.log("Connection error: " + error);
+                    console.log(JSON.stringify(error));
                 });
             }
             else if(wroteTextSuccessfully == false)
