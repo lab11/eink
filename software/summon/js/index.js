@@ -93,7 +93,7 @@ function writeConnect(charUuid, buffer, device, callback)
         globalDevice = device;
 
     }, function(error){
-        console.log("Connection error: " + error);
+        console.log(JSON.stringify(error));
         writeConnect(charUuid, buffer, device, callback);
     });
     
