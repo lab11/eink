@@ -60,7 +60,7 @@ function writeBuffer(charUuid, buffer, device, callback)
 
         //disconnect from device
         /*
-        ble.disconnect(device, function(){
+        ble.disconnect(deviceId, function(){
             console.log("successfully disconnected");
             callback();
         }, function(error){
@@ -75,7 +75,6 @@ function writeBuffer(charUuid, buffer, device, callback)
             writeBuffer(charUuid, buffer, device, callback);
         }
     });
-    
 }
 
 //write connect
@@ -380,11 +379,7 @@ function clicked()
             writeY(function(){
                 writeScale(function(){
                     writeText(function(){
-                        ble.disconnect(deviceId, function(){
-                            console.log("successfully disconnected");
-                        }, function(error){
-                            console.log("error disconnecting: " + error);
-                        });
+                        disconnect();
                     });
                 });
             });
