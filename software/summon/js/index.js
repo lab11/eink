@@ -168,7 +168,7 @@ function writeText(callback)
 {
     wroteSuccessfully = false;
     console.log("started text");
-    var buffer = stringToBytes($("#textinput").val().substring(31));
+    var buffer = stringToBytes($("#textinput").val().substring(0, 31));
 
     //scanConnectWrite(textUuid, buffer, callback);
 
@@ -180,7 +180,7 @@ function writeQRcode(callback)
 {
     wroteSuccessfully = false;
     console.log("started qr code");
-    var buffer = stringToBytes($("#qrcodeinput").val().substring(53));
+    var buffer = stringToBytes($("#qrcodeinput").val().substring(0, 53));
 
     scanConnectWrite(qrcodeUuid, buffer, callback);
 }
