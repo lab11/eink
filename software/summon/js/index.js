@@ -38,6 +38,7 @@ function stringToBytes(string) {
 
 function numberToBuffer(string)
 {
+    string = string.substring(0, 8);
     var num = parseInt(string);
     var data = new Uint8Array([num]).buffer;
     return data;
@@ -152,7 +153,7 @@ function writeX(callback)
 {
     wroteSuccessfully = false;
     console.log("started x");
-    var buffer = numberToBuffer($("#xcoordinateinput").val() % 400);
+    var buffer = numberToBuffer($("#xcoordinateinput").val());
     scanConnectWrite(xcoordUuid, buffer, callback);
 }
 
@@ -161,7 +162,7 @@ function writeY(callback)
 {
     wroteSuccessfully = false;
     console.log("started y");
-    var buffer = numberToBuffer($("#ycoordinateinput").val() % 300);
+    var buffer = numberToBuffer($("#ycoordinateinput").val());
     
     //scanConnectWrite(ycoordUuid, buffer, callback);
 
@@ -173,7 +174,7 @@ function writeScale(callback)
 {
     wroteSuccessfully = false;
     console.log("started scale");
-    var buffer = numberToBuffer($("#scaleinput").val() % 8);
+    var buffer = numberToBuffer($("#scaleinput").val());
 
     //scanConnectWrite(scaleUuid, buffer, callback);
 
@@ -185,7 +186,7 @@ function writeText(callback)
 {
     wroteSuccessfully = false;
     console.log("started text");
-    var buffer = stringToBytes($("#textinput").val().substring(0, 31));
+    var buffer = stringToBytes($("#textinput").val());
 
     //scanConnectWrite(textUuid, buffer, callback);
 
@@ -197,7 +198,7 @@ function writeQRcode(callback)
 {
     wroteSuccessfully = false;
     console.log("started qr code");
-    var buffer = stringToBytes($("#qrcodeinput").val().substring(0, 53));
+    var buffer = stringToBytes($("#qrcodeinput").val());
 
     scanConnectWrite(qrcodeUuid, buffer, callback);
 }
