@@ -165,7 +165,7 @@ function writeScale(callback)
 {
     wroteSuccessfully = false;
     console.log("started scale");
-    var buffer = new Uint8Array([parseInt($("#scaleinput").slider("option", "value"))]).buffer;
+    var buffer = new Uint8Array([parseInt($("#scaleinput").val())]).buffer;
 
     //scanConnectWrite(scaleUuid, buffer, callback);
 
@@ -349,7 +349,7 @@ var app = {
 
 function clicked()
 {
-    console.log($("#scaleinput").val());
+    console.log($("#scaleInput").val());
 
     wroteSuccessfully = false;
     bluetooth.isEnabled(app.onEnable);  
