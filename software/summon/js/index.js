@@ -54,26 +54,27 @@ function writeBuffer(charUuid, buffer, device, callback)
 {
     ble.isConnected(deviceId, function(){
         ble.write(deviceId, serviceUuid, charUuid, buffer, function(){
-        console.log("wrote to " + charUuid + " successfully"); 
-        wroteSuccessfully = true;
+            console.log("wrote to " + charUuid + " successfully"); 
+            wroteSuccessfully = true;
 
-        //callback();
+            //callback();
 
-        //disconnect from device
-        ble.disconnect(deviceId, function(){
-            console.log("successfully disconnected");
-            callback();
+            //disconnect from device
+            ble.disconnect(deviceId, function(){
+                console.log("successfully disconnected");
+                callback();
+            }, function(error){
+                console.log(error);
+            });
         }, function(error){
-            console.log(error)
+            console.log("62Error: " + error + "  ID: " + charUuid + " Buffer Length: " + buffer.byteLength);
+            if(writeBufferAttempts < 5)
+            {
+                writeBuffer(charUuid, buffer, device, callback);
+            }
         });
-    }, function(error){
-        console.log("62Error: " + error + "  ID: " + charUuid + " Buffer Length: " + buffer.byteLength);
-        if(writeBufferAttempts < 5)
-        {
-            writeBuffer(charUuid, buffer, device, callback);
-        }
-    });
     }, function(){
+        console.log("NOT CONNECTED AT TIME OF WRITE");
         writeConnect(charUuid, buffer, device, callback);
     });
 }
@@ -134,7 +135,7 @@ function disconnect()
             console.log("error disconnecting: " + error);
         });
     }, function(error){
-        console.log("isConnected error: " + error);
+        console.log("Not connected when attempting to disconnect");
     });
 }
 
