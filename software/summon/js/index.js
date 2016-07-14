@@ -56,17 +56,16 @@ function writeBuffer(charUuid, buffer, device, callback)
         console.log("wrote to " + charUuid + " successfully"); 
         wroteSuccessfully = true;
 
-        callback();
+        //callback();
 
         //disconnect from device
-        /*
         ble.disconnect(deviceId, function(){
             console.log("successfully disconnected");
             callback();
         }, function(error){
             console.log(error)
         });
-        */
+        
 
     }, function(error){
         console.log("62Error: " + error + "  ID: " + charUuid + " Buffer Length: " + buffer.byteLength);
@@ -153,9 +152,9 @@ function writeY(callback)
     console.log("started y");
     var buffer = numberToBuffer($("#ycoordinateinput").val());
     
-    //scanConnectWrite(ycoordUuid, buffer, callback);
+    scanConnectWrite(ycoordUuid, buffer, callback);
 
-    writeBuffer(ycoordUuid, buffer, globalDevice, callback);
+    //writeBuffer(ycoordUuid, buffer, globalDevice, callback);
 }
 
 //write scale
@@ -165,9 +164,9 @@ function writeScale(callback)
     console.log("started scale");
     var buffer = numberToBuffer($("#scaleinput").val());
 
-    //scanConnectWrite(scaleUuid, buffer, callback);
+    scanConnectWrite(scaleUuid, buffer, callback);
 
-    writeBuffer(scaleUuid, buffer, globalDevice, callback);
+    //writeBuffer(scaleUuid, buffer, globalDevice, callback);
 }
 
 //write text
@@ -177,9 +176,9 @@ function writeText(callback)
     console.log("started text");
     var buffer = stringToBytes($("#textinput").val().substring(0,30));
 
-    //scanConnectWrite(textUuid, buffer, callback);
+    scanConnectWrite(textUuid, buffer, callback);
 
-    writeBuffer(textUuid, buffer, globalDevice, callback);
+    //writeBuffer(textUuid, buffer, globalDevice, callback);
 }
 
 //write qrcode
