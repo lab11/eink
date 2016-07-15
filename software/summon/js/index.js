@@ -175,7 +175,11 @@ function writeText(callback)
 {
     wroteSuccessfully = false;
     console.log("started text");
-    var buffer = stringToBytes($("#textinput").val().substring(0,30));
+
+    var text = $("#textinput").val().substring(0,29);
+    console.log(text.length);
+
+    var buffer = stringToBytes(text);
 
     //scanConnectWrite(textUuid, buffer, callback);
 
