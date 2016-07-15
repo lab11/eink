@@ -2,12 +2,13 @@
 
 var deviceId = "C0:98:E5:00:F8:02";                                                 // while testing, replace with address of a BLE peripheral
 var deviceName = "E-Ink disp";                                                      // while testing, replace with desired name
-var serviceUuid ="e528a44a-ff4f-3089-d44f-7cb505aba641";                               // example service UUID to access
-var textUuid   = "e528a410-ff4f-3089-d44f-7cb505aba641";                        // example characteristic UUID to read or write
-var xcoordUuid = "e528a411-ff4f-3089-d44f-7cb505aba641";
-var ycoordUuid = "e528a412-ff4f-3089-d44f-7cb505aba641";
-var scaleUuid  = "e528a413-ff4f-3089-d44f-7cb505aba641";
-var qrcodeUuid = "e528a414-ff4f-3089-d44f-7cb505aba641";
+var serviceUuid  ="e528a44a-ff4f-3089-d44f-7cb505aba641";                               // example service UUID to access
+var textUuid     = "e528a410-ff4f-3089-d44f-7cb505aba641";                        // example characteristic UUID to read or write
+var xcoordUuid   = "e528a411-ff4f-3089-d44f-7cb505aba641";
+var ycoordUuid   = "e528a412-ff4f-3089-d44f-7cb505aba641";
+var scaleUuid    = "e528a413-ff4f-3089-d44f-7cb505aba641";
+var qrcodeUuid   = "e528a414-ff4f-3089-d44f-7cb505aba641";
+var controleUuid = "e528a415-ff4f-3089-d44f-7cb505aba641";
 
 var timer;
 
@@ -194,6 +195,24 @@ function writeQRcode(callback)
     scanConnectWrite(qrcodeUuid, buffer, callback);
 }
 
+//write command
+function writeControl(callback)
+{
+    var shouldClear = $("#flip-1").val() == "on";
+    var control = 0;
+    if(shouldClear)
+    {
+        control = 2;//clear
+    }
+    else
+    {
+        control = 1;//update display
+    }
+    var buffer = new Uint8Array([control]).buffer;
+
+    writeBuffer(controlUuid, buffer, globalDevice, callback);
+}
+
 //write text to ble
 var wroteTextSuccessfully = false;
 function writeBLEtext()
@@ -373,8 +392,10 @@ function clicked()
                 writeY(function(){
                     writeScale(function(){
                         writeText(function(){
-                            disconnect(function(){
-                                console.log("write text disconnect");
+                            writeControl(function(){
+                                disconnect(function(){
+                                    console.log("write text disconnect");
+                                });
                             });
                         });
                     });
