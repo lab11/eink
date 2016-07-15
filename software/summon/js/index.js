@@ -45,8 +45,55 @@ function numberToBuffer(string)
     return data;
 }
 
+function textToBytes(index, text)
+{
+    text = " " + text;
+    var array;
+    if(index == 0)
+    {
+        array = new Uint8Array(text.length + 2);
+    }
+    else
+    {
+        array = new Uint8Array(text.length + 1);
+    }
+    
+    for(var i = 0, l = string.length; i < l; i++)
+    {
+        array[i] = string.charCodeAt(i);
+    }
+
+    if(index == 0)
+    {
+        array[string.length] = '\0';
+    }
+    array[0] = index;
+    return array.buffer;
+}
+
 //write
 var wroteSuccessfully = false;
+
+//write text buffer
+function writeTextBuffer(chunks, index, callback)
+{
+    var buffer = textToBytes(index, chunks[chunks.length - 1 - index]);
+
+    ble.write(deviceId, serviceUuid, textUuid, buffer, function(){
+        if(index > 0){
+            index--;
+            buffer = textToBytes(index, chunks[chunks.length - 1 - index]);
+
+            writeTextBuffer(chunks, index, callback);
+        }
+        else
+        {
+            callback();
+        }
+    }, function(error){
+        console.log(error);
+    });
+}
 
 //write buffer
 var writeBufferAttempts = 0;
@@ -177,13 +224,14 @@ function writeText(callback)
     console.log("started text");
 
     var text = $("#textinput").val().substring(0,29);
-    console.log(text.length);
-
-    var buffer = stringToBytes(text);
+    var chunks = text.match(/.{1, 18}/g);
+    var index = chunks.length - 1;
 
     //scanConnectWrite(textUuid, buffer, callback);
 
-    writeBuffer(textUuid, buffer, callback);
+    //writeBuffer(textUuid, buffer, callback);
+
+    writeTextBuffer(chunks, index, callback);
 }
 
 //write qrcode
