@@ -70,7 +70,7 @@ function writeTextBuffer(chunks, index, callback)
     console.log("chunk: " + chunks[index]);
 
     ble.write(deviceId, serviceUuid, textUuid, buffer, function(){
-        if(index > 0){
+        if(index < chunks.length){
             index++;
             buffer = textToBytes(index, chunks[index]);
 
