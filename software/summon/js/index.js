@@ -58,14 +58,14 @@ function textToBytes(index, text)
         array = new Uint8Array(text.length + 1);
     }
     
-    for(var i = 0, l = string.length; i < l; i++)
+    for(var i = 0, l = text.length; i < l; i++)
     {
-        array[i] = string.charCodeAt(i);
+        array[i] = text.charCodeAt(i);
     }
 
     if(index == 0)
     {
-        array[string.length] = '\0';
+        array[text.length] = '\0';
     }
     array[0] = index;
     return array.buffer;
