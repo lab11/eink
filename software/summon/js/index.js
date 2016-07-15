@@ -8,7 +8,7 @@ var xcoordUuid   = "e528a411-ff4f-3089-d44f-7cb505aba641";
 var ycoordUuid   = "e528a412-ff4f-3089-d44f-7cb505aba641";
 var scaleUuid    = "e528a413-ff4f-3089-d44f-7cb505aba641";
 var qrcodeUuid   = "e528a414-ff4f-3089-d44f-7cb505aba641";
-var controleUuid = "e528a415-ff4f-3089-d44f-7cb505aba641";
+var controlUuid = "e528a415-ff4f-3089-d44f-7cb505aba641";
 
 var timer;
 
