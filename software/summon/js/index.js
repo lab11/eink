@@ -214,7 +214,6 @@ function writeText(callback)
     console.log("started text");
 
     var text = $("#textinput").val().substring(0, 57);
-    text = text + '\0';
     var chunks = text.match(/.{1,18}/g);
     console.log(chunks);
     var index = 0;
