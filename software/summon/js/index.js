@@ -48,25 +48,13 @@ function numberToBuffer(string)
 function textToBytes(index, text)
 {
     text = " " + text;
-    var array;
-    if(index == 0)
-    {
-        array = new Uint8Array(text.length + 2);
-    }
-    else
-    {
-        array = new Uint8Array(text.length + 1);
-    }
+    var array = new Uint8Array(text.length + 1);
     
     for(var i = 0, l = text.length; i < l; i++)
     {
         array[i] = text.charCodeAt(i);
     }
-
-    if(index == 0)
-    {
-        array[text.length] = '\0';
-    }
+    
     array[0] = index;
     return array.buffer;
 }
@@ -226,6 +214,7 @@ function writeText(callback)
     console.log("started text");
 
     var text = $("#textinput").val();
+    text = text + '\0';
     var chunks = text.match(/.{1,18}/g);
     console.log(chunks);
     var index = chunks.length - 1;
