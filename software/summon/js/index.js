@@ -54,7 +54,7 @@ function textToBytes(index, text)
     {
         array[i] = text.charCodeAt(i);
     }
-    
+
     array[0] = index;
     return array.buffer;
 }
@@ -65,14 +65,14 @@ var wroteSuccessfully = false;
 //write text buffer
 function writeTextBuffer(chunks, index, callback)
 {
-    var buffer = textToBytes(index, chunks[chunks.length - 1 - index]);
+    var buffer = textToBytes(index, chunks[index]);
 
-    console.log("chunk: " + chunks[chunks.length - 1 - index]);
+    console.log("chunk: " + chunks[index]);
 
     ble.write(deviceId, serviceUuid, textUuid, buffer, function(){
         if(index > 0){
-            index--;
-            buffer = textToBytes(index, chunks[chunks.length - 1 - index]);
+            index++;
+            buffer = textToBytes(index, chunks[index]);
 
             writeTextBuffer(chunks, index, callback);
         }
@@ -213,11 +213,11 @@ function writeText(callback)
     wroteSuccessfully = false;
     console.log("started text");
 
-    var text = $("#textinput").val();
+    var text = $("#textinput").val().substring(0, 57);
     text = text + '\0';
-    var chunks = text.match(/.{1,18}/g);
+    var chunks = text.match(/.{1,19}/g);
     console.log(chunks);
-    var index = chunks.length - 1;
+    var index = 0;
     console.log("Index: " + index);
 
     //scanConnectWrite(textUuid, buffer, callback);
