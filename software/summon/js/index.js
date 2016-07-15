@@ -92,7 +92,7 @@ function writeConnect(charUuid, buffer, callback)
 
     }, function(error){
         console.log(JSON.stringify(error));
-        writeConnect(charUuid, buffer, device, callback);
+        writeConnect(charUuid, buffer, callback);
     });
     
 }
