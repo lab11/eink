@@ -2,13 +2,13 @@
 
 var deviceId = "C0:98:E5:00:F8:02";                                                 // while testing, replace with address of a BLE peripheral
 var deviceName = "E-Ink disp";                                                      // while testing, replace with desired name
-var serviceUuid  ="e528a44a-ff4f-3089-d44f-7cb505aba641";                               // example service UUID to access
+var serviceUuid  = "e528a44a-ff4f-3089-d44f-7cb505aba641";                               // example service UUID to access
 var textUuid     = "e528a410-ff4f-3089-d44f-7cb505aba641";                        // example characteristic UUID to read or write
 var xcoordUuid   = "e528a411-ff4f-3089-d44f-7cb505aba641";
 var ycoordUuid   = "e528a412-ff4f-3089-d44f-7cb505aba641";
 var scaleUuid    = "e528a413-ff4f-3089-d44f-7cb505aba641";
 var qrcodeUuid   = "e528a414-ff4f-3089-d44f-7cb505aba641";
-var controlUuid = "e528a415-ff4f-3089-d44f-7cb505aba641";
+var controlUuid  = "e528a415-ff4f-3089-d44f-7cb505aba641";
 
 var timer;
 
@@ -381,8 +381,10 @@ function clicked()
         {
             writeQRcode(function(){
                 console.log("Successfully wrote qr code");
-                disconnect(function(){
-                    console.log("qr code disconnect");
+                writeControl(function(){
+                    disconnect(function(){
+                        console.log("write text disconnect");
+                    });
                 });
             });
         }
