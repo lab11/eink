@@ -224,7 +224,7 @@ function writeText(callback)
     console.log("started text");
 
     var text = $("#textinput").val();
-    var chunks = text.match(/.{1, 18}/g);
+    var chunks = text.match(/.{1,18}/g);
     console.log(chunks);
     var index = chunks.length - 1;
     console.log("Index: " + index);
