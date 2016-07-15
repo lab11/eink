@@ -223,9 +223,10 @@ function writeText(callback)
     wroteSuccessfully = false;
     console.log("started text");
 
-    var text = $("#textinput").val().substring(0,29);
+    var text = $("#textinput").val();
     var chunks = text.match(/.{1, 18}/g);
     var index = chunks.length - 1;
+    console.log("Index: " + index);
 
     //scanConnectWrite(textUuid, buffer, callback);
 
