@@ -254,13 +254,6 @@ function writeControl(callback)
     writeBuffer(controlUuid, buffer, callback);
 }
 
-function writeStringControl(callback)
-{
-    var buffer = new Uint8Array([3]).buffer;
-
-    writeBuffer(controlUuid, buffer, callback);
-}
-
 //write text to ble
 var wroteTextSuccessfully = false;
 function writeBLEtext()
@@ -442,11 +435,9 @@ function clicked()
                 writeY(function(){
                     writeScale(function(){
                         writeText(function(){
-                            writeStringControl(function(){
-                                writeControl(function(){
-                                    disconnect(function(){
-                                        console.log("write text disconnect");
-                                    });
+                            writeControl(function(){
+                                disconnect(function(){
+                                    console.log("write text disconnect");
                                 });
                             });
                         });
