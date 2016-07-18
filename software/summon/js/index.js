@@ -70,8 +70,8 @@ function writeTextBuffer(chunks, index, callback)
     console.log("chunk: " + chunks[index]);
 
     ble.write(deviceId, serviceUuid, textUuid, buffer, function(){
-        index++;
-        if(index < chunks.length){
+        index--;
+        if(index > 0){
             buffer = textToBytes(index, chunks[index]);
 
             writeTextBuffer(chunks, index, callback);
@@ -216,7 +216,7 @@ function writeText(callback)
     var text = $("#textinput").val().substring(0, 57);
     var chunks = text.match(/.{1,18}/g);
     console.log(chunks);
-    var index = 0;
+    var index = chunks.length;
     console.log("Index: " + index);
 
     //scanConnectWrite(textUuid, buffer, callback);
