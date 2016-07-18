@@ -216,7 +216,7 @@ function writeText(callback)
     var text = $("#textinput").val().substring(0, 57);
     var chunks = text.match(/.{1,18}/g);
     console.log(chunks);
-    var index = chunks.length;
+    var index = chunks.length - 1;
     console.log("Index: " + index);
 
     //scanConnectWrite(textUuid, buffer, callback);
