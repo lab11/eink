@@ -2,9 +2,10 @@
 This is a BLE-controlled e-ink display built off of the nrf51822.
 
 ## Software
-There are 2 main parts to the software for this: the software running on the nrf and the software that makes up the summon app.
-The nrf software can be found in the submodule in ``` /software/nrf5x-base/apps/eink-advanced/ ```
-The summon app can be found in ``` /software/summon/ ```
+The nrf software can be found in ``` /software/nrf5x-base/apps/eink-advanced/ ```
+
+## Summon App
+[Summon](https://github.com/lab11/summon) is a UI application for BLE devices. Rather than requiring every user to install a new app for every BLE device, Summon allows BLE devices to point to their own HTML/JS based interface and loads it in a single application. Eink supports the summon architecture and provides a Summon application.
 
 ## Hardware
 The hardware is built on top of the nrf51822. A full parts list can be found in the ``` /hardware ``` directory, along with pcb and case designs.
