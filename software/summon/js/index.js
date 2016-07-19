@@ -47,7 +47,7 @@ function numberToBuffer(string)
 
 function textToBytes(index, text)
 {
-    text = " " + text;
+    //text = " " + text;
     var array = new Uint8Array(text.length + 1);
     
     for(var i = 0, l = text.length; i < l; i++)
@@ -55,7 +55,7 @@ function textToBytes(index, text)
         array[i] = text.charCodeAt(i);
     }
 
-    array[0] = index;
+    array[text.length] = '\0';
     return array.buffer;
 }
 
