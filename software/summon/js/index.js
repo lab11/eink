@@ -213,7 +213,7 @@ function writeText(callback)
     wroteSuccessfully = false;
     console.log("started text");
 
-    var text = $("#textinput").val().substring(0, 57);
+    var text = $("#textinput").val().substring(0, 18);
     var chunks = text.match(/.{1,18}/g);
     console.log(chunks);
     var index = chunks.length - 1;
@@ -223,7 +223,8 @@ function writeText(callback)
 
     //writeBuffer(textUuid, buffer, callback);
 
-    writeTextBuffer(chunks, index, callback);
+    var buffer = textToBytes(0, text);
+    writeBuffer(textUuid, buffer, callback);
 }
 
 //write qrcode
