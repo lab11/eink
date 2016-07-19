@@ -22,9 +22,10 @@ The hardware is built on top of the nrf51822. A full parts list can be found in 
 | control             | e528a415-ff4f-3089-d44f-7cb505aba641 | uint8_t                        |
 
 #### Text
-1. Break your text up into 18-byte packets.
+1. Break your text up into 19-byte packets.
 2. Create an array of these packets.
 3. For each packet, make the first byte equal to its distance from the last packet (the first byte of the first packet would be chunks.length - 1, the first byte of the last packet will be 0).
+4. The remaining bytes will be the text packet.
 
 #### Control
 Writing 1 to control will refresh the display to show changes that have been made.
