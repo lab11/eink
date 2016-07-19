@@ -2027,6 +2027,13 @@ To use, set global attributes TITLE, AUTHOR and REV in your schematic.</descript
 <pinref part="GND1" gate="1" pin="GND"/>
 </segment>
 </net>
+<net name="VCC" class="0">
+<segment>
+<pinref part="U1" gate="G$1" pin="VCC"/>
+<wire x1="101.6" y1="66.04" x2="101.6" y2="58.42" width="0.1524" layer="91"/>
+<label x="101.6" y="58.42" size="1.778" layer="95" rot="R270" xref="yes"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
