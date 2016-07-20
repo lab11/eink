@@ -6629,8 +6629,12 @@ Mating wall wart : TOL-00298 (and others)</description>
 <part name="R1" library="passives" deviceset="RESISTOR" device="" value="100K"/>
 <part name="D1" library="nxp" deviceset="DIODE[SCHOTKY]" device="-SOD123W"/>
 <part name="Q1" library="transistor-fet" deviceset="FDN340P" device=""/>
-<part name="U4" library="Maxim_By_element14_Batch_1" deviceset="MAX6326UR29+" device=""/>
-<part name="J2" library="SparkFun-Connectors" deviceset="POWER_JACK" device="SMD" value="5.5x2.1mm Barrel"/>
+<part name="U4" library="Maxim_By_element14_Batch_1" deviceset="MAX6326UR29+" device="">
+<attribute name="DIGIKEY" value="MAX6326UR29+TCT-ND"/>
+</part>
+<part name="J2" library="SparkFun-Connectors" deviceset="POWER_JACK" device="SMD" value="5.5x2.1mm Barrel">
+<attribute name="DIGIKEY" value="CP-002AHPJCT-ND"/>
+</part>
 <part name="GND4" library="umich" deviceset="GND" device=""/>
 <part name="R2" library="passives" deviceset="RESISTOR" device="" value="100K"/>
 </parts>
@@ -6656,8 +6660,12 @@ Mating wall wart : TOL-00298 (and others)</description>
 <instance part="R1" gate="G$1" x="55.88" y="160.02" rot="R90"/>
 <instance part="D1" gate="G$1" x="76.2" y="104.14"/>
 <instance part="Q1" gate="G$1" x="96.52" y="63.5" rot="R270"/>
-<instance part="U4" gate="A" x="76.2" y="86.36"/>
-<instance part="J2" gate="G$1" x="35.56" y="96.52"/>
+<instance part="U4" gate="A" x="76.2" y="86.36">
+<attribute name="DIGIKEY" x="76.2" y="86.36" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="J2" gate="G$1" x="35.56" y="96.52">
+<attribute name="DIGIKEY" x="35.56" y="96.52" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="GND4" gate="1" x="50.8" y="68.58"/>
 <instance part="R2" gate="G$1" x="40.64" y="76.2"/>
 </instances>

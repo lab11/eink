@@ -4883,9 +4883,7 @@ at 21/03/2012 16:17:53</description>
 <part name="R3" library="Yageo_By_element14_Batch_1" deviceset="RC0603JR-07100KL" device="" value="100K Ohms">
 <attribute name="DIGIKEY" value="311-100KGRCT-ND"/>
 </part>
-<part name="R4" library="Yageo_By_element14_Batch_1" deviceset="RC0603JR-07100KL" device="" value="100K Ohms">
-<attribute name="DIGIKEY" value="311-100KGRCT-ND"/>
-</part>
+<part name="R4" library="Yageo_By_element14_Batch_1" deviceset="RC0603JR-07100KL" device="" value="100K Ohms"/>
 </parts>
 <sheets>
 <sheet>
@@ -4932,9 +4930,7 @@ at 21/03/2012 16:17:53</description>
 <instance part="R3" gate="A" x="55.88" y="152.4" rot="R90">
 <attribute name="DIGIKEY" x="55.88" y="152.4" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
-<instance part="R4" gate="A" x="43.18" y="81.28" rot="R90">
-<attribute name="DIGIKEY" x="43.18" y="81.28" size="1.778" layer="96" rot="R90" display="off"/>
-</instance>
+<instance part="R4" gate="A" x="43.18" y="81.28" rot="R90"/>
 </instances>
 <busses>
 </busses>

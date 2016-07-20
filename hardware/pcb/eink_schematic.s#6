@@ -6619,16 +6619,24 @@ Mating wall wart : TOL-00298 (and others)</description>
 <part name="JP1" library="pinhead" deviceset="PINHD-1X10" device="/90">
 <attribute name="DIGIKEY" value="S5446-ND"/>
 </part>
-<part name="U2" library="LTC_By_element14_Batch_1" deviceset="LTC3531ES6-3PBF" device=""/>
+<part name="U2" library="LTC_By_element14_Batch_1" deviceset="LTC3531ES6-3PBF" device="">
+<attribute name="DIGIKEY" value="LTC3531ES6-3.3#TRMPBFCT-ND"/>
+</part>
 <part name="L1" library="umich" deviceset="L-US" device="0207/10" value="10uH"/>
-<part name="C1" library="passives" deviceset="CAPACITOR" device="" value="2.2uF"/>
+<part name="C1" library="passives" deviceset="CAPACITOR" device="" value="2.2uF">
+<attribute name="DIGIKEY" value="490-3296-1-ND"/>
+</part>
 <part name="C2" library="passives" deviceset="CAPACITOR" device="" value="10uF"/>
 <part name="J1" library="connector" deviceset="AA_BAT_PACK" device="SMD"/>
 <part name="GND2" library="umich" deviceset="GND" device=""/>
 <part name="GND3" library="umich" deviceset="GND" device=""/>
 <part name="R1" library="passives" deviceset="RESISTOR" device="" value="100K"/>
-<part name="D1" library="nxp" deviceset="DIODE[SCHOTKY]" device="-SOD123W"/>
-<part name="Q1" library="transistor-fet" deviceset="FDN340P" device=""/>
+<part name="D1" library="nxp" deviceset="DIODE[SCHOTKY]" device="-SOD123W">
+<attribute name="DIGIKEY" value="SS15FACT-ND"/>
+</part>
+<part name="Q1" library="transistor-fet" deviceset="FDN340P" device="">
+<attribute name="DIGIKEY" value="FDN340PCT-ND"/>
+</part>
 <part name="U4" library="Maxim_By_element14_Batch_1" deviceset="MAX6326UR29+" device="">
 <attribute name="DIGIKEY" value="MAX6326UR29+TCT-ND"/>
 </part>
@@ -6650,16 +6658,24 @@ Mating wall wart : TOL-00298 (and others)</description>
 <instance part="JP1" gate="A" x="238.76" y="106.68">
 <attribute name="DIGIKEY" x="238.76" y="106.68" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="U2" gate="A" x="81.28" y="149.86"/>
+<instance part="U2" gate="A" x="81.28" y="149.86">
+<attribute name="DIGIKEY" x="81.28" y="149.86" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="L1" gate="G$1" x="43.18" y="147.32" rot="MR0"/>
-<instance part="C1" gate="G$1" x="33.02" y="144.78"/>
+<instance part="C1" gate="G$1" x="33.02" y="144.78">
+<attribute name="DIGIKEY" x="33.02" y="144.78" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="C2" gate="G$1" x="106.68" y="147.32"/>
 <instance part="J1" gate="G$1" x="106.68" y="22.86"/>
 <instance part="GND2" gate="1" x="106.68" y="124.46"/>
 <instance part="GND3" gate="1" x="96.52" y="35.56"/>
 <instance part="R1" gate="G$1" x="55.88" y="160.02" rot="R90"/>
-<instance part="D1" gate="G$1" x="76.2" y="104.14"/>
-<instance part="Q1" gate="G$1" x="96.52" y="63.5" rot="R270"/>
+<instance part="D1" gate="G$1" x="76.2" y="104.14">
+<attribute name="DIGIKEY" x="76.2" y="104.14" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="Q1" gate="G$1" x="96.52" y="63.5" rot="R270">
+<attribute name="DIGIKEY" x="96.52" y="63.5" size="1.778" layer="96" rot="R270" display="off"/>
+</instance>
 <instance part="U4" gate="A" x="76.2" y="86.36">
 <attribute name="DIGIKEY" x="76.2" y="86.36" size="1.778" layer="96" display="off"/>
 </instance>
@@ -6922,6 +6938,15 @@ Mating wall wart : TOL-00298 (and others)</description>
 <pinref part="J1" gate="G$1" pin="P2+"/>
 <wire x1="101.6" y1="63.5" x2="109.22" y2="63.5" width="0.1524" layer="91"/>
 <wire x1="109.22" y1="63.5" x2="109.22" y2="35.56" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$6" class="0">
+<segment>
+<pinref part="J2" gate="G$1" pin="GNDBREAK"/>
+<wire x1="38.1" y1="101.6" x2="40.64" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="101.6" x2="40.64" y2="99.06" width="0.1524" layer="91"/>
+<pinref part="J2" gate="G$1" pin="GND"/>
+<wire x1="40.64" y1="99.06" x2="38.1" y2="99.06" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

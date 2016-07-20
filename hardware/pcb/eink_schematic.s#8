@@ -6616,7 +6616,9 @@ Mating wall wart : TOL-00298 (and others)</description>
 <part name="FRAME1" library="frames" deviceset="LETTER_L" device=""/>
 <part name="U1" library="nucleum" deviceset="NUCLEUM" device=""/>
 <part name="GND1" library="umich" deviceset="GND" device=""/>
-<part name="JP1" library="pinhead" deviceset="PINHD-1X10" device="/90"/>
+<part name="JP1" library="pinhead" deviceset="PINHD-1X10" device="/90">
+<attribute name="DIGIKEY" value="S5446-ND"/>
+</part>
 <part name="U2" library="LTC_By_element14_Batch_1" deviceset="LTC3531ES6-3PBF" device=""/>
 <part name="L1" library="umich" deviceset="L-US" device="0207/10" value="10uH"/>
 <part name="C1" library="passives" deviceset="CAPACITOR" device="" value="2.2uF"/>
@@ -6641,7 +6643,9 @@ Mating wall wart : TOL-00298 (and others)</description>
 <instance part="FRAME1" gate="G$2" x="147.32" y="0"/>
 <instance part="U1" gate="G$1" x="157.48" y="104.14"/>
 <instance part="GND1" gate="1" x="121.92" y="134.62"/>
-<instance part="JP1" gate="A" x="238.76" y="106.68"/>
+<instance part="JP1" gate="A" x="238.76" y="106.68">
+<attribute name="DIGIKEY" x="238.76" y="106.68" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="U2" gate="A" x="81.28" y="149.86"/>
 <instance part="L1" gate="G$1" x="43.18" y="147.32" rot="MR0"/>
 <instance part="C1" gate="G$1" x="33.02" y="144.78"/>

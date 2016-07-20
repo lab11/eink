@@ -6626,8 +6626,12 @@ Mating wall wart : TOL-00298 (and others)</description>
 <part name="C1" library="passives" deviceset="CAPACITOR" device="" value="2.2uF">
 <attribute name="DIGIKEY" value="490-3296-1-ND"/>
 </part>
-<part name="C2" library="passives" deviceset="CAPACITOR" device="" value="10uF"/>
-<part name="J1" library="connector" deviceset="AA_BAT_PACK" device="SMD"/>
+<part name="C2" library="passives" deviceset="CAPACITOR" device="" value="10uF">
+<attribute name="DIGIKEY" value="490-10693-1-ND"/>
+</part>
+<part name="J1" library="connector" deviceset="AA_BAT_PACK" device="SMD">
+<attribute name="DIGIKEY" value="36-1012-ND"/>
+</part>
 <part name="GND2" library="umich" deviceset="GND" device=""/>
 <part name="GND3" library="umich" deviceset="GND" device=""/>
 <part name="R1" library="passives" deviceset="RESISTOR" device="" value="100K"/>
@@ -6665,16 +6669,20 @@ Mating wall wart : TOL-00298 (and others)</description>
 <instance part="C1" gate="G$1" x="33.02" y="144.78">
 <attribute name="DIGIKEY" x="33.02" y="144.78" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="C2" gate="G$1" x="106.68" y="147.32"/>
-<instance part="J1" gate="G$1" x="106.68" y="22.86"/>
+<instance part="C2" gate="G$1" x="106.68" y="147.32">
+<attribute name="DIGIKEY" x="106.68" y="147.32" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="J1" gate="G$1" x="76.2" y="27.94">
+<attribute name="DIGIKEY" x="76.2" y="27.94" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="GND2" gate="1" x="106.68" y="124.46"/>
-<instance part="GND3" gate="1" x="96.52" y="35.56"/>
+<instance part="GND3" gate="1" x="66.04" y="40.64"/>
 <instance part="R1" gate="G$1" x="55.88" y="160.02" rot="R90"/>
 <instance part="D1" gate="G$1" x="76.2" y="104.14">
 <attribute name="DIGIKEY" x="76.2" y="104.14" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="Q1" gate="G$1" x="96.52" y="63.5" rot="R270">
-<attribute name="DIGIKEY" x="96.52" y="63.5" size="1.778" layer="96" rot="R270" display="off"/>
+<instance part="Q1" gate="G$1" x="91.44" y="63.5" rot="MR270">
+<attribute name="DIGIKEY" x="91.44" y="63.5" size="1.778" layer="96" rot="MR270" display="off"/>
 </instance>
 <instance part="U4" gate="A" x="76.2" y="86.36">
 <attribute name="DIGIKEY" x="76.2" y="86.36" size="1.778" layer="96" display="off"/>
@@ -6803,10 +6811,10 @@ Mating wall wart : TOL-00298 (and others)</description>
 </segment>
 <segment>
 <pinref part="J1" gate="G$1" pin="P1-"/>
-<wire x1="104.14" y1="35.56" x2="104.14" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="40.64" x2="73.66" y2="45.72" width="0.1524" layer="91"/>
 <pinref part="GND3" gate="1" pin="GND"/>
-<wire x1="104.14" y1="40.64" x2="96.52" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="96.52" y1="40.64" x2="96.52" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="45.72" x2="66.04" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="66.04" y1="45.72" x2="66.04" y2="43.18" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="U4" gate="A" pin="GND"/>
@@ -6866,10 +6874,10 @@ Mating wall wart : TOL-00298 (and others)</description>
 <net name="N$5" class="0">
 <segment>
 <pinref part="J1" gate="G$1" pin="P1+"/>
-<wire x1="104.14" y1="10.16" x2="104.14" y2="7.62" width="0.1524" layer="91"/>
-<wire x1="104.14" y1="7.62" x2="109.22" y2="7.62" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="15.24" x2="73.66" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="12.7" x2="78.74" y2="12.7" width="0.1524" layer="91"/>
 <pinref part="J1" gate="G$1" pin="P2-"/>
-<wire x1="109.22" y1="7.62" x2="109.22" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="78.74" y1="12.7" x2="78.74" y2="15.24" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="!SHDN" class="0">
@@ -6910,13 +6918,8 @@ Mating wall wart : TOL-00298 (and others)</description>
 <pinref part="D1" gate="G$1" pin="2"/>
 <wire x1="78.74" y1="104.14" x2="101.6" y2="104.14" width="0.1524" layer="91"/>
 <wire x1="101.6" y1="104.14" x2="101.6" y2="86.36" width="0.1524" layer="91"/>
-<pinref part="Q1" gate="G$1" pin="S"/>
-<wire x1="101.6" y1="86.36" x2="101.6" y2="71.12" width="0.1524" layer="91"/>
-<wire x1="101.6" y1="71.12" x2="91.44" y2="71.12" width="0.1524" layer="91"/>
-<wire x1="91.44" y1="71.12" x2="91.44" y2="63.5" width="0.1524" layer="91"/>
 <wire x1="101.6" y1="86.36" x2="109.22" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="109.22" y1="86.36" x2="109.22" y2="114.3" width="0.1524" layer="91"/>
-<junction x="101.6" y="86.36"/>
 <wire x1="109.22" y1="114.3" x2="17.78" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="17.78" y1="114.3" x2="17.78" y2="167.64" width="0.1524" layer="91"/>
 <pinref part="U2" gate="A" pin="VIN"/>
@@ -6930,14 +6933,10 @@ Mating wall wart : TOL-00298 (and others)</description>
 <junction x="55.88" y="167.64"/>
 <wire x1="17.78" y1="167.64" x2="33.02" y2="167.64" width="0.1524" layer="91"/>
 <junction x="33.02" y="167.64"/>
-</segment>
-</net>
-<net name="N$4" class="0">
-<segment>
-<pinref part="Q1" gate="G$1" pin="D"/>
-<pinref part="J1" gate="G$1" pin="P2+"/>
-<wire x1="101.6" y1="63.5" x2="109.22" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="109.22" y1="63.5" x2="109.22" y2="35.56" width="0.1524" layer="91"/>
+<pinref part="Q1" gate="G$1" pin="S"/>
+<wire x1="96.52" y1="63.5" x2="101.6" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="63.5" x2="101.6" y2="86.36" width="0.1524" layer="91"/>
+<junction x="101.6" y="86.36"/>
 </segment>
 </net>
 <net name="N$6" class="0">
@@ -6947,6 +6946,14 @@ Mating wall wart : TOL-00298 (and others)</description>
 <wire x1="40.64" y1="101.6" x2="40.64" y2="99.06" width="0.1524" layer="91"/>
 <pinref part="J2" gate="G$1" pin="GND"/>
 <wire x1="40.64" y1="99.06" x2="38.1" y2="99.06" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$4" class="0">
+<segment>
+<pinref part="J1" gate="G$1" pin="P2+"/>
+<wire x1="78.74" y1="40.64" x2="78.74" y2="63.5" width="0.1524" layer="91"/>
+<pinref part="Q1" gate="G$1" pin="D"/>
+<wire x1="78.74" y1="63.5" x2="86.36" y2="63.5" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
