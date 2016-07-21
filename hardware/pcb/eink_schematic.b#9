@@ -775,7 +775,7 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 </pass>
 </autorouter>
 <elements>
-<element name="U1" library="nucleum" package="NUCLEUM" value="NUCLEUM" x="35.56" y="47.49" rot="R270"/>
+<element name="U1" library="nucleum" package="NUCLEUM" value="NUCLEUM" x="36.06" y="45.49" rot="R270"/>
 <element name="JP1" library="pinhead" package="1X10/90" value="" x="15.24" y="48.26">
 <attribute name="DIGIKEY" value="S5446-ND" x="15.24" y="48.26" size="1.778" layer="27" display="off"/>
 </element>
@@ -840,32 +840,32 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <signal name="TC_BUSY">
 <contactref element="U1" pad="8"/>
 <contactref element="JP1" pad="5"/>
-<wire x1="13.97" y1="44.45" x2="35.4511" y2="32.0089" width="0" layer="19" extent="1-1"/>
+<wire x1="13.97" y1="44.45" x2="35.9511" y2="30.0089" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="ENABLE">
 <contactref element="U1" pad="9"/>
 <contactref element="JP1" pad="2"/>
-<wire x1="6.35" y1="44.45" x2="35.4511" y2="31.0089" width="0" layer="19" extent="1-1"/>
+<wire x1="6.35" y1="44.45" x2="35.9511" y2="29.0089" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="!CS">
 <contactref element="U1" pad="7"/>
 <contactref element="JP1" pad="8"/>
-<wire x1="21.59" y1="44.45" x2="35.4511" y2="33.0089" width="0" layer="19" extent="1-1"/>
+<wire x1="21.59" y1="44.45" x2="35.9511" y2="31.0089" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SPI_MOSI">
 <contactref element="U1" pad="15"/>
 <contactref element="JP1" pad="7"/>
-<wire x1="19.05" y1="44.45" x2="42.03" y2="29.43" width="0" layer="19" extent="1-1"/>
+<wire x1="19.05" y1="44.45" x2="42.53" y2="27.43" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SPI_CLK">
 <contactref element="U1" pad="16"/>
 <contactref element="JP1" pad="9"/>
-<wire x1="24.13" y1="44.45" x2="43.03" y2="29.43" width="0" layer="19" extent="1-1"/>
+<wire x1="24.13" y1="44.45" x2="43.53" y2="27.43" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SPI_MISO">
 <contactref element="U1" pad="14"/>
 <contactref element="JP1" pad="6"/>
-<wire x1="16.51" y1="44.45" x2="41.03" y2="29.43" width="0" layer="19" extent="1-1"/>
+<wire x1="16.51" y1="44.45" x2="41.53" y2="27.43" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="GND">
 <contactref element="U1" pad="32"/>
@@ -877,8 +877,8 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <contactref element="U4" pad="1"/>
 <contactref element="J1" pad="1-"/>
 <contactref element="R4" pad="2"/>
-<wire x1="66.548" y1="17.526" x2="53.6089" y2="39.0089" width="0" layer="19" extent="1-1"/>
-<wire x1="26.67" y1="44.45" x2="53.6089" y2="39.0089" width="0" layer="19" extent="1-1"/>
+<wire x1="66.548" y1="17.526" x2="54.1089" y2="37.0089" width="0" layer="19" extent="1-1"/>
+<wire x1="26.67" y1="44.45" x2="54.1089" y2="37.0089" width="0" layer="19" extent="1-1"/>
 <wire x1="18.55" y1="35.77693125" x2="26.67" y2="44.45" width="0" layer="19" extent="1-1"/>
 <wire x1="13.5716" y1="31.8798" x2="18.55" y2="35.77693125" width="0" layer="19" extent="1-1"/>
 <wire x1="6.35" y1="35.433" x2="13.5716" y2="31.8798" width="0" layer="19" extent="1-1"/>
@@ -892,7 +892,7 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <contactref element="JP1" pad="4"/>
 <contactref element="U2" pad="3"/>
 <contactref element="C2" pad="1"/>
-<wire x1="11.43" y1="44.45" x2="35.4511" y2="39.0089" width="0" layer="19" extent="1-1"/>
+<wire x1="11.43" y1="44.45" x2="35.9511" y2="37.0089" width="0" layer="19" extent="1-1"/>
 <wire x1="8.89" y1="44.45" x2="11.43" y2="44.45" width="0" layer="19" extent="1-1"/>
 <wire x1="5.41693125" y1="38.1" x2="8.89" y2="44.45" width="0" layer="19" extent="1-1"/>
 <wire x1="5.4102" y1="35.433" x2="5.41693125" y2="38.1" width="0" layer="19" extent="1-1"/>
