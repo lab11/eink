@@ -818,14 +818,14 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <element name="L2" library="inductor-tdk" package="VLF302510MT" value="VLF302510MT" x="10.16" y="34.29" rot="R270">
 <attribute name="DIGIKEY" value="445-6775-1-ND" x="10.16" y="34.29" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="R3" library="Yageo_By_element14_Batch_1" package="RESC1608X60N" value="100K Ohms" x="6.35" y="30.48" rot="R180">
-<attribute name="OC_NEWARK" value="98K7287" x="6.35" y="30.48" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="TOLERANCE" value="±5%" x="6.35" y="30.48" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MPN" value="RC0603JR-07100KL" x="6.35" y="30.48" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="SUPPLIER" value="Yageo" x="6.35" y="30.48" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="OC_FARNELL" value="9233628" x="6.35" y="30.48" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="WATTAGE" value="1/10 W" x="6.35" y="30.48" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="DIGIKEY" value="311-100KGRCT-ND" x="6.35" y="30.48" size="1.778" layer="27" rot="R180" display="off"/>
+<element name="R3" library="Yageo_By_element14_Batch_1" package="RESC1608X60N" value="100K Ohms" x="5.35" y="30.98" rot="R180">
+<attribute name="OC_NEWARK" value="98K7287" x="5.35" y="30.98" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="TOLERANCE" value="±5%" x="5.35" y="30.98" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MPN" value="RC0603JR-07100KL" x="5.35" y="30.98" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="SUPPLIER" value="Yageo" x="5.35" y="30.98" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="OC_FARNELL" value="9233628" x="5.35" y="30.98" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="WATTAGE" value="1/10 W" x="5.35" y="30.98" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="DIGIKEY" value="311-100KGRCT-ND" x="5.35" y="30.98" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 <element name="R4" library="Yageo_By_element14_Batch_1" package="RESC1608X60N" value="100K Ohms" x="1.27" y="34.79" rot="R90">
 <attribute name="OC_NEWARK" value="98K7287" x="1.27" y="34.79" size="1.778" layer="27" rot="R90" display="off"/>
@@ -924,10 +924,6 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <wire x1="6.28306875" y1="40.71693125" x2="4.5" y2="42.5" width="0.4064" layer="1"/>
 <wire x1="4.5" y1="42.5" x2="4.5" y2="43.76" width="0.4064" layer="1"/>
 <wire x1="4.5" y1="43.76" x2="3.81" y2="44.45" width="0.4064" layer="1"/>
-<wire x1="6.35" y1="35.433" x2="6.35" y2="34.65" width="0.4064" layer="1"/>
-<wire x1="6.35" y1="34.65" x2="6.5" y2="34.5" width="0.4064" layer="1"/>
-<wire x1="6.5" y1="34.5" x2="10.9514" y2="34.5" width="0.4064" layer="1"/>
-<wire x1="10.9514" y1="34.5" x2="13.5716" y2="31.8798" width="0.4064" layer="1"/>
 <wire x1="13.5716" y1="31.8798" x2="13.5716" y2="32.0716" width="0.4064" layer="1"/>
 <wire x1="13.5716" y1="32.0716" x2="14.5" y2="33" width="0.4064" layer="1"/>
 <via x="14.5" y="33" extent="1-16" drill="0.6"/>
@@ -964,6 +960,10 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <via x="26.5" y="40.5" extent="1-16" drill="0.6"/>
 <wire x1="26.5" y1="40.5" x2="26.5" y2="44.28" width="0.4064" layer="1"/>
 <wire x1="26.5" y1="44.28" x2="26.67" y2="44.45" width="0.4064" layer="1"/>
+<wire x1="13.5716" y1="32.0716" x2="12.5" y2="33.1432" width="0.4064" layer="1"/>
+<wire x1="12.5" y1="33.1432" x2="12.5" y2="36" width="0.4064" layer="1"/>
+<wire x1="12.5" y1="36" x2="11.5" y2="37" width="0.4064" layer="1"/>
+<wire x1="11.5" y1="37" x2="7.5" y2="37" width="0.4064" layer="1"/>
 </signal>
 <signal name="VCC">
 <contactref element="U1" pad="1"/>
@@ -1010,8 +1010,9 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <signal name="!SHDN">
 <contactref element="U2" pad="4"/>
 <contactref element="R3" pad="2"/>
-<wire x1="5.5118" y1="30.48" x2="5.5118" y2="33.0454" width="0.4064" layer="1"/>
 <wire x1="5.5118" y1="33.0454" x2="5.4102" y2="33.147" width="0.4064" layer="1"/>
+<wire x1="5.5118" y1="33.0454" x2="5.5118" y2="31.98" width="0.4064" layer="1"/>
+<wire x1="5.5118" y1="31.98" x2="4.5118" y2="30.98" width="0.4064" layer="1"/>
 </signal>
 <signal name="N$1">
 <contactref element="U4" pad="2"/>
@@ -1039,17 +1040,24 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <contactref element="C1" pad="1"/>
 <contactref element="Q1" pad="2"/>
 <contactref element="R3" pad="1"/>
-<wire x1="7.1882" y1="30.48" x2="7.1882" y2="31.3118" width="0.4064" layer="1"/>
-<wire x1="7.1882" y1="31.3118" x2="6.5" y2="32" width="0.4064" layer="1"/>
-<wire x1="6.5" y1="32" x2="6.5" y2="32.997" width="0.4064" layer="1"/>
-<wire x1="6.5" y1="32.997" x2="6.35" y2="33.147" width="0.4064" layer="1"/>
 <wire x1="14.51" y1="38.74" x2="16.45306875" y2="38.74" width="0.4064" layer="1"/>
 <wire x1="16.45306875" y1="38.74" x2="18.55" y2="36.64306875" width="0.4064" layer="1"/>
 <wire x1="18.55" y1="36.64306875" x2="19.85693125" y2="36.64306875" width="0.4064" layer="1"/>
 <wire x1="19.85693125" y1="36.64306875" x2="20.5" y2="36" width="0.4064" layer="1"/>
 <wire x1="20.5" y1="36" x2="20.5" y2="32.12" width="0.4064" layer="1"/>
 <wire x1="20.5" y1="32.12" x2="20.42" y2="32.04" width="0.4064" layer="1"/>
-<wire x1="6.5" y1="32.997" x2="14.51" y2="38.74" width="0" layer="19" extent="1-1"/>
+<wire x1="6.35" y1="33.147" x2="6.35" y2="31.1418" width="0.4064" layer="1"/>
+<wire x1="6.35" y1="31.1418" x2="6.1882" y2="30.98" width="0.4064" layer="1"/>
+<wire x1="6.35" y1="33.147" x2="6.35" y2="32.15" width="0.4064" layer="1"/>
+<wire x1="6.35" y1="32.15" x2="7.5" y2="31" width="0.4064" layer="1"/>
+<wire x1="7.5" y1="31" x2="8.5" y2="31" width="0.4064" layer="1"/>
+<wire x1="8.5" y1="31" x2="9" y2="31.5" width="0.4064" layer="1"/>
+<via x="9" y="31.5" extent="1-16" drill="0.6"/>
+<wire x1="9" y1="31.5" x2="9" y2="36" width="0.4064" layer="16"/>
+<wire x1="9" y1="36" x2="11.5" y2="38.5" width="0.4064" layer="16"/>
+<via x="11.5" y="38.5" extent="1-16" drill="0.6"/>
+<wire x1="11.5" y1="38.5" x2="14.27" y2="38.5" width="0.4064" layer="1"/>
+<wire x1="14.27" y1="38.5" x2="14.51" y2="38.74" width="0.4064" layer="1"/>
 </signal>
 <signal name="N$6">
 <contactref element="J2" pad="GND"/>
