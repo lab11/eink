@@ -1,0 +1,23 @@
+Partlist
+
+Exported from eink_schematic.brd at 7/20/16 9:12 PM
+
+EAGLE Version 6.6.0 Copyright (c) 1988-2014 CadSoft
+
+Assembly variant: 
+
+Part     Value            Package          Library                    Position (mm)         Orientation
+
+C1       2.2uF            0402_CAP         passives                   (26.55 23.71)         R270
+C2       10uF             0402_CAP         passives                   (13.85 25.6)          R0
+D1                        SOD123W          nxp                        (22.51 24.29)         R90
+J1       AA_BAT_PACKSMD   AA_SMD           connector                  (81.66 35.76)         R0
+J2       5.5x2.1mm Barrel POWER_JACK_SMD   SparkFun-Connectors        (5.31 7.82)           R0
+JP1                       1X10/90          pinhead                    (23.24 35.76)         R0
+L2       VLF302510MT      VLF302510MT      inductor-tdk               (18.16 21.79)         R270
+Q1       FDN340P          SSOT-3           transistor-fet             (27.32 18.59)         R90
+R3       100K Ohms        RESC1608X60N     Yageo_By_element14_Batch_1 (13.35 18.48)         R180
+R4       100K Ohms        RESC1608X60N     Yageo_By_element14_Batch_1 (9.27 22.29)          R90
+U1       NUCLEUM          NUCLEUM          nucleum                    (44.06 32.99)         R270
+U2       LTC3531ES6-3PBF  SOT95P280X100-6N LTC_By_element14_Batch_1   (14.35 21.79)         R270
+U4       MAX6326UR29+     SOT95P228X119-3N Maxim_By_element14_Batch_1 (22.74 18.44)         R0
