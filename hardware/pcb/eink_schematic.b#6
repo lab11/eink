@@ -1054,7 +1054,6 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <contactref element="J2" pad="GND"/>
 <contactref element="J2" pad="P$4"/>
 <wire x1="2.31" y1="2.12" x2="8.41" y2="2.12" width="0.4064" layer="1"/>
-<wire x1="15" y1="16.5" x2="8.41" y2="2.12" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VCC">
 <contactref element="U1" pad="1"/>

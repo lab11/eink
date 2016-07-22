@@ -30,7 +30,7 @@
 <layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
@@ -821,8 +821,9 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 </autorouter>
 <elements>
 <element name="U1" library="nucleum" package="NUCLEUM" value="NUCLEUM" x="58.06" y="0.99" rot="R90"/>
-<element name="JP1" library="pinhead" package="1X10/90" value="" x="23.24" y="35.76">
+<element name="JP1" library="pinhead" package="1X10/90" value="" x="23.24" y="35.76" smashed="yes">
 <attribute name="DIGIKEY" value="S5446-ND" x="23.24" y="35.76" size="1.778" layer="27" display="off"/>
+<attribute name="VALUE" x="37.845" y="31.315" size="1.27" layer="27" rot="R90"/>
 </element>
 <element name="U2" library="LTC_By_element14_Batch_1" package="SOT95P280X100-6N" value="LTC3531ES6-3PBF" x="14.35" y="21.79" smashed="yes" rot="R270">
 <attribute name="PACKAGE" value="TSOT-23-6" x="14.35" y="21.79" size="1.778" layer="27" rot="R270" display="off"/>
@@ -899,7 +900,7 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <attribute name="DIGIKEY" value="36-2462-ND" x="74.5" y="7.5" size="1.778" layer="27" display="off"/>
 </element>
 <element name="U$5" library="holes" package="3,2" value="" x="71" y="69.5"/>
-<element name="LOGO1" library="logos" package="UMICH_SOLID_350MIL" value="UMICH_SOLID_LARGE" x="-2.5" y="-11"/>
+<element name="LOGO1" library="logos" package="UMICH_SOLID_350MIL" value="UMICH_SOLID_LARGE" x="36.5" y="22.5"/>
 </elements>
 <signals>
 <signal name="TC_BUSY">

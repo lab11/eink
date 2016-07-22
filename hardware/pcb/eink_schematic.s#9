@@ -4831,6 +4831,50 @@ at 21/03/2012 16:17:53</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="through_hole_battery_pack">
+<packages>
+<package name="KEYSTONEELECTRONICS2462">
+<pad name="P3" x="0" y="0" drill="1.016" shape="square"/>
+<pad name="P4" x="14.986" y="0" drill="1.016" shape="square"/>
+<pad name="P2" x="14.986" y="27.178" drill="3.302" shape="square"/>
+<pad name="P1" x="0" y="27.178" drill="3.302" shape="square" rot="R90"/>
+</package>
+</packages>
+<symbols>
+<symbol name="KEYSTONEELECTRONICS2462">
+<wire x1="0" y1="0" x2="0" y2="27.94" width="0.254" layer="94"/>
+<wire x1="0" y1="27.94" x2="20.32" y2="27.94" width="0.254" layer="94"/>
+<wire x1="20.32" y1="27.94" x2="20.32" y2="0" width="0.254" layer="94"/>
+<wire x1="20.32" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
+<pin name="P1" x="-5.08" y="22.86" length="middle"/>
+<pin name="P3+" x="-5.08" y="2.54" length="middle"/>
+<pin name="P4-" x="25.4" y="2.54" length="middle" rot="R180"/>
+<pin name="P2" x="25.4" y="22.86" length="middle" rot="R180"/>
+<text x="2.54" y="27.94" size="2.54" layer="96">&gt;NAME</text>
+<text x="2.54" y="-2.54" size="2.54" layer="96">&gt;VALUE</text>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="KEYSTONEELECTRONICS2462">
+<gates>
+<gate name="KE2462" symbol="KEYSTONEELECTRONICS2462" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="KEYSTONEELECTRONICS2462">
+<connects>
+<connect gate="KE2462" pin="P1" pad="P1"/>
+<connect gate="KE2462" pin="P2" pad="P2"/>
+<connect gate="KE2462" pin="P3+" pad="P3"/>
+<connect gate="KE2462" pin="P4-" pad="P4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 <attribute name="AUTHOR" value="Cole Hudson"/>
@@ -4884,6 +4928,7 @@ at 21/03/2012 16:17:53</description>
 <attribute name="DIGIKEY" value="311-100KGRCT-ND"/>
 </part>
 <part name="R4" library="Yageo_By_element14_Batch_1" deviceset="RC0603JR-07100KL" device="" value="100K Ohms"/>
+<part name="BATTERY" library="through_hole_battery_pack" deviceset="KEYSTONEELECTRONICS2462" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -4931,6 +4976,7 @@ at 21/03/2012 16:17:53</description>
 <attribute name="DIGIKEY" x="55.88" y="152.4" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="R4" gate="A" x="43.18" y="81.28" rot="R90"/>
+<instance part="BATTERY" gate="KE2462" x="38.1" y="25.4"/>
 </instances>
 <busses>
 </busses>

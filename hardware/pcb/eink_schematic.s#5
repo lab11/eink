@@ -5115,7 +5115,7 @@ at 21/03/2012 16:17:53</description>
 <busses>
 </busses>
 <nets>
-<net name="TC_BUSY" class="0">
+<net name="!TC_BUSY" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="P23"/>
 <wire x1="149.86" y1="68.58" x2="149.86" y2="60.96" width="0.1524" layer="91"/>
@@ -5127,7 +5127,7 @@ at 21/03/2012 16:17:53</description>
 <label x="228.6" y="106.68" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="ENABLE" class="0">
+<net name="!ENABLE" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="P24"/>
 <wire x1="152.4" y1="68.58" x2="152.4" y2="63.5" width="0.1524" layer="91"/>

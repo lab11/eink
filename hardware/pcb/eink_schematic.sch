@@ -5049,7 +5049,7 @@ at 21/03/2012 16:17:53</description>
 <part name="U3" library="Maxim_By_element14_Batch_1" deviceset="MAX6326UR29+" device="">
 <attribute name="DIGIKEY" value="MAX6326UR29+TCT-ND"/>
 </part>
-<part name="J2" library="SparkFun-Connectors" deviceset="POWER_JACK" device="SMD" value="5.5x2.1mm Barrel">
+<part name="J1" library="SparkFun-Connectors" deviceset="POWER_JACK" device="SMD" value="5.5x2.1mm Barrel">
 <attribute name="DIGIKEY" value="CP-002AHPJCT-ND"/>
 </part>
 <part name="GND4" library="umich" deviceset="GND" device=""/>
@@ -5098,7 +5098,7 @@ at 21/03/2012 16:17:53</description>
 <instance part="U3" gate="A" x="76.2" y="86.36">
 <attribute name="DIGIKEY" x="76.2" y="86.36" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="J2" gate="G$1" x="35.56" y="96.52">
+<instance part="J1" gate="G$1" x="35.56" y="96.52">
 <attribute name="DIGIKEY" x="35.56" y="96.52" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="GND4" gate="1" x="50.8" y="68.58"/>
@@ -5251,10 +5251,10 @@ at 21/03/2012 16:17:53</description>
 <wire x1="119.38" y1="30.48" x2="119.38" y2="25.4" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="J2" gate="G$1" pin="GNDBREAK"/>
+<pinref part="J1" gate="G$1" pin="GNDBREAK"/>
 <wire x1="38.1" y1="101.6" x2="40.64" y2="101.6" width="0.1524" layer="91"/>
 <wire x1="40.64" y1="101.6" x2="40.64" y2="99.06" width="0.1524" layer="91"/>
-<pinref part="J2" gate="G$1" pin="GND"/>
+<pinref part="J1" gate="G$1" pin="GND"/>
 <wire x1="40.64" y1="99.06" x2="38.1" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="40.64" y1="99.06" x2="40.64" y2="96.52" width="0.1524" layer="91"/>
 <junction x="40.64" y="99.06"/>
@@ -5325,7 +5325,7 @@ at 21/03/2012 16:17:53</description>
 </net>
 <net name="N$2" class="0">
 <segment>
-<pinref part="J2" gate="G$1" pin="PWR"/>
+<pinref part="J1" gate="G$1" pin="PWR"/>
 <pinref part="D1" gate="G$1" pin="1"/>
 <pinref part="U3" gate="A" pin="VCC"/>
 <wire x1="38.1" y1="104.14" x2="43.18" y2="104.14" width="0.1524" layer="91"/>

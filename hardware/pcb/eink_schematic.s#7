@@ -4849,7 +4849,9 @@ at 21/03/2012 16:17:53</description>
 <attribute name="DIGIKEY" value="311-100KGRCT-ND"/>
 </part>
 <part name="R4" library="Yageo_By_element14_Batch_1" deviceset="RC0603JR-07100KL" device="" value="100K Ohms"/>
-<part name="BATTERY" library="through_hole_battery_pack" deviceset="KEYSTONEELECTRONICS2462" device=""/>
+<part name="BATTERY" library="through_hole_battery_pack" deviceset="KEYSTONEELECTRONICS2462" device="">
+<attribute name="DIGIKEY" value="36-2462-ND"/>
+</part>
 </parts>
 <sheets>
 <sheet>
@@ -4894,7 +4896,9 @@ at 21/03/2012 16:17:53</description>
 <attribute name="DIGIKEY" x="55.88" y="152.4" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="R4" gate="A" x="43.18" y="81.28" rot="R90"/>
-<instance part="BATTERY" gate="KE2462" x="86.36" y="17.78"/>
+<instance part="BATTERY" gate="KE2462" x="86.36" y="17.78">
+<attribute name="DIGIKEY" x="86.36" y="17.78" size="1.778" layer="96" display="off"/>
+</instance>
 </instances>
 <busses>
 </busses>

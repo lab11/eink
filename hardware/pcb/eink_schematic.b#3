@@ -164,7 +164,8 @@
 <wire x1="0.23" y1="36.26" x2="0.23" y2="0.2" width="0.4064" layer="20"/>
 <text x="13" y="10" size="1.778" layer="21" font="vector" ratio="12">Cole Hudson</text>
 <text x="13" y="7.5" size="1.4" layer="21" font="vector" ratio="12">2016/07/21</text>
-<text x="13" y="3" size="1.778" layer="21" font="vector">5V</text>
+<text x="2" y="16.5" size="1.778" layer="21" font="vector">5V</text>
+<text x="13" y="5" size="1.778" layer="25" font="vector">REV A</text>
 </plain>
 <libraries>
 <library name="nucleum">
