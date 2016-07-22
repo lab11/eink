@@ -4880,7 +4880,9 @@ at 21/03/2012 16:17:53</description>
 <part name="L2" library="inductor-tdk" deviceset="VLF302510MT" device="">
 <attribute name="DIGIKEY" value="445-6775-1-ND"/>
 </part>
-<part name="R3" library="Yageo_By_element14_Batch_1" deviceset="RC0603JR-07100KL" device="" value="100K Ohms"/>
+<part name="R3" library="Yageo_By_element14_Batch_1" deviceset="RC0603JR-07100KL" device="" value="100K Ohms">
+<attribute name="DIGIKEY" value="311-100KGRCT-ND"/>
+</part>
 <part name="R4" library="Yageo_By_element14_Batch_1" deviceset="RC0603JR-07100KL" device="" value="100K Ohms"/>
 </parts>
 <sheets>
@@ -4925,7 +4927,9 @@ at 21/03/2012 16:17:53</description>
 <instance part="L2" gate="G$1" x="43.18" y="147.32" rot="R90">
 <attribute name="DIGIKEY" x="43.18" y="147.32" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
-<instance part="R3" gate="A" x="55.88" y="152.4" rot="R90"/>
+<instance part="R3" gate="A" x="55.88" y="152.4" rot="R90">
+<attribute name="DIGIKEY" x="55.88" y="152.4" size="1.778" layer="96" rot="R90" display="off"/>
+</instance>
 <instance part="R4" gate="A" x="43.18" y="81.28" rot="R90"/>
 </instances>
 <busses>

@@ -5046,20 +5046,20 @@ at 21/03/2012 16:17:53</description>
 <part name="Q1" library="transistor-fet" deviceset="FDN340P" device="">
 <attribute name="DIGIKEY" value="FDN340PCT-ND"/>
 </part>
-<part name="U4" library="Maxim_By_element14_Batch_1" deviceset="MAX6326UR29+" device="">
+<part name="U3" library="Maxim_By_element14_Batch_1" deviceset="MAX6326UR29+" device="">
 <attribute name="DIGIKEY" value="MAX6326UR29+TCT-ND"/>
 </part>
 <part name="J2" library="SparkFun-Connectors" deviceset="POWER_JACK" device="SMD" value="5.5x2.1mm Barrel">
 <attribute name="DIGIKEY" value="CP-002AHPJCT-ND"/>
 </part>
 <part name="GND4" library="umich" deviceset="GND" device=""/>
-<part name="L2" library="inductor-tdk" deviceset="VLF302510MT" device="">
+<part name="L1" library="inductor-tdk" deviceset="VLF302510MT" device="">
 <attribute name="DIGIKEY" value="445-6775-1-ND"/>
 </part>
-<part name="R3" library="Yageo_By_element14_Batch_1" deviceset="RC0603JR-07100KL" device="" value="100K Ohms">
+<part name="R1" library="Yageo_By_element14_Batch_1" deviceset="RC0603JR-07100KL" device="" value="100K Ohms">
 <attribute name="DIGIKEY" value="311-100KGRCT-ND"/>
 </part>
-<part name="R4" library="Yageo_By_element14_Batch_1" deviceset="RC0603JR-07100KL" device="" value="100K Ohms"/>
+<part name="R2" library="Yageo_By_element14_Batch_1" deviceset="RC0603JR-07100KL" device="" value="100K Ohms"/>
 <part name="BATTERY" library="through_hole_battery_pack" deviceset="KEYSTONEELECTRONICS2462" device="">
 <attribute name="DIGIKEY" value="36-2462-ND"/>
 </part>
@@ -5095,20 +5095,20 @@ at 21/03/2012 16:17:53</description>
 <instance part="Q1" gate="G$1" x="91.44" y="63.5" rot="MR270">
 <attribute name="DIGIKEY" x="91.44" y="63.5" size="1.778" layer="96" rot="MR270" display="off"/>
 </instance>
-<instance part="U4" gate="A" x="76.2" y="86.36">
+<instance part="U3" gate="A" x="76.2" y="86.36">
 <attribute name="DIGIKEY" x="76.2" y="86.36" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="J2" gate="G$1" x="35.56" y="96.52">
 <attribute name="DIGIKEY" x="35.56" y="96.52" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="GND4" gate="1" x="50.8" y="68.58"/>
-<instance part="L2" gate="G$1" x="43.18" y="147.32" rot="R90">
+<instance part="L1" gate="G$1" x="43.18" y="147.32" rot="R90">
 <attribute name="DIGIKEY" x="43.18" y="147.32" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
-<instance part="R3" gate="A" x="55.88" y="152.4" rot="R90">
+<instance part="R1" gate="A" x="55.88" y="152.4" rot="R90">
 <attribute name="DIGIKEY" x="55.88" y="152.4" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
-<instance part="R4" gate="A" x="43.18" y="81.28" rot="R90"/>
+<instance part="R2" gate="A" x="43.18" y="81.28" rot="R90"/>
 <instance part="BATTERY" gate="KE2462" x="86.36" y="17.78">
 <attribute name="DIGIKEY" x="86.36" y="17.78" size="1.778" layer="96" display="off"/>
 </instance>
@@ -5232,11 +5232,11 @@ at 21/03/2012 16:17:53</description>
 <junction x="55.88" y="129.54"/>
 </segment>
 <segment>
-<pinref part="U4" gate="A" pin="GND"/>
+<pinref part="U3" gate="A" pin="GND"/>
 <wire x1="58.42" y1="81.28" x2="50.8" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="GND4" gate="1" pin="GND"/>
 <wire x1="50.8" y1="81.28" x2="50.8" y2="78.74" width="0.1524" layer="91"/>
-<pinref part="R4" gate="A" pin="R2"/>
+<pinref part="R2" gate="A" pin="R2"/>
 <wire x1="50.8" y1="78.74" x2="50.8" y2="71.12" width="0.1524" layer="91"/>
 <wire x1="43.18" y1="81.28" x2="43.18" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="43.18" y1="78.74" x2="50.8" y2="78.74" width="0.1524" layer="91"/>
@@ -5294,7 +5294,7 @@ at 21/03/2012 16:17:53</description>
 <wire x1="48.26" y1="154.94" x2="48.26" y2="147.32" width="0.1524" layer="91"/>
 <pinref part="U2" gate="A" pin="SW1"/>
 <wire x1="48.26" y1="147.32" x2="63.5" y2="147.32" width="0.1524" layer="91"/>
-<pinref part="L2" gate="G$1" pin="2"/>
+<pinref part="L1" gate="G$1" pin="2"/>
 <wire x1="43.18" y1="154.94" x2="43.18" y2="152.4" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -5304,7 +5304,7 @@ at 21/03/2012 16:17:53</description>
 <wire x1="48.26" y1="139.7" x2="48.26" y2="144.78" width="0.1524" layer="91"/>
 <pinref part="U2" gate="A" pin="SW2"/>
 <wire x1="48.26" y1="144.78" x2="63.5" y2="144.78" width="0.1524" layer="91"/>
-<pinref part="L2" gate="G$1" pin="1"/>
+<pinref part="L1" gate="G$1" pin="1"/>
 <wire x1="43.18" y1="139.7" x2="43.18" y2="142.24" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -5312,13 +5312,13 @@ at 21/03/2012 16:17:53</description>
 <segment>
 <pinref part="U2" gate="A" pin="~SHDN"/>
 <wire x1="63.5" y1="149.86" x2="55.88" y2="149.86" width="0.1524" layer="91"/>
-<pinref part="R3" gate="A" pin="R2"/>
+<pinref part="R1" gate="A" pin="R2"/>
 <wire x1="55.88" y1="152.4" x2="55.88" y2="149.86" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$1" class="0">
 <segment>
-<pinref part="U4" gate="A" pin="~RESET"/>
+<pinref part="U3" gate="A" pin="~RESET"/>
 <pinref part="Q1" gate="G$1" pin="G"/>
 <wire x1="93.98" y1="86.36" x2="93.98" y2="68.58" width="0.1524" layer="91"/>
 </segment>
@@ -5327,14 +5327,14 @@ at 21/03/2012 16:17:53</description>
 <segment>
 <pinref part="J2" gate="G$1" pin="PWR"/>
 <pinref part="D1" gate="G$1" pin="1"/>
-<pinref part="U4" gate="A" pin="VCC"/>
+<pinref part="U3" gate="A" pin="VCC"/>
 <wire x1="38.1" y1="104.14" x2="43.18" y2="104.14" width="0.1524" layer="91"/>
 <wire x1="43.18" y1="104.14" x2="53.34" y2="104.14" width="0.1524" layer="91"/>
 <wire x1="53.34" y1="104.14" x2="73.66" y2="104.14" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="86.36" x2="53.34" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="53.34" y1="86.36" x2="53.34" y2="104.14" width="0.1524" layer="91"/>
 <junction x="53.34" y="104.14"/>
-<pinref part="R4" gate="A" pin="R1"/>
+<pinref part="R2" gate="A" pin="R1"/>
 <wire x1="43.18" y1="93.98" x2="43.18" y2="104.14" width="0.1524" layer="91"/>
 <junction x="43.18" y="104.14"/>
 </segment>
@@ -5360,7 +5360,7 @@ at 21/03/2012 16:17:53</description>
 <wire x1="96.52" y1="63.5" x2="101.6" y2="63.5" width="0.1524" layer="91"/>
 <wire x1="101.6" y1="63.5" x2="101.6" y2="86.36" width="0.1524" layer="91"/>
 <junction x="101.6" y="86.36"/>
-<pinref part="R3" gate="A" pin="R1"/>
+<pinref part="R1" gate="A" pin="R1"/>
 <wire x1="55.88" y1="165.1" x2="55.88" y2="167.64" width="0.1524" layer="91"/>
 <junction x="55.88" y="167.64"/>
 </segment>
