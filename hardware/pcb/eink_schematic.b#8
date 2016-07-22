@@ -908,7 +908,13 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <signal name="SPI_CLK">
 <contactref element="U1" pad="16"/>
 <contactref element="JP1" pad="9"/>
-<wire x1="32.13" y1="31.95" x2="50.59" y2="19.05" width="0" layer="19" extent="1-1"/>
+<wire x1="32.13" y1="31.95" x2="32.13" y2="29.87" width="0.4064" layer="16"/>
+<wire x1="32.13" y1="29.87" x2="32.5" y2="29.5" width="0.4064" layer="16"/>
+<wire x1="32.5" y1="29.5" x2="49.5" y2="29.5" width="0.4064" layer="16"/>
+<wire x1="49.5" y1="29.5" x2="50.5" y2="28.5" width="0.4064" layer="16"/>
+<via x="50.5" y="28.5" extent="1-16" drill="0.6"/>
+<wire x1="50.5" y1="28.5" x2="50.59" y2="28.41" width="0.4064" layer="1"/>
+<wire x1="50.59" y1="28.41" x2="50.59" y2="19.05" width="0.4064" layer="1"/>
 </signal>
 <signal name="SPI_MISO">
 <contactref element="U1" pad="14"/>

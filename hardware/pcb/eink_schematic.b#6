@@ -927,7 +927,17 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <signal name="SPI_MISO">
 <contactref element="U1" pad="14"/>
 <contactref element="JP1" pad="6"/>
-<wire x1="24.51" y1="31.95" x2="52.59" y2="19.05" width="0" layer="19" extent="1-1"/>
+<wire x1="24.51" y1="31.95" x2="24.51" y2="30.99" width="0.4064" layer="1"/>
+<wire x1="24.51" y1="30.99" x2="25" y2="30.5" width="0.4064" layer="1"/>
+<wire x1="25" y1="30.5" x2="26" y2="30.5" width="0.4064" layer="1"/>
+<wire x1="26" y1="30.5" x2="27.5" y2="29" width="0.4064" layer="1"/>
+<via x="27.5" y="29" extent="1-16" drill="0.6"/>
+<wire x1="27.5" y1="29" x2="30" y2="26.5" width="0.4064" layer="16"/>
+<wire x1="30" y1="26.5" x2="49" y2="26.5" width="0.4064" layer="16"/>
+<wire x1="49" y1="26.5" x2="52.5" y2="23" width="0.4064" layer="16"/>
+<via x="52.5" y="23" extent="1-16" drill="0.6"/>
+<wire x1="52.5" y1="23" x2="52.5" y2="19.14" width="0.4064" layer="1"/>
+<wire x1="52.5" y1="19.14" x2="52.59" y2="19.05" width="0.4064" layer="1"/>
 </signal>
 <signal name="GND">
 <contactref element="U1" pad="32"/>

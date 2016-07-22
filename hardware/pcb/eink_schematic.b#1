@@ -160,11 +160,13 @@
 <wire x1="65.15" y1="74.82" x2="65.15" y2="36.26" width="0.4064" layer="20"/>
 <wire x1="65.15" y1="36.26" x2="0.23" y2="36.26" width="0.4064" layer="20"/>
 <wire x1="0.23" y1="36.26" x2="0.23" y2="0.2" width="0.4064" layer="20"/>
-<dimension x1="10.5" y1="43" x2="0.5" y2="43" x3="5.5" y3="42" textsize="1.778" layer="20"/>
+<dimension x1="10.5" y1="43" x2="0.5" y2="43" x3="5.5" y3="42" textsize="1.778" textratio="12" layer="20"/>
 <dimension x1="10.5" y1="52" x2="65" y2="52" x3="37.75" y3="53" textsize="1.778" layer="20"/>
 <dimension x1="89.486" y1="7.5" x2="89.5" y2="34.5" x3="92.993515625" y3="20.998184375" textsize="1.778" layer="20"/>
 <dimension x1="89.5" y1="34.5" x2="89.5" y2="61.5" x3="93.5" y3="48" textsize="1.778" layer="20"/>
 <dimension x1="98.17" y1="0.2" x2="98.17" y2="74.82" x3="116" y3="37.51" textsize="1.778" layer="20"/>
+<text x="13" y="10" size="1.778" layer="21" font="vector" ratio="12">Cole Hudson</text>
+<text x="13" y="7.5" size="1.4" layer="21" font="vector" ratio="12">2016/07/21</text>
 </plain>
 <libraries>
 <library name="nucleum">
@@ -821,7 +823,7 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 </element>
 <element name="Q1" library="transistor-fet" package="SSOT-3" value="FDN340P" x="27.32" y="18.59" smashed="yes" rot="R90">
 <attribute name="DIGIKEY" value="FDN340PCT-ND" x="27.32" y="18.59" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="28.14" y="21.55" size="1.016" layer="25" font="vector" ratio="18" rot="R180"/>
+<attribute name="NAME" x="28.14" y="21.55" size="1.016" layer="25" font="vector" ratio="12" rot="R180"/>
 <attribute name="VALUE" x="30.495" y="16.685" size="0.8128" layer="27" ratio="10" rot="R90"/>
 </element>
 <element name="U4" library="Maxim_By_element14_Batch_1" package="SOT95P228X119-3N" value="MAX6326UR29+" x="22.74" y="18.44" smashed="yes">
@@ -831,7 +833,7 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <attribute name="SUPPLIER" value="Maxim" x="22.74" y="18.44" size="1.778" layer="27" display="off"/>
 <attribute name="OC_FARNELL" value="9723951" x="22.74" y="18.44" size="1.778" layer="27" display="off"/>
 <attribute name="DIGIKEY" value="MAX6326UR29+TCT-ND" x="22.74" y="18.44" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="21.7856" y="20.48" size="1" layer="25" font="vector" ratio="10" rot="SR0"/>
+<attribute name="NAME" x="21.7856" y="20.48" size="1" layer="25" font="vector" ratio="12" rot="SR0"/>
 <attribute name="VALUE" x="19.2856" y="13.995" size="2.0828" layer="27" ratio="10" rot="SR0"/>
 </element>
 <element name="J2" library="SparkFun-Connectors" package="POWER_JACK_SMD" value="5.5x2.1mm Barrel" x="2.31" y="7.82">
@@ -841,7 +843,7 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 </element>
 <element name="L2" library="inductor-tdk" package="VLF302510MT" value="VLF302510MT" x="18.16" y="21.79" smashed="yes" rot="R270">
 <attribute name="DIGIKEY" value="445-6775-1-ND" x="18.16" y="21.79" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="20.311" y="22.941" size="1.016" layer="25" font="vector" ratio="18" rot="R270"/>
+<attribute name="NAME" x="20.311" y="22.941" size="1.016" layer="25" font="vector" ratio="12" rot="R270"/>
 <attribute name="VALUE" x="15.747" y="23.441" size="0.8128" layer="27" ratio="10" rot="R270"/>
 </element>
 <element name="R3" library="Yageo_By_element14_Batch_1" package="RESC1608X60N" value="100K Ohms" x="10.85" y="19.48" smashed="yes" rot="R90">
@@ -852,7 +854,7 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <attribute name="OC_FARNELL" value="9233628" x="10.85" y="19.48" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="WATTAGE" value="1/10 W" x="10.85" y="19.48" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="DIGIKEY" value="311-100KGRCT-ND" x="10.85" y="19.48" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="10.08" y="18.5256" size="1" layer="25" font="vector" ratio="10" rot="SR90"/>
+<attribute name="NAME" x="10.08" y="18.5256" size="1" layer="25" font="vector" ratio="12" rot="SR90"/>
 <attribute name="VALUE" x="14.025" y="16.0256" size="2.0828" layer="27" ratio="10" rot="SR90"/>
 </element>
 <element name="R4" library="Yageo_By_element14_Batch_1" package="RESC1608X60N" value="100K Ohms" x="8.27" y="21.79" smashed="yes" rot="R90">
@@ -862,7 +864,7 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <attribute name="SUPPLIER" value="Yageo" x="8.27" y="21.79" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="OC_FARNELL" value="9233628" x="8.27" y="21.79" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="WATTAGE" value="1/10 W" x="8.27" y="21.79" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="7.5" y="20.8356" size="1" layer="25" font="vector" ratio="10" rot="SR90"/>
+<attribute name="NAME" x="7.5" y="20.8356" size="1" layer="25" font="vector" ratio="12" rot="SR90"/>
 <attribute name="VALUE" x="11.445" y="18.3356" size="2.0828" layer="27" ratio="10" rot="SR90"/>
 </element>
 <element name="U$1" library="holes" package="3,2" value="" x="5" y="30.5"/>
@@ -996,11 +998,32 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <wire x1="16" y1="24.5" x2="15.5" y2="25" width="0.4064" layer="1"/>
 <wire x1="15.5" y1="25" x2="14" y2="25" width="0.4064" layer="1"/>
 <polygon width="0.4064" layer="1">
-<vertex x="0.5" y="26"/>
-<vertex x="38" y="26"/>
-<vertex x="38" y="25.5"/>
-<vertex x="38" y="0.5"/>
+<vertex x="0.5" y="27.5"/>
+<vertex x="34" y="27.5"/>
+<vertex x="34" y="0.5"/>
 <vertex x="0.5" y="0.5"/>
+</polygon>
+<polygon width="0.4064" layer="16">
+<vertex x="0.5" y="27.5"/>
+<vertex x="34" y="27.5"/>
+<vertex x="34" y="0.5"/>
+<vertex x="0.5" y="0.5"/>
+</polygon>
+<polygon width="0.4064" layer="16">
+<vertex x="9.5" y="36"/>
+<vertex x="61.5" y="36"/>
+<vertex x="61.5" y="8.5"/>
+<vertex x="34" y="8.5"/>
+<vertex x="34" y="27.5"/>
+<vertex x="9.5" y="27.5"/>
+</polygon>
+<polygon width="0.4064" layer="1">
+<vertex x="9.5" y="36"/>
+<vertex x="61.5" y="36"/>
+<vertex x="61.5" y="8.5"/>
+<vertex x="34" y="8.5"/>
+<vertex x="34" y="27.5"/>
+<vertex x="9.5" y="27.5"/>
 </polygon>
 </signal>
 <signal name="VCC">
