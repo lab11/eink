@@ -4758,10 +4758,15 @@ at 21/03/2012 16:17:53</description>
 <library name="through_hole_battery_pack">
 <packages>
 <package name="KEYSTONEELECTRONICS2462">
-<pad name="P3" x="0" y="0" drill="1.016" shape="square"/>
-<pad name="P4" x="14.986" y="0" drill="1.016" shape="square"/>
-<pad name="P2" x="14.986" y="27.178" drill="3.302" shape="square"/>
-<pad name="P1" x="0" y="27.178" drill="3.302" shape="square" rot="R90"/>
+<pad name="P3" x="-7.493" y="-27.178" drill="1.016" shape="square"/>
+<pad name="P4" x="7.493" y="-27.178" drill="1.016" shape="square"/>
+<wire x1="-16.4592" y1="29.7561" x2="-16.4592" y2="-29.7561" width="0.127" layer="21"/>
+<wire x1="-16.4592" y1="-29.7561" x2="16.4592" y2="-29.7561" width="0.127" layer="21"/>
+<wire x1="16.4592" y1="-29.7561" x2="16.4592" y2="29.7561" width="0.127" layer="21"/>
+<wire x1="16.4592" y1="29.7561" x2="-16.4592" y2="29.7561" width="0.127" layer="21"/>
+<text x="0" y="30.178" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+<hole x="-7.493" y="0" drill="3.302"/>
+<hole x="7.493" y="0" drill="3.302"/>
 </package>
 </packages>
 <symbols>
@@ -4770,12 +4775,10 @@ at 21/03/2012 16:17:53</description>
 <wire x1="0" y1="27.94" x2="20.32" y2="27.94" width="0.254" layer="94"/>
 <wire x1="20.32" y1="27.94" x2="20.32" y2="0" width="0.254" layer="94"/>
 <wire x1="20.32" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
-<pin name="P1" x="-5.08" y="22.86" length="middle"/>
-<pin name="P3+" x="-5.08" y="2.54" length="middle"/>
-<pin name="P4-" x="25.4" y="2.54" length="middle" rot="R180"/>
-<pin name="P2" x="25.4" y="22.86" length="middle" rot="R180"/>
+<pin name="+" x="-5.08" y="2.54" length="middle"/>
+<pin name="-" x="25.4" y="2.54" length="middle" rot="R180"/>
 <text x="2.54" y="27.94" size="2.54" layer="96">&gt;NAME</text>
-<text x="2.54" y="-2.54" size="2.54" layer="96">&gt;VALUE</text>
+<text x="10.16" y="-2.54" size="1.27" layer="96" ratio="12" rot="R180" align="bottom-center">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -4786,11 +4789,219 @@ at 21/03/2012 16:17:53</description>
 <devices>
 <device name="" package="KEYSTONEELECTRONICS2462">
 <connects>
-<connect gate="KE2462" pin="P1" pad="P1"/>
-<connect gate="KE2462" pin="P2" pad="P2"/>
-<connect gate="KE2462" pin="P3+" pad="P3"/>
-<connect gate="KE2462" pin="P4-" pad="P4"/>
+<connect gate="KE2462" pin="+" pad="P3"/>
+<connect gate="KE2462" pin="-" pad="P4"/>
 </connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+<library name="logos">
+<description>&lt;b&gt;LAB11&lt;/b&gt; - Logos for PCBs.</description>
+<packages>
+<package name="UMICH_SOLID_75MIL">
+<description>University of Michigan - Solid block M 0.075 in tall.</description>
+<rectangle x1="0" y1="1.3716" x2="0.8001" y2="1.905" layer="21"/>
+<wire x1="0.8001" y1="1.8923" x2="1.3335" y2="1.1811" width="0.0254" layer="21"/>
+<wire x1="1.3335" y1="1.1811" x2="1.8669" y2="1.8923" width="0.0254" layer="21"/>
+<wire x1="1.3335" y1="0.3429" x2="1.8923" y2="1.0668" width="0.0254" layer="21"/>
+<wire x1="1.3335" y1="0.3429" x2="0.7747" y2="1.0541" width="0.0254" layer="21"/>
+<rectangle x1="0.2032" y1="0.5334" x2="0.7874" y2="1.3716" layer="21"/>
+<rectangle x1="0" y1="0" x2="1.016" y2="0.5334" layer="21"/>
+<rectangle x1="1.651" y1="0" x2="2.667" y2="0.5334" layer="21"/>
+<rectangle x1="1.8796" y1="0.5334" x2="2.4638" y2="1.3716" layer="21"/>
+<rectangle x1="1.8669" y1="1.3716" x2="2.667" y2="1.905" layer="21"/>
+<polygon width="0.0254" layer="21">
+<vertex x="1.8669" y="1.8923"/>
+<vertex x="1.3335" y="1.1811"/>
+<vertex x="0.8001" y="1.8923"/>
+<vertex x="0.8001" y="1.0414"/>
+<vertex x="1.3335" y="0.3683"/>
+<vertex x="1.8796" y="1.0795"/>
+</polygon>
+</package>
+<package name="UMICH_SOLID_200MIL">
+<description>University of Michigan - Solid block M 0.200 in tall.</description>
+<rectangle x1="0" y1="3.6322" x2="2.1336" y2="5.08" layer="21"/>
+<wire x1="2.1336" y1="5.0673" x2="3.5433" y2="3.1623" width="0.0254" layer="21"/>
+<wire x1="3.5433" y1="3.1623" x2="4.9276" y2="5.0673" width="0.0254" layer="21"/>
+<wire x1="4.9657" y1="2.7559" x2="3.5306" y2="0.8763" width="0.0254" layer="21"/>
+<wire x1="3.5306" y1="0.8763" x2="2.1209" y2="2.7559" width="0.0254" layer="21"/>
+<rectangle x1="0.5334" y1="1.4478" x2="2.1082" y2="3.6322" layer="21"/>
+<rectangle x1="0" y1="0" x2="2.6924" y2="1.4478" layer="21"/>
+<rectangle x1="4.3942" y1="0" x2="7.0866" y2="1.4478" layer="21"/>
+<rectangle x1="4.9784" y1="1.4478" x2="6.5532" y2="3.6322" layer="21"/>
+<rectangle x1="4.9276" y1="3.6322" x2="7.0866" y2="5.08" layer="21"/>
+<polygon width="0.0254" layer="21">
+<vertex x="2.1209" y="2.7559"/>
+<vertex x="3.5306" y="0.8763"/>
+<vertex x="5.0165" y="2.8194"/>
+<vertex x="5.0165" y="5.0673"/>
+<vertex x="4.9276" y="5.0673"/>
+<vertex x="3.5433" y="3.1623"/>
+<vertex x="2.1336" y="5.0673"/>
+<vertex x="2.0701" y="5.0673"/>
+<vertex x="2.0701" y="2.7559"/>
+</polygon>
+</package>
+<package name="UMICH_SOLID_500MIL">
+<description>University of Michigan - Solid block M 0.500 in tall.</description>
+<rectangle x1="0" y1="0" x2="6.7056" y2="3.6068" layer="21"/>
+<rectangle x1="1.2954" y1="3.6068" x2="5.2578" y2="9.0932" layer="21"/>
+<rectangle x1="0" y1="9.0932" x2="5.334" y2="12.7" layer="21"/>
+<polygon width="0.0254" layer="21">
+<vertex x="5.334" y="12.6873"/>
+<vertex x="8.8519" y="7.8613"/>
+<vertex x="12.3444" y="12.6873"/>
+<vertex x="12.5603" y="12.6873"/>
+<vertex x="12.5603" y="6.9723"/>
+<vertex x="12.4587" y="6.9723"/>
+<vertex x="8.8392" y="2.1463"/>
+<vertex x="5.2705" y="6.9723"/>
+<vertex x="5.0419" y="6.9723"/>
+<vertex x="5.0546" y="12.6873"/>
+</polygon>
+<rectangle x1="12.573" y1="9.0932" x2="17.7292" y2="12.7" layer="21"/>
+<rectangle x1="12.4714" y1="3.6068" x2="16.4338" y2="9.0932" layer="21"/>
+<rectangle x1="11.0236" y1="0" x2="17.7292" y2="3.6068" layer="21"/>
+</package>
+<package name="UMICH_SOLID_1000MIL">
+<description>University of Michigan - Solid block M 1.000 in tall.</description>
+<rectangle x1="0" y1="0" x2="13.4112" y2="7.2136" layer="21"/>
+<rectangle x1="2.5908" y1="7.2136" x2="10.5156" y2="18.1864" layer="21"/>
+<rectangle x1="0" y1="18.1864" x2="10.668" y2="25.4" layer="21"/>
+<polygon width="0.0508" layer="21">
+<vertex x="10.668" y="25.3746"/>
+<vertex x="17.7038" y="15.7226"/>
+<vertex x="24.6888" y="25.3746"/>
+<vertex x="25.146" y="25.3746"/>
+<vertex x="25.146" y="13.9446"/>
+<vertex x="24.9174" y="13.9446"/>
+<vertex x="17.6784" y="4.2926"/>
+<vertex x="10.541" y="13.9446"/>
+<vertex x="10.1854" y="13.9446"/>
+<vertex x="10.1854" y="25.3746"/>
+</polygon>
+<rectangle x1="22.0472" y1="0" x2="35.4584" y2="7.2136" layer="21"/>
+<rectangle x1="24.9428" y1="7.2136" x2="32.8676" y2="18.1864" layer="21"/>
+<rectangle x1="25.146" y1="18.1864" x2="35.4584" y2="25.4" layer="21"/>
+</package>
+<package name="UMICH_SOLID_350MIL">
+<description>University of Michigan - Solid block M 0.350 in tall.</description>
+<rectangle x1="0" y1="6.3754" x2="3.7338" y2="8.89" layer="21"/>
+<rectangle x1="0.9144" y1="2.5146" x2="3.683" y2="6.3754" layer="21"/>
+<rectangle x1="0" y1="0" x2="4.699" y2="2.5146" layer="21"/>
+<rectangle x1="7.7216" y1="0" x2="12.4206" y2="2.5146" layer="21"/>
+<rectangle x1="8.7376" y1="2.5146" x2="11.5062" y2="6.3754" layer="21"/>
+<rectangle x1="8.6614" y1="6.3754" x2="12.4206" y2="8.89" layer="21"/>
+<polygon width="0.0254" layer="21">
+<vertex x="3.7338" y="8.8773"/>
+<vertex x="6.1976" y="5.5245"/>
+<vertex x="8.6614" y="8.8773"/>
+<vertex x="8.8138" y="8.8773"/>
+<vertex x="8.8138" y="4.8641"/>
+<vertex x="8.7249" y="4.8641"/>
+<vertex x="6.1976" y="1.5113"/>
+<vertex x="3.6957" y="4.8641"/>
+<vertex x="3.5814" y="4.8641"/>
+<vertex x="3.5941" y="8.8773"/>
+</polygon>
+</package>
+<package name="UMICH_SOLID_100MIL">
+<rectangle x1="0" y1="1.8161" x2="1.0541" y2="2.54" layer="21"/>
+<rectangle x1="0.2667" y1="0.7239" x2="1.0541" y2="1.8161" layer="21"/>
+<rectangle x1="0" y1="0" x2="1.3462" y2="0.7239" layer="21"/>
+<rectangle x1="2.1971" y1="0" x2="3.5433" y2="0.7239" layer="21"/>
+<rectangle x1="2.4892" y1="0.7239" x2="3.2766" y2="1.8161" layer="21"/>
+<rectangle x1="2.4892" y1="1.8161" x2="3.5433" y2="2.54" layer="21"/>
+<polygon width="0" layer="21">
+<vertex x="2.4892" y="1.37795"/>
+<vertex x="1.7653" y="0.43815"/>
+<vertex x="1.0541" y="1.37795"/>
+<vertex x="1.0541" y="2.54"/>
+<vertex x="1.7653" y="1.6002"/>
+<vertex x="2.4892" y="2.54"/>
+</polygon>
+</package>
+<package name="UMICH_SOLID_50MIL">
+<rectangle x1="-0.885825" y1="0.27305" x2="-0.358775" y2="0.635" layer="21"/>
+<rectangle x1="-0.752475" y1="-0.27305" x2="-0.358775" y2="0.27305" layer="21"/>
+<rectangle x1="-0.885825" y1="-0.635" x2="-0.212725" y2="-0.27305" layer="21"/>
+<rectangle x1="0.212725" y1="-0.635" x2="0.885825" y2="-0.27305" layer="21"/>
+<rectangle x1="0.358775" y1="-0.27305" x2="0.752475" y2="0.27305" layer="21"/>
+<rectangle x1="0.358775" y1="0.27305" x2="0.885825" y2="0.635" layer="21"/>
+<polygon width="0" layer="21">
+<vertex x="0.358775" y="0.053975"/>
+<vertex x="-0.003175" y="-0.415925"/>
+<vertex x="-0.358775" y="0.053975"/>
+<vertex x="-0.358775" y="0.635"/>
+<vertex x="-0.003175" y="0.1651"/>
+<vertex x="0.358775" y="0.635"/>
+</polygon>
+</package>
+</packages>
+<symbols>
+<symbol name="UMICH_SOLID">
+<rectangle x1="0" y1="7.2644" x2="4.2672" y2="10.16" layer="94"/>
+<rectangle x1="1.0668" y1="2.8956" x2="4.2164" y2="7.2644" layer="94"/>
+<rectangle x1="0" y1="0" x2="5.3848" y2="2.8956" layer="94"/>
+<rectangle x1="8.7884" y1="0" x2="14.1732" y2="2.8956" layer="94"/>
+<rectangle x1="9.9568" y1="2.8956" x2="13.1064" y2="7.2644" layer="94"/>
+<rectangle x1="9.906" y1="7.2644" x2="14.1732" y2="10.16" layer="94"/>
+<polygon width="0.0508" layer="94">
+<vertex x="4.2672" y="10.1346"/>
+<vertex x="7.0866" y="6.3246"/>
+<vertex x="9.906" y="10.1346"/>
+<vertex x="10.0838" y="10.1346"/>
+<vertex x="10.0838" y="5.5626"/>
+<vertex x="9.9568" y="5.5626"/>
+<vertex x="7.0612" y="1.7526"/>
+<vertex x="4.2164" y="5.5626"/>
+<vertex x="4.2418" y="10.1346"/>
+</polygon>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="UMICH_SOLID" prefix="LOGO">
+<gates>
+<gate name="G$1" symbol="UMICH_SOLID" x="0" y="0"/>
+</gates>
+<devices>
+<device name="_SMALL" package="UMICH_SOLID_75MIL">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_MEDIUM" package="UMICH_SOLID_200MIL">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_HUGE" package="UMICH_SOLID_500MIL">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_GIANT" package="UMICH_SOLID_1000MIL">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_LARGE" package="UMICH_SOLID_350MIL">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_SMALL+" package="UMICH_SOLID_100MIL">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_TINY" package="UMICH_SOLID_50MIL">
 <technologies>
 <technology name=""/>
 </technologies>
@@ -4852,6 +5063,8 @@ at 21/03/2012 16:17:53</description>
 <part name="BATTERY" library="through_hole_battery_pack" deviceset="KEYSTONEELECTRONICS2462" device="">
 <attribute name="DIGIKEY" value="36-2462-ND"/>
 </part>
+<part name="LOGO1" library="logos" deviceset="UMICH_SOLID" device="_LARGE"/>
+<part name="GND5" library="umich" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -4899,11 +5112,13 @@ at 21/03/2012 16:17:53</description>
 <instance part="BATTERY" gate="KE2462" x="86.36" y="17.78">
 <attribute name="DIGIKEY" x="86.36" y="17.78" size="1.778" layer="96" display="off"/>
 </instance>
+<instance part="LOGO1" gate="G$1" x="45.72" y="35.56"/>
+<instance part="GND5" gate="1" x="33.02" y="93.98"/>
 </instances>
 <busses>
 </busses>
 <nets>
-<net name="TC_BUSY" class="0">
+<net name="!TC_BUSY" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="P23"/>
 <wire x1="149.86" y1="68.58" x2="149.86" y2="60.96" width="0.1524" layer="91"/>
@@ -4915,7 +5130,7 @@ at 21/03/2012 16:17:53</description>
 <label x="228.6" y="106.68" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="ENABLE" class="0">
+<net name="!ENABLE" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="P24"/>
 <wire x1="152.4" y1="68.58" x2="152.4" y2="63.5" width="0.1524" layer="91"/>
@@ -5028,12 +5243,23 @@ at 21/03/2012 16:17:53</description>
 <junction x="50.8" y="78.74"/>
 </segment>
 <segment>
-<pinref part="BATTERY" gate="KE2462" pin="P4-"/>
+<pinref part="BATTERY" gate="KE2462" pin="-"/>
 <wire x1="111.76" y1="20.32" x2="114.3" y2="20.32" width="0.1524" layer="91"/>
 <wire x1="114.3" y1="20.32" x2="114.3" y2="30.48" width="0.1524" layer="91"/>
 <pinref part="GND3" gate="1" pin="GND"/>
 <wire x1="114.3" y1="30.48" x2="119.38" y2="30.48" width="0.1524" layer="91"/>
 <wire x1="119.38" y1="30.48" x2="119.38" y2="25.4" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="J2" gate="G$1" pin="GNDBREAK"/>
+<wire x1="38.1" y1="101.6" x2="40.64" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="101.6" x2="40.64" y2="99.06" width="0.1524" layer="91"/>
+<pinref part="J2" gate="G$1" pin="GND"/>
+<wire x1="40.64" y1="99.06" x2="38.1" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="99.06" x2="40.64" y2="96.52" width="0.1524" layer="91"/>
+<junction x="40.64" y="99.06"/>
+<pinref part="GND5" gate="1" pin="GND"/>
+<wire x1="40.64" y1="96.52" x2="33.02" y2="96.52" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VCC" class="0">
@@ -5139,21 +5365,12 @@ at 21/03/2012 16:17:53</description>
 <junction x="55.88" y="167.64"/>
 </segment>
 </net>
-<net name="N$6" class="0">
-<segment>
-<pinref part="J2" gate="G$1" pin="GNDBREAK"/>
-<wire x1="38.1" y1="101.6" x2="40.64" y2="101.6" width="0.1524" layer="91"/>
-<wire x1="40.64" y1="101.6" x2="40.64" y2="99.06" width="0.1524" layer="91"/>
-<pinref part="J2" gate="G$1" pin="GND"/>
-<wire x1="40.64" y1="99.06" x2="38.1" y2="99.06" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="N$4" class="0">
 <segment>
 <pinref part="Q1" gate="G$1" pin="D"/>
 <wire x1="86.36" y1="63.5" x2="76.2" y2="63.5" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="63.5" x2="76.2" y2="20.32" width="0.1524" layer="91"/>
-<pinref part="BATTERY" gate="KE2462" pin="P3+"/>
+<pinref part="BATTERY" gate="KE2462" pin="+"/>
 <wire x1="76.2" y1="20.32" x2="81.28" y2="20.32" width="0.1524" layer="91"/>
 </segment>
 </net>

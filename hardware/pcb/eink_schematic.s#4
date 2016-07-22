@@ -2401,82 +2401,6 @@ at 30/07/2012 10:08:22</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="connector">
-<description>&lt;b&gt;LAB11&lt;/b&gt; - Connectors for various cable types.</description>
-<packages>
-<package name="AA_BAT">
-<wire x1="-16.002" y1="29.972" x2="16.002" y2="29.972" width="0.127" layer="21"/>
-<wire x1="16.002" y1="29.972" x2="16.002" y2="-30.226" width="0.127" layer="21"/>
-<wire x1="16.002" y1="-30.226" x2="-16.002" y2="-30.226" width="0.127" layer="21"/>
-<wire x1="-16.002" y1="-30.226" x2="-16.002" y2="29.972" width="0.127" layer="21"/>
-<pad name="P1+" x="-7.874" y="-27.178" drill="1.524"/>
-<pad name="P2-" x="7.874" y="-27.178" drill="1.524"/>
-<pad name="P1-" x="-7.874" y="27.178" drill="1.524"/>
-<pad name="P2+" x="7.874" y="27.178" drill="1.524"/>
-<hole x="-7.874" y="-20.32" drill="3.2004"/>
-<hole x="7.874" y="-20.32" drill="3.2004"/>
-<hole x="-7.874" y="20.32" drill="3.2004"/>
-<hole x="7.874" y="20.32" drill="3.2004"/>
-</package>
-<package name="AA_SMD">
-<smd name="1+" x="-7.112" y="30.734" dx="6.35" dy="7.366" layer="1"/>
-<smd name="2-" x="7.112" y="30.734" dx="6.35" dy="7.366" layer="1"/>
-<smd name="1-" x="-7.112" y="-30.734" dx="6.35" dy="7.366" layer="1"/>
-<smd name="2+" x="7.112" y="-30.734" dx="6.35" dy="7.366" layer="1"/>
-<hole x="13.97" y="26.924" drill="2.286"/>
-<wire x1="-14.986" y1="29.972" x2="14.986" y2="29.972" width="0.127" layer="21"/>
-<wire x1="14.986" y1="29.972" x2="14.986" y2="-29.972" width="0.127" layer="21"/>
-<wire x1="14.986" y1="-29.972" x2="-14.986" y2="-29.972" width="0.127" layer="21"/>
-<wire x1="-14.986" y1="-29.972" x2="-14.986" y2="29.972" width="0.127" layer="21"/>
-</package>
-</packages>
-<symbols>
-<symbol name="AA_BAT">
-<wire x1="-5.08" y1="7.62" x2="-5.08" y2="-7.62" width="0.254" layer="94"/>
-<wire x1="-5.08" y1="-7.62" x2="5.08" y2="-7.62" width="0.254" layer="94"/>
-<wire x1="5.08" y1="-7.62" x2="5.08" y2="7.62" width="0.254" layer="94"/>
-<wire x1="5.08" y1="7.62" x2="-5.08" y2="7.62" width="0.254" layer="94"/>
-<pin name="P1-" x="-2.54" y="12.7" length="middle" rot="R270"/>
-<pin name="P2+" x="2.54" y="12.7" length="middle" rot="R270"/>
-<pin name="P1+" x="-2.54" y="-12.7" length="middle" rot="R90"/>
-<pin name="P2-" x="2.54" y="-12.7" length="middle" rot="R90"/>
-<text x="-5.08" y="-7.62" size="1.778" layer="95" rot="R90">&gt;NAME</text>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="AA_BAT_PACK" prefix="J">
-<description>Types of AA Battery Packs</description>
-<gates>
-<gate name="G$1" symbol="AA_BAT" x="0" y="5.08"/>
-</gates>
-<devices>
-<device name="PIN" package="AA_BAT">
-<connects>
-<connect gate="G$1" pin="P1+" pad="P1+"/>
-<connect gate="G$1" pin="P1-" pad="P1-"/>
-<connect gate="G$1" pin="P2+" pad="P2+"/>
-<connect gate="G$1" pin="P2-" pad="P2-"/>
-</connects>
-<technologies>
-<technology name=""/>
-<technology name="SMD"/>
-</technologies>
-</device>
-<device name="SMD" package="AA_SMD">
-<connects>
-<connect gate="G$1" pin="P1+" pad="1+"/>
-<connect gate="G$1" pin="P1-" pad="1-"/>
-<connect gate="G$1" pin="P2+" pad="2+"/>
-<connect gate="G$1" pin="P2-" pad="2-"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="nxp">
 <packages>
 <package name="SOD123W">
@@ -4831,6 +4755,50 @@ at 21/03/2012 16:17:53</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="through_hole_battery_pack">
+<packages>
+<package name="KEYSTONEELECTRONICS2462">
+<pad name="P3" x="0" y="0" drill="1.016" shape="square"/>
+<pad name="P4" x="14.986" y="0" drill="1.016" shape="square"/>
+<pad name="P2" x="14.986" y="27.178" drill="3.302" shape="square"/>
+<pad name="P1" x="0" y="27.178" drill="3.302" shape="square" rot="R90"/>
+</package>
+</packages>
+<symbols>
+<symbol name="KEYSTONEELECTRONICS2462">
+<wire x1="0" y1="0" x2="0" y2="27.94" width="0.254" layer="94"/>
+<wire x1="0" y1="27.94" x2="20.32" y2="27.94" width="0.254" layer="94"/>
+<wire x1="20.32" y1="27.94" x2="20.32" y2="0" width="0.254" layer="94"/>
+<wire x1="20.32" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
+<pin name="P1" x="-5.08" y="22.86" length="middle"/>
+<pin name="P3+" x="-5.08" y="2.54" length="middle"/>
+<pin name="P4-" x="25.4" y="2.54" length="middle" rot="R180"/>
+<pin name="P2" x="25.4" y="22.86" length="middle" rot="R180"/>
+<text x="2.54" y="27.94" size="2.54" layer="96">&gt;NAME</text>
+<text x="2.54" y="-2.54" size="2.54" layer="96">&gt;VALUE</text>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="KEYSTONEELECTRONICS2462">
+<gates>
+<gate name="KE2462" symbol="KEYSTONEELECTRONICS2462" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="KEYSTONEELECTRONICS2462">
+<connects>
+<connect gate="KE2462" pin="P1" pad="P1"/>
+<connect gate="KE2462" pin="P2" pad="P2"/>
+<connect gate="KE2462" pin="P3+" pad="P3"/>
+<connect gate="KE2462" pin="P4-" pad="P4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 <attribute name="AUTHOR" value="Cole Hudson"/>
@@ -4859,9 +4827,6 @@ at 21/03/2012 16:17:53</description>
 <part name="C2" library="passives" deviceset="CAPACITOR" device="" value="10uF">
 <attribute name="DIGIKEY" value="490-10693-1-ND"/>
 </part>
-<part name="J1" library="connector" deviceset="AA_BAT_PACK" device="SMD">
-<attribute name="DIGIKEY" value="36-1012-ND"/>
-</part>
 <part name="GND2" library="umich" deviceset="GND" device=""/>
 <part name="GND3" library="umich" deviceset="GND" device=""/>
 <part name="D1" library="nxp" deviceset="DIODE[SCHOTKY]" device="-SOD123W">
@@ -4883,8 +4848,9 @@ at 21/03/2012 16:17:53</description>
 <part name="R3" library="Yageo_By_element14_Batch_1" deviceset="RC0603JR-07100KL" device="" value="100K Ohms">
 <attribute name="DIGIKEY" value="311-100KGRCT-ND"/>
 </part>
-<part name="R4" library="Yageo_By_element14_Batch_1" deviceset="RC0603JR-07100KL" device="" value="100K Ohms">
-<attribute name="DIGIKEY" value="311-100KGRCT-ND"/>
+<part name="R4" library="Yageo_By_element14_Batch_1" deviceset="RC0603JR-07100KL" device="" value="100K Ohms"/>
+<part name="BATTERY" library="through_hole_battery_pack" deviceset="KEYSTONEELECTRONICS2462" device="">
+<attribute name="DIGIKEY" value="36-2462-ND"/>
 </part>
 </parts>
 <sheets>
@@ -4908,11 +4874,8 @@ at 21/03/2012 16:17:53</description>
 <instance part="C2" gate="G$1" x="106.68" y="147.32">
 <attribute name="DIGIKEY" x="106.68" y="147.32" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="J1" gate="G$1" x="91.44" y="43.18" rot="R90">
-<attribute name="DIGIKEY" x="91.44" y="43.18" size="1.778" layer="96" rot="R90" display="off"/>
-</instance>
 <instance part="GND2" gate="1" x="106.68" y="124.46"/>
-<instance part="GND3" gate="1" x="66.04" y="38.1"/>
+<instance part="GND3" gate="1" x="119.38" y="22.86"/>
 <instance part="D1" gate="G$1" x="76.2" y="104.14">
 <attribute name="DIGIKEY" x="76.2" y="104.14" size="1.778" layer="96" display="off"/>
 </instance>
@@ -4932,8 +4895,9 @@ at 21/03/2012 16:17:53</description>
 <instance part="R3" gate="A" x="55.88" y="152.4" rot="R90">
 <attribute name="DIGIKEY" x="55.88" y="152.4" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
-<instance part="R4" gate="A" x="43.18" y="81.28" rot="R90">
-<attribute name="DIGIKEY" x="43.18" y="81.28" size="1.778" layer="96" rot="R90" display="off"/>
+<instance part="R4" gate="A" x="43.18" y="81.28" rot="R90"/>
+<instance part="BATTERY" gate="KE2462" x="86.36" y="17.78">
+<attribute name="DIGIKEY" x="86.36" y="17.78" size="1.778" layer="96" display="off"/>
 </instance>
 </instances>
 <busses>
@@ -5064,9 +5028,12 @@ at 21/03/2012 16:17:53</description>
 <junction x="50.8" y="78.74"/>
 </segment>
 <segment>
-<pinref part="J1" gate="G$1" pin="P1-"/>
+<pinref part="BATTERY" gate="KE2462" pin="P4-"/>
+<wire x1="111.76" y1="20.32" x2="114.3" y2="20.32" width="0.1524" layer="91"/>
+<wire x1="114.3" y1="20.32" x2="114.3" y2="30.48" width="0.1524" layer="91"/>
 <pinref part="GND3" gate="1" pin="GND"/>
-<wire x1="78.74" y1="40.64" x2="66.04" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="114.3" y1="30.48" x2="119.38" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="119.38" y1="30.48" x2="119.38" y2="25.4" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VCC" class="0">
@@ -5183,19 +5150,11 @@ at 21/03/2012 16:17:53</description>
 </net>
 <net name="N$4" class="0">
 <segment>
-<pinref part="J1" gate="G$1" pin="P2+"/>
-<wire x1="78.74" y1="45.72" x2="78.74" y2="63.5" width="0.1524" layer="91"/>
 <pinref part="Q1" gate="G$1" pin="D"/>
-<wire x1="78.74" y1="63.5" x2="86.36" y2="63.5" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$5" class="0">
-<segment>
-<pinref part="J1" gate="G$1" pin="P2-"/>
-<wire x1="104.14" y1="45.72" x2="106.68" y2="45.72" width="0.1524" layer="91"/>
-<wire x1="106.68" y1="45.72" x2="106.68" y2="40.64" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$1" pin="P1+"/>
-<wire x1="106.68" y1="40.64" x2="104.14" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="86.36" y1="63.5" x2="76.2" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="63.5" x2="76.2" y2="20.32" width="0.1524" layer="91"/>
+<pinref part="BATTERY" gate="KE2462" pin="P3+"/>
+<wire x1="76.2" y1="20.32" x2="81.28" y2="20.32" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

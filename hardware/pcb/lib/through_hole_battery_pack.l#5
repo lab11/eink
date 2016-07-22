@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
@@ -71,10 +71,17 @@
 <library>
 <packages>
 <package name="KEYSTONEELECTRONICS2462">
-<pad name="P$1" x="0" y="0" drill="0.8" shape="square"/>
-<pad name="P$2" x="14.986" y="0" drill="0.8" shape="square"/>
-<pad name="P$3" x="14.986" y="27.178" drill="0.8" shape="square"/>
-<pad name="P$4" x="0" y="27.178" drill="0.8" shape="square" rot="R90"/>
+<pad name="P3" x="-7.493" y="-27.178" drill="1.016" shape="square"/>
+<pad name="P4" x="7.493" y="-27.178" drill="1.016" shape="square"/>
+<pad name="P2" x="7.493" y="0" drill="3.302" shape="square"/>
+<pad name="P1" x="-7.493" y="0" drill="3.302" shape="square" rot="R90"/>
+<wire x1="-16.4592" y1="29.7561" x2="-16.4592" y2="-29.7561" width="0.127" layer="21"/>
+<wire x1="-16.4592" y1="-29.7561" x2="16.4592" y2="-29.7561" width="0.127" layer="21"/>
+<wire x1="16.4592" y1="-29.7561" x2="16.4592" y2="29.7561" width="0.127" layer="21"/>
+<wire x1="16.4592" y1="29.7561" x2="-16.4592" y2="29.7561" width="0.127" layer="21"/>
+<text x="0" y="30.178" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+<hole x="-7.493" y="0" drill="3.302"/>
+<hole x="7.493" y="0" drill="3.302"/>
 </package>
 </packages>
 <symbols>
@@ -84,14 +91,32 @@
 <wire x1="20.32" y1="27.94" x2="20.32" y2="0" width="0.254" layer="94"/>
 <wire x1="20.32" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
 <pin name="P1" x="-5.08" y="22.86" length="middle"/>
-<pin name="P3" x="-5.08" y="2.54" length="middle"/>
-<pin name="P4" x="25.4" y="2.54" length="middle" rot="R180"/>
+<pin name="P3+" x="-5.08" y="2.54" length="middle"/>
+<pin name="P4-" x="25.4" y="2.54" length="middle" rot="R180"/>
 <pin name="P2" x="25.4" y="22.86" length="middle" rot="R180"/>
 <text x="2.54" y="27.94" size="2.54" layer="96">&gt;NAME</text>
 <text x="2.54" y="-2.54" size="2.54" layer="96">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
+<deviceset name="KEYSTONEELECTRONICS2462">
+<gates>
+<gate name="KE2462" symbol="KEYSTONEELECTRONICS2462" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="KEYSTONEELECTRONICS2462">
+<connects>
+<connect gate="KE2462" pin="P1" pad="P1"/>
+<connect gate="KE2462" pin="P2" pad="P2"/>
+<connect gate="KE2462" pin="P3+" pad="P3"/>
+<connect gate="KE2462" pin="P4-" pad="P4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 </drawing>
