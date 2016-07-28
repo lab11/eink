@@ -1,6 +1,0 @@
-{
- "mqttBroker": "mqtt://141.212.11.202",
- "controlTopic": "occupancy/4908",
- "controlKey": "occupied",
- "einkAddress": "c0:98:e5:00:f8:02"
-}
