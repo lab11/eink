@@ -164,7 +164,8 @@
 <wire x1="0.23" y1="36.26" x2="0.23" y2="0.2" width="0.4064" layer="20"/>
 <text x="13" y="10" size="1.778" layer="21" font="vector" ratio="12">Cole Hudson</text>
 <text x="13" y="7.5" size="1.4" layer="21" font="vector" ratio="12">2016/07/21</text>
-<text x="13" y="3" size="1.778" layer="21" font="vector">5V</text>
+<text x="2" y="16.5" size="1.778" layer="21" font="vector">5V</text>
+<text x="13" y="5" size="1.778" layer="25" font="vector">REV A</text>
 </plain>
 <libraries>
 <library name="nucleum">
@@ -901,8 +902,8 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <element name="U$2" library="holes" package="3,2" value="" x="29.5" y="5.5"/>
 <element name="U$3" library="holes" package="3,2" value="" x="61" y="30.5"/>
 <element name="U$4" library="holes" package="3,2" value="" x="92" y="69"/>
-<element name="BATTERY" library="through_hole_battery_pack" package="KEYSTONEELECTRONICS2462" value="KEYSTONEELECTRONICS2462" x="74.5" y="7.5">
-<attribute name="DIGIKEY" value="36-2462-ND" x="74.5" y="7.5" size="1.778" layer="27" display="off"/>
+<element name="BATTERY" library="through_hole_battery_pack" package="KEYSTONEELECTRONICS2462" value="KEYSTONEELECTRONICS2462" x="81.5" y="34">
+<attribute name="DIGIKEY" value="36-2462-ND" x="81.5" y="34" size="1.778" layer="27" display="off"/>
 </element>
 <element name="U$5" library="holes" package="3,2" value="" x="71" y="69.5"/>
 <element name="LOGO1" library="logos" package="UMICH_SOLID_350MIL" value="UMICH_SOLID_LARGE" x="36.5" y="22.5"/>
@@ -1009,7 +1010,6 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <wire x1="51" y1="7.5" x2="71" y2="7.5" width="0.4064" layer="1"/>
 <wire x1="71" y1="7.5" x2="73" y2="5.5" width="0.4064" layer="1"/>
 <wire x1="73" y1="5.5" x2="87.486" y2="5.5" width="0.4064" layer="1"/>
-<wire x1="87.486" y1="5.5" x2="81.993" y2="-19.678" width="0.4064" layer="1"/>
 <wire x1="21.5716" y1="19.3798" x2="20.5" y2="20.4514" width="0.4064" layer="1"/>
 <wire x1="20.5" y1="20.4514" x2="20.5" y2="26.5" width="0.4064" layer="1"/>
 <wire x1="20.5" y1="26.5" x2="21.5" y2="27.5" width="0.4064" layer="1"/>
@@ -1059,6 +1059,8 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <contactref element="J2" pad="GND"/>
 <contactref element="J2" pad="P$4"/>
 <wire x1="2.31" y1="2.12" x2="8.41" y2="2.12" width="0.4064" layer="1"/>
+<wire x1="88.993" y1="6.822" x2="88.808" y2="6.822" width="0.4064" layer="1"/>
+<wire x1="88.808" y1="6.822" x2="87.486" y2="5.5" width="0.4064" layer="1"/>
 </signal>
 <signal name="VCC">
 <contactref element="U1" pad="1"/>
@@ -1175,9 +1177,8 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <signal name="N$4">
 <contactref element="Q1" pad="3"/>
 <contactref element="BATTERY" pad="P3"/>
-<wire x1="67.007" y1="-19.678" x2="72" y2="7.5" width="0.4064" layer="1"/>
-<wire x1="72" y1="7.5" x2="71" y2="8.5" width="0.4064" layer="1"/>
-<wire x1="71" y1="8.5" x2="51" y2="8.5" width="0.4064" layer="1"/>
+<wire x1="71" y1="8.5" x2="70.5" y2="8.5" width="0.4064" layer="1"/>
+<wire x1="70.5" y1="8.5" x2="51" y2="8.5" width="0.4064" layer="1"/>
 <wire x1="51" y1="8.5" x2="49" y2="10.5" width="0.4064" layer="1"/>
 <wire x1="49" y1="10.5" x2="42.5" y2="10.5" width="0.4064" layer="1"/>
 <via x="42.5" y="10.5" extent="1-16" drill="0.6"/>
@@ -1185,6 +1186,8 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <via x="37.5" y="10.5" extent="1-16" drill="0.6"/>
 <wire x1="37.5" y1="10.5" x2="29.41" y2="18.59" width="0.4064" layer="1"/>
 <wire x1="29.41" y1="18.59" x2="26.22" y2="18.59" width="0.4064" layer="1"/>
+<wire x1="74.007" y1="6.822" x2="72.329" y2="8.5" width="0.4064" layer="1"/>
+<wire x1="72.329" y1="8.5" x2="71" y2="8.5" width="0.4064" layer="1"/>
 </signal>
 </signals>
 </board>

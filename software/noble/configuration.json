@@ -1,0 +1,5 @@
+{
+ "mqttBroker": "mqtt://141.212.11.202",
+ "controlTopic": "occupancy/4908",
+ "controlKey": "occupied"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "occupancy-eink",
+  "version": "1.0.0",
+  "description": "Update an eink display with boolean occupancy values from MQTT",
+  "main": "occupancy-eink.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cole Hudson",
+  "license": "ISC",
+  "dependencies": {
+    "edimax-smartplug": "0.0.14",
+    "mqtt": "^1.12.0"
+  }
+}
