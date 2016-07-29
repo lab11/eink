@@ -99,7 +99,6 @@ void ble_evt_write(ble_evt_t* p_ble_evt)
 {
     if (simple_ble_is_char_event(p_ble_evt, &text_char)) 
     {
-
         tcmp441_writeStringAtLocation(text_value, text_x_coordinate_value, text_y_coordinate_value, text_scale_value);
 
         tcmp441_updateDisplay();

@@ -20,22 +20,23 @@ APPLICATION_SRCS += nrf_delay.c
 
 APPLICATION_SRCS += eddystone.c
 
-# APPLICATION_SRCS += adxl362.c
+LIBRARY_PATHS += . ../../include
+SOURCE_PATHS += ../../src
 
+#NRF BASE PATH!!!
 NRF_BASE_PATH ?= ../../nrf5x-base
-LIBRARY_PATHS += . $(NRF_BASE_PATH)/devices ../../include
-LIBRARY_PATHS += ./libqrencode
-LIBRARY_PATHS += ./font
-SOURCE_PATHS += $(NRF_BASE_PATH)/devices ../../src
 
-SOURCE_PATHS += $(NRF_BASE_PATH)/devices/tcmp441/
-LIBRARY_PATHS += $(NRF_BASE_PATH)/devices/tcmp441/
+# include c files for E-Ink display driver
 APPLICATION_SRCS += tcmp441.c
+APPLICATION_SRCS += $(notdir $(wildcard $(NRF_BASE_PATH)/devices/tcmp441/libqrencode/*.c))
+
+
 
 SOFTDEVICE_MODEL = s130
 RAM_KB = 32
 
 CFLAGS += -D__STATIC=''
+#XXX /\ delete that later
 LDFLAGS += --specs=nano.specs
 
 include $(NRF_BASE_PATH)/make/Makefile
