@@ -22,11 +22,15 @@ APPLICATION_SRCS += eddystone.c
 
 # APPLICATION_SRCS += adxl362.c
 
-NRF_BASE_PATH ?= ../..
+NRF_BASE_PATH ?= ../../nrf5x-base
 LIBRARY_PATHS += . $(NRF_BASE_PATH)/devices ../../include
 LIBRARY_PATHS += ./libqrencode
 LIBRARY_PATHS += ./font
 SOURCE_PATHS += $(NRF_BASE_PATH)/devices ../../src
+
+SOURCE_PATHS += $(NRF_BASE_PATH)/devices/tcmp441/
+LIBRARY_PATHS += $(NRF_BASE_PATH)/devices/tcmp441/
+APPLICATION_SRCS += tcmp441.c
 
 SOFTDEVICE_MODEL = s130
 RAM_KB = 32
@@ -34,4 +38,4 @@ RAM_KB = 32
 CFLAGS += -D__STATIC=''
 LDFLAGS += --specs=nano.specs
 
-include ../make/Makefile
+include $(NRF_BASE_PATH)/make/Makefile
