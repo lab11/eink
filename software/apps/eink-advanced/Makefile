@@ -30,13 +30,9 @@ NRF_BASE_PATH ?= ../../nrf5x-base
 APPLICATION_SRCS += tcmp441.c
 APPLICATION_SRCS += $(notdir $(wildcard $(NRF_BASE_PATH)/devices/tcmp441/libqrencode/*.c))
 
-
-
 SOFTDEVICE_MODEL = s130
 RAM_KB = 32
 
-CFLAGS += -D__STATIC=''
-#XXX /\ delete that later
 LDFLAGS += --specs=nano.specs
 
 include $(NRF_BASE_PATH)/make/Makefile
