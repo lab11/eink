@@ -1,0 +1,10 @@
+Theme [number]: [Title of theme]
+
+Task [task number]: [Task Title].
+
+PI Dutta's team has developed a bluetooth enabled e-ink display. It provides an output for the data gathered by other projects from PI Dutta's team. It is built off of a nucleum module and Pervasive Displays' TCMP441 e-ink display. Data is sent over Bluetooth Low Energy to the e-ink display through the nucleum over a 10 pin header. It accepts x, y, scale, and text inputs. The device is also capable of displaying qr codes. All of this is powered by either a 5v barrel jack and wall adapter or a pair of AA batteries. Because of the nature of an e-ink display, it is able to run for very long periods of time on just those batteries. 
+
+%width=450px%Attach:umich-figure-name.png
+Fig X. [Your Figure Caption Here, Bold and Major Words Capitalized].
+
+Future Work involves integrating this display with other projects developed by PI Dutta's team. Specifically, it will be used to display occupancy values of rooms using data from sensor deployments.
