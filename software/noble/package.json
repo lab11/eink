@@ -9,7 +9,8 @@
   "author": "Cole Hudson",
   "license": "ISC",
   "dependencies": {
-    "edimax-smartplug": "0.0.14",
-    "mqtt": "^1.12.0"
+    "fs": "0.0.2",
+    "mqtt": "^1.13.0",
+    "noble": "^1.6.0"
   }
 }

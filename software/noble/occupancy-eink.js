@@ -30,14 +30,17 @@ var qrcode =     "e528a414ff4f3089d44f7cb505aba641";
 var control =    "e528a415ff4f3089d44f7cb505aba641";
 
 var text_value = "";
-var scale_value = 1;
-var x_value = 0;
-var y_value = 0;
+var scale_value = 3;
+var x_value = 50;
+var y_value = 126;
 var qrcode_value = "";
-var control_value = 0;
+var control_value = 1;
+
+var shouldUpdateDisplay = false;
 
 function updateDoor()
 {
+	shouldUpdateDisplay = true;
 	console.log("update started");
 
 	if(noble.state == "poweredOn")
@@ -48,20 +51,23 @@ function updateDoor()
 	else
 	{
 		console.log("not powered on");
-		while(noble.state != "poweredOn")
-		{
-			if(noble.state == "poweredOn")
-			{
-				updateDoor();
-			}
-		}
+		console.log(noble.state);
+		setTimeout(updateDoor, 5000);
 	}
 }
 
+noble.on('stateChange', function(state) {
+  if (state === 'poweredOn')
+    console.log("state: " + state);
+  else
+    console.log("state: " + state);
+});
+
 noble.on('discover', function(peripheral){
 	console.log(peripheral.address);
-	if(peripheral.address == einkAddress && peripheral.connectable)
+	if(peripheral.address == einkAddress && peripheral.connectable && shouldUpdateDisplay)
 	{
+		shouldUpdateDisplay = false;
 		peripheral.connect(function(error){
 			if(error)
 			{
@@ -69,6 +75,7 @@ noble.on('discover', function(peripheral){
 			}
 			else
 			{
+				console.log("Connected to device");
 				peripheral.discoverAllServicesAndCharacteristics(function(error, services, characteristics){
 					//characteristics[0] = X COORDINATE
 					//characteristics[1] = Y COORDINATE
@@ -76,38 +83,49 @@ noble.on('discover', function(peripheral){
 					//characteristics[3] = TEXT
 					//characteristics[4] = QR CODE
 					//characteristics[5] = CONTROL
-					for(var i = 0; i < characteristics.length; i++)
-					{
-						if(characteristics[i].uuid == text)
+
+					//write text
+					characteristics[3].write(new Buffer(text_value), false, function(error){
+						if(error)
 						{
-							characteristics[i].write(Buffer.from(text_value), false, function(error){
-								if(error)
-								{
-									console.log(error);
-								}
-								else
-								{
-									console.log("wrote to text");
+							console.log(error);
+						}
+						else
+						{
+							//write x
+							var x_buf = new Buffer(1);
+							x_buf.writeUInt8(x_value, 0);
+							characteristics[0].write(x_buf, false, function(error){
+								if(error){console.log(error)};
+								
+								//write y
+								var y_buf = new Buffer(1);
+								y_buf.writeUInt8(y_value, 0);
+								characteristics[1].write(y_buf, false, function(error){
+									if(error){console.log(error)};
+									
+									//write scale
+									var scale_buf = new Buffer(1);
+									scale_buf.writeUInt8(scale_value, 0);
+									characteristics[2].write(scale_buf, false, function(error){
+										if(error){console.log(error)};
+										
+										//write control
+										var control_buf = new Buffer(1);
+										control_buf.writeUInt8(0x1, 0);
 
-									for(var i = 0; i < characteristics.length; i++)
-									{
-										if(characteristics[i].uuid == control)
-										{
-											var buf = new Buffer(1);
-											buf.writeUInt8(0x1, 0);
-
-											characteristics[i].write(buf, false, function(error){
+										characteristics[5].write(control_buf, false, function(error){
+											if(error){console.log(error)};
+											peripheral.disconnect(function(error){
 												console.log(error);
-												peripheral.disconnect(function(error){
-													console.log(error);
-												});
 											});
-										}
-									}
-								}
+										});
+										
+									});
+								});
 							});
 						}
-					}
+					});
 				});
 			}
 
@@ -153,12 +171,12 @@ client.on('connect', function () {
 			//set eink display to occupied
 			console.log("occupied");
 
-			text_value = "Come on in!";
+			text_value = "Come on in!   ";
 		} else {
 			//set eink display to not occupied
 			console.log("NOT occupied");
 
-			text_value = "Nobody home";
+			text_value = "Nobody home :(";
 		}
 		updateDoor();
 	});
