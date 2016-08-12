@@ -41,6 +41,7 @@ var shouldUpdateDisplay = false;
 function updateDoor()
 {
 	shouldUpdateDisplay = true;
+
 	console.log("update started");
 
 	if(noble.state == "poweredOn")
@@ -76,6 +77,7 @@ noble.on('discover', function(peripheral){
 			else
 			{
 				console.log("Connected to device");
+				console.log("\nStarted writing to display");
 				peripheral.discoverAllServicesAndCharacteristics(function(error, services, characteristics){
 					//characteristics[0] = X COORDINATE
 					//characteristics[1] = Y COORDINATE
@@ -84,51 +86,85 @@ noble.on('discover', function(peripheral){
 					//characteristics[4] = QR CODE
 					//characteristics[5] = CONTROL
 
-					//write text
-					characteristics[3].write(new Buffer(text_value), false, function(error){
-						if(error)
+					//X
+					for(var i = 0; i < characteristics.length; i++)
+					{	
+						if(characteristics[i].uuid == x)
 						{
-							console.log(error);
-						}
-						else
-						{
-							//write x
+							console.log("x");
+
 							var x_buf = new Buffer(1);
 							x_buf.writeUInt8(x_value, 0);
-							characteristics[0].write(x_buf, false, function(error){
+							characteristics[i].write(x_buf, false, function(error){
 								if(error){console.log(error)};
-								
-								//write y
-								var y_buf = new Buffer(1);
-								y_buf.writeUInt8(y_value, 0);
-								characteristics[1].write(y_buf, false, function(error){
-									if(error){console.log(error)};
-									
-									//write scale
-									var scale_buf = new Buffer(1);
-									scale_buf.writeUInt8(scale_value, 0);
-									characteristics[2].write(scale_buf, false, function(error){
-										if(error){console.log(error)};
-										
-										//write control
-										var control_buf = new Buffer(1);
-										control_buf.writeUInt8(control_value, 0);
 
-										characteristics[5].write(control_buf, false, function(error){
+					//Y
+								for(var j = 0; j < characteristics.length; j++)
+								{
+									if(characteristics[j].uuid == y)
+									{
+										console.log("y");
+
+										var y_buf = new Buffer(1);
+										y_buf.writeUInt8(y_value, 0);
+										characteristics[j].write(y_buf, false, function(error){
 											if(error){console.log(error)};
-											peripheral.disconnect(function(error){
-												console.log(error);
-											});
+
+					//SCALE
+											for(var k = 0; k < characteristics.length; k++)
+											{
+												if(characteristics[k].uuid == scale)
+												{
+													console.log("scale");
+
+													var scale_buf = new Buffer(1);
+													scale_buf.writeUInt8(scale_value, 0);
+													characteristics[k].write(scale_buf, false, function(error){
+														if(error){console.log(error)};
+
+					//TEXT
+														for(var l = 0; l < characteristics.length; l++)
+														{
+															if(characteristics[l].uuid == text)
+															{
+																console.log("text");
+
+																characteristics[l].write(new Buffer(text_value), false, function(error){
+																	if(error){console.log(error)};
+
+                    //CONTROL
+																	for(var m = 0; m < characteristics.length; m++)
+																	{
+																		if(characteristics[m].uuid == control)
+																		{
+																			console.log("control");
+
+																			var control_buf = new Buffer(1);
+																			control_buf.writeUInt8(0x01, 0);
+																			characteristics[m].write(control_buf, false, function(error){
+																				if(error){console.log(error)};
+																				peripheral.disconnect(function(error){
+																					console.log(error);
+																				});
+																			});
+																						
+																		}
+																	}
+																});
+															}
+														}
+													});
+												}
+											}
+
 										});
-										
-									});
-								});
+									}
+								}
 							});
 						}
-					});
+					}
 				});
 			}
-
 		});
 	}
 });
