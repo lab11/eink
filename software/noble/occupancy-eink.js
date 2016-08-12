@@ -112,7 +112,7 @@ noble.on('discover', function(peripheral){
 										
 										//write control
 										var control_buf = new Buffer(1);
-										control_buf.writeUInt8(0x1, 0);
+										control_buf.writeUInt8(control_value, 0);
 
 										characteristics[5].write(control_buf, false, function(error){
 											if(error){console.log(error)};
